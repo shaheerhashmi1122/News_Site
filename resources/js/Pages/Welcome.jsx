@@ -1,5 +1,5 @@
 import { Link, Head } from '@inertiajs/react';
-import UserDash  from '@/Pages/User/UserDash';
+import UserDash  from '@/Pages/UserDash';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
