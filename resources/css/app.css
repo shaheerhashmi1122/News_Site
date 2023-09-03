@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+/* dashboard setting */
+.dash{
+    padding: 25px  0 25px 36px;
+}
+
+/* sidebar css doing */
+
+.side-bar .logo {
+    padding: 24px 0 11px 61px;
+}
+.side-bar .menu-list .navli {
+    padding-left: 12px;
+   
+    font-weight: 500;
+}
+.side-bar .menu-list .navli #heading  {
+  font-size: 25px;
+  margin-bottom: 42px;
+}
+
+
+
+
+.menu-list .li-items{
+    padding-left: 61px;
+    margin-bottom: 12px;
+}
