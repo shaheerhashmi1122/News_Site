@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Author\AuthorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Foundation\Application;
@@ -27,9 +28,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 
@@ -43,11 +41,15 @@ Route::middleware('admin')->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 });
 
+Route::middleware('author')->group(function () {
+    Route::get('author/dashboard', [AuthorController::class, 'dashboard'])->name('author.dashboard');
+});
+
 Route::middleware('user')->group(function () {
     Route::get('user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
 });
 Route::get('/message',function(){
-return "Hello World";
+return "Ani deya Mzaak ay";
 })->name('message');
 
 
