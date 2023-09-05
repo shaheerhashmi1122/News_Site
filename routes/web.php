@@ -7,7 +7,6 @@ use App\Http\Controllers\User\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +53,14 @@ Route::middleware('user')->group(function () {
 Route::get('/message',function(){
 return "Ani deya Mzaak ay";
 })->name('message');
+
+
+
+
+// tables route
+Route::get('/tables', function () {
+    return Inertia::render('Tables');
+})->name('tables');
 
 
 require __DIR__.'/auth.php';

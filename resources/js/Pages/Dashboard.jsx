@@ -1,15 +1,18 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import '../../css/app.css';
+// import Tables from './Admin/Tables';
 export default function Dashboard({ auth }) {
 
     return (
-<div className="black-background">
+<div>
         <AuthenticatedLayout
             user={auth.user}
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
         >
             <Head title="Dashboard" />
+          
+           
 
             <div className="py-12 px-4 ">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">

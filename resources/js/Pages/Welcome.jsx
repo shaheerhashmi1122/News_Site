@@ -1,7 +1,7 @@
 import { Link, Head } from '@inertiajs/react';
-// import UserDash  from '@/Pages/UserDash';
 
-export default function Welcome({ auth, laravelVersion, phpVersion }) {
+
+export default function Welcome({ auth}) {
     return (
         <>
             <Head title="Welcome" />
