@@ -12,30 +12,17 @@ import Pages from "@/assests/pages.png";
 import { Link } from "@inertiajs/react";
 import "../../css/app.css";
 import DarkMode from "@/Components/DarkMode";
+import SideBar from "@/Components/SideBar";
 
 function Authenticated({ user, header, children }) {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false); // Start with the sidebar hidden by default
-  const [activeNavItem, setActiveNavItem] = useState("");
+ 
 
 
 
 
 
 
-  const handleNavItemClick = (item) => {
-    setActiveNavItem(item);
-  };
-
-  const showSidebar = () => {
-    setIsSidebarVisible(true);
-  };
-
-  const hideSidebar = () => {
-    setIsSidebarVisible(false);
-  };
-
-
-
+  
 
 
 
@@ -62,9 +49,13 @@ const toggleTheme = () => {
 
 
   return (
-    <div className={`min-h-screen ${isDarkTheme ? "dark-theme" : "light-theme"}`}>
+    <div className={`min-h-screen ${isDarkTheme ? "dark-theme" : "light-theme"}`}  >
+       
       <div className="flex">
-        <aside
+      {/* important comments donot delet withoutasking<SideBar/> */}
+
+
+        {/* <aside
           className={`bg-white ${isSidebarVisible ? "w-64" : "w-20"} min-h-screen side-bar border-r border-gray-100`}
           onMouseEnter={showSidebar}
           onMouseLeave={hideSidebar}
@@ -161,7 +152,7 @@ const toggleTheme = () => {
               </ul>
             </div>
           </nav>
-        </aside>
+        </aside> */}
         <div className="flex-1 min-h-screen">
           <nav className="bg-white border-b border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -173,7 +164,7 @@ const toggleTheme = () => {
    </div>
                     <Link href="/">
                       <ApplicationLogo
-                        className={`block ${isSidebarVisible ? "h-9" : "h-6"} w-auto fill-current text-gray-800`}
+                        className=" w-auto fill-current text-gray-800"
                       />
                     </Link>
                   </div>

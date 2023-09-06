@@ -3,114 +3,66 @@
 @tailwind utilities;
 
 /* =====================sidebar====================================== */
-.dash {
-    padding: 25px 0 25px 36px;
+
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+body{
+  background-color: #EAEEF6;
+}
+.side-menu {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 60px;
+  list-style-type: none;
+  background: #FEFFFE;
+  overflow: hidden;
+  transition: width 0.6s;
 }
 
-.side-bar {
-    font-family: 'Ubuntu', sans-serif;
-    /* padding-left: 12px; */
-    font-size: 14px;
-    line-height: 25.2px;
-    transition: 0.3s;
-    font-weight: 500;
+.side-menu:hover {
+  width: 300px;
 }
 
-.side-bar .menu-list {
-    line-height: 18.4px;
-    font-size: 16px;
-    text-align: start;
-    letter-spacing: normal;
+.side-menu li {
+  width: 300px;
+  margin: 0;
 }
 
-.side-bar .menu-list .navli .heading {
-    font-size: 16px;
-    margin-bottom: 50px;
+.side-menu li span {
+  font-size: 1rem;
+  margin: 20px 30px 0 22px;
+}
+.side-menu li img {
+  font-size: 1rem;
+  margin: 0 0 0 20px;
 }
 
-.menu-list .li-items {
-    padding-left: 35px;
-    margin-bottom: 30px;
+.side-menu li a {
+  display: flex;
+ 
+  padding-top: 20px;
+  font-size: .9rem;
+  text-decoration: none;
+  color: #333;
+  height: 60px;
 }
 
-.icons {
-    margin-left: 112px;
-    float: right;
-    height: 18px;
-    line-height: 18px;
-}
-
-img {
-    height: 16px;
-}
-
-.active {
-    color: #B66DFF;
-}
-
-@media (max-width: 640px) {
-    .dash {
-        padding: 15px 0 15px 16px;
-    }
-
-    .side-bar {
-        padding-left: 8px;
-        font-size: 12px;
-        line-height: 20px;
-    }
-
-    .side-bar .menu-list .navli .heading {
-        font-size: 14px;
-        margin-bottom: 30px;
-    }
-
-    .menu-list .li-items {
-        padding-left: 20px;
-        margin-bottom: 20px;
-    }
-
-    .icons {
-        margin-left: 80px;
-        height: 16px;
-        line-height: 16px;
-        color: black;
-    }
-
-    img {
-        height: 14px;
-    }
+.side-menu li a:hover,
+.side-menu li:first-child a {
+  background: #14081d;
+  color: white;
+  display: flex;
 }
 
 
-
-
-
-
-
-
-
-
-
-/* = ========================================for side menu small===========================*/
-
-
-
-
-
-
-
-
-
- .li-items2{
-    margin-left: -119px;
-  
-    margin-bottom: 33px;
+.side-menu li a img{
+ background-color:#fff;
+  /* background-color: #EAEEF6; */
 }
-
-
-
-
-
 /* =============================================sidebar-finish============================================= */
 
 
