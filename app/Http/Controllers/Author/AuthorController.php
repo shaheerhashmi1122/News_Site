@@ -10,6 +10,6 @@ class AuthorController extends Controller
 {
     public function dashboard()
     {
-        return Inertia::render('authordash');
+        return Inertia::render('Author/authordash');
     }
 }

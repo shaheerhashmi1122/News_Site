@@ -11,6 +11,6 @@ class UserController extends Controller
     public function dashboard()
     {
         // dd('Hello');
-        return Inertia::render('UserDash');
+        return Inertia::render('User/UserDash');
     }
 }
