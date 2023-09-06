@@ -1,6 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
-import '../../css/app.css';
+import '../../../css/app.css';
 // import Tables from './Admin/Tables';
 export default function Dashboard({ auth }) {
 
