@@ -159,11 +159,11 @@ const toggleTheme = () => {
    <div className="dark-mode">
    <DarkMode darkMode={isDarkTheme} toggleDarkMode={toggleTheme} />
    </div>
-                    <Link href="/">
+                    {/* <Link href="/">
                       <ApplicationLogo
                         className=" w-auto fill-current text-gray-800"
                       />
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
                 <div className="hidden sm:flex sm:items-center sm:ml-6">
