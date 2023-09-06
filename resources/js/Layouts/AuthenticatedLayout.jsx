@@ -52,6 +52,7 @@ const toggleTheme = () => {
     <div className={`min-h-screen ${isDarkTheme ? "dark-theme" : "light-theme"}`}  >
        
       <div className="flex">
+        <SideBar/>
       {/* important comments donot delet withoutasking<SideBar/> */}
 
 
