@@ -91,35 +91,47 @@ const toggleTheme = () => {
                   </NavLink>
                 </li>
 
-                <li className={`li-items${isSidebarVisible ? "" : "2"}`}>
-                  <Link
-                    className={` table ${
-                      activeNavItem === "home" ? "active" : ""
-                    }`}
-                    href="#"
-                    onClick={() => handleNavItemClick("home")}
-                  >
-                    Home
-                    <img
-                      className="icons"
-                      src={Home}
-                      alt=""
-                      style={{ paddingLeft: "3px" }}
-                    />
-                  </Link>
-                </li>
-                <li className={`li-items${isSidebarVisible ? "" : "2"}`}>
-                  <Link
-                    className={` table ${
-                      activeNavItem === "tables" ? "active" : ""
-                    }`}
-                    href={route("tables")}
-                    onClick={() => handleNavItemClick("tables")}
-                  >
-                    Tables
-                    <img className="icons" src={Table} alt="" />
-                  </Link>
-                </li>
+                                    <li className="li-items">
+                                        <Link
+                                            className={` table ${
+                                                activeNavItem === "home"
+                                                    ? "active"
+                                                    : ""
+                                            }`}
+                                            href="#"
+                                            onClick={() =>
+                                                handleNavItemClick("home")
+                                            }
+                                        >
+                                            Home
+                                            <img
+                                                className="icons"
+                                                src={Home}
+                                                alt=""
+                                                style={{paddingLeft:"3px"}}
+                                            />
+                                        </Link>
+                                    </li>
+                                    <li className="li-items">
+                                        <Link
+                                            className={` table ${
+                                                activeNavItem === "tables"
+                                                    ? "active"
+                                                    : ""
+                                            }`}
+                                            href={route('admin.tables')}
+                                            onClick={() =>
+                                                handleNavItemClick("tables")
+                                            }
+                                        >
+                                            Tables
+                                            <img
+                                                className="icons"
+                                                src={Table}
+                                                alt=""
+                                            />
+                                        </Link>
+                                    </li>
 
                 <li className={`li-items${isSidebarVisible ? "" : "2"}`}>
                   <Link

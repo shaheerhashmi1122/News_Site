@@ -9,7 +9,7 @@ import Chart from "@/assests/charts.png";
 import Home from "@/assests/home.png";
 import Pages from "@/assests/pages.png";
 import { Link, usePage } from "@inertiajs/react"; // Import `usePage` from Inertia
-import "../../css/app.css";
+import '../../../css/app.css';
 
 export default function Authenticated({ user, header, children }) {
     const [activeNavItem, setActiveNavItem] = useState("");
