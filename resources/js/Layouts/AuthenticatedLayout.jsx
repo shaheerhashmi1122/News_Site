@@ -82,7 +82,7 @@ function Authenticated({ user, header, children }) {
                                                     ? "active"
                                                     : ""
                                             }`}
-                                            href={route('tables')}
+                                            href={route('admin.tables')}
                                             onClick={() =>
                                                 handleNavItemClick("tables")
                                             }
