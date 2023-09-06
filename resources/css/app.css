@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 /* =====================sidebar====================================== */
 .dash {
     padding: 25px 0 25px 36px;
@@ -104,7 +103,7 @@ img {
 
  .li-items2{
     margin-left: -119px;
-    /* margin-right: 13px; */
+  
     margin-bottom: 33px;
 }
 
@@ -113,3 +112,21 @@ img {
 
 
 /* =============================================sidebar-finish============================================= */
+
+
+
+
+
+
+
+
+
+
+/* =====================================dark mode started======================== */
+.light-theme{
+    color: #333;
+    background-color: #fff;
+}.dark-theme{
+    color: #fff;
+    background-color: #333;
+}

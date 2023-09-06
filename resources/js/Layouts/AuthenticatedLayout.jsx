@@ -2,18 +2,25 @@ import React, { useState } from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
+
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import Table from "@/assests/table.png";
-import Ham from "@/assests/ham.png";
+
 import Chart from "@/assests/charts.png";
 import Home from "@/assests/home.png";
 import Pages from "@/assests/pages.png";
 import { Link } from "@inertiajs/react";
 import "../../css/app.css";
+import DarkMode from "@/Components/DarkMode";
 
 function Authenticated({ user, header, children }) {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false); // Start with the sidebar hidden by default
   const [activeNavItem, setActiveNavItem] = useState("");
+
+
+
+
+
 
   const handleNavItemClick = (item) => {
     setActiveNavItem(item);
@@ -27,8 +34,35 @@ function Authenticated({ user, header, children }) {
     setIsSidebarVisible(false);
   };
 
+
+
+
+
+
+
+
+
+
+// =====================================/darkmode=====================================
+
+
+
+
+const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+const toggleTheme = () => {
+  setIsDarkTheme(!isDarkTheme);
+};
+
+
+
+
+
+
+
+
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className={`min-h-screen ${isDarkTheme ? "dark-theme" : "light-theme"}`}>
       <div className="flex">
         <aside
           className={`bg-white ${isSidebarVisible ? "w-64" : "w-20"} min-h-screen side-bar border-r border-gray-100`}
@@ -122,6 +156,9 @@ function Authenticated({ user, header, children }) {
               <div className="flex justify-between h-16">
                 <div className="flex">
                   <div className="shrink-0 flex items-center">
+   <div className="dark-mode">
+   <DarkMode darkMode={isDarkTheme} toggleDarkMode={toggleTheme} />
+   </div>
                     <Link href="/">
                       <ApplicationLogo
                         className={`block ${isSidebarVisible ? "h-9" : "h-6"} w-auto fill-current text-gray-800`}
