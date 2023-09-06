@@ -59,6 +59,8 @@ return "Ani deya Mzaak ay";
 
 
 
+
+
 // tables route
 Route::get('/tables', function () {
     return Inertia::render('Tables');

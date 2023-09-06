@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
-import NavLink from "@/Components/NavLink";
 
-import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
-import Table from "@/assests/table.png";
+import { BrowserRouter } from 'react-router-dom'
+import Tables from "@/Pages/Admin/Tables";
 
-import Chart from "@/assests/charts.png";
-import Home from "@/assests/home.png";
-import Pages from "@/assests/pages.png";
 import { Link } from "@inertiajs/react";
 import "../../css/app.css";
 import DarkMode from "@/Components/DarkMode";
@@ -52,7 +48,7 @@ const toggleTheme = () => {
     <div className={`min-h-screen ${isDarkTheme ? "dark-theme" : "light-theme"}`}  >
        
       <div className="flex">
-        <SideBar/>
+        <SideBar />
       {/* important comments donot delet withoutasking<SideBar/> */}
 
 
