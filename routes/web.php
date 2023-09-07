@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ChartController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Author\AuthorController;
 use App\Http\Controllers\ProfileController;
@@ -43,6 +45,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware('admin')->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('admin/tables', [TableController::class, 'show'])->name('admin.tables');
+    Route::get('admin/charts', [ChartController::class, 'show'])->name('admin.charts');
+    Route::get('admin/pages', [PageController::class, 'show'])->name('admin.pages');
 });
 
 Route::middleware('author')->group(function () {
