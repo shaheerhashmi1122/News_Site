@@ -21,7 +21,7 @@ function Authenticated({ user, header, children }) {
             <div className="flex">
           
 
-                <SideBar darkMode={isDarkTheme} toggleDarkMode={toggleTheme} user={user} />
+                <SideBar darkMode={isDarkTheme} toggleDarkMode={toggleTheme} user={user.name} />
               
                 <div className="flex-1 min-h-screen content">
                    
