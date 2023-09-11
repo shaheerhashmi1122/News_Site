@@ -9,27 +9,34 @@ import Setting from "@/assests/setting.png";
 import { Link } from "@inertiajs/react";
 
 import "../../css/app.css";
-import DarkMode from "./DarkMode";
+import DarkMode from "@/Components/DarkMode";
 
-export default function SideBar({ darkMode, user }) {
+export default function SideBar() {
+
+        
     // ===============================darkmode============================
+
+    const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+    const toggleTheme = () => {
+        setIsDarkTheme(!isDarkTheme);
+    };
+
 
     return (
         <aside
-            className={`${
-                darkMode ? "dark-theme" : "light-theme"
-            } bg-white min-h-screen side-bar border-r border-gray-100`}
-        >
+        className={`min-h-screen ${isDarkTheme ? "dark-theme" : "light-theme"} bg-white min-h-screen side-bar border-r border-gray-100`}>
+
             <nav>
                 <div>
-                    <ul className="side-menu ">
+                                <ul className="side-menu ">
                         <li>
                             <Link href={route("dashboard")}>
                                 <img
                                     src={Dash}
                                     alt=""
                                     style={{ height: "24px" }}
-                                />
+                                    />
                                 <span />
                                 DashBoard
                             </Link>
@@ -40,7 +47,7 @@ export default function SideBar({ darkMode, user }) {
                                     src={Home}
                                     alt=""
                                     style={{ height: "24px" }}
-                                />
+                                    />
                                 <span />
                                 Home
                             </Link>
@@ -78,12 +85,8 @@ export default function SideBar({ darkMode, user }) {
                                 Pages
                             </Link>
                         </li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li>
+                      
+                        <li className="setting">
                             <Dropdown>
                                 <Dropdown.Trigger>
                                   
@@ -97,12 +100,17 @@ export default function SideBar({ darkMode, user }) {
                                         href={route("logout")}
                                         method="post"
                                         as="button"
-                                    >
+                                        >
                                         Log Out
                                     </Dropdown.Link>
                                 </Dropdown.Content>
                             </Dropdown>
                         </li>
+                                <li>
+                                      <DarkMode  darkMode={isDarkTheme}
+                                                    toggleDarkMode={toggleTheme}/>
+                                    
+                                    </li>      
                     </ul>
                 </div>
             </nav>

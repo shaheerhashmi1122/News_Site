@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Dropdown from "@/Components/Dropdown";
-// import { BrowserRouter } from "react-router-dom";
+
+
 import "../../css/app.css";
 import DarkMode from "@/Components/DarkMode";
 import SideBar from "@/Components/SideBar";
@@ -21,7 +21,7 @@ function Authenticated({ user, header, children }) {
             <div className="flex">
           
 
-                <SideBar darkMode={isDarkTheme} toggleDarkMode={toggleTheme} user={user.name} />
+                <SideBar  user={user.name} />
               
                 <div className="flex-1 min-h-screen content">
                    
