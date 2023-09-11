@@ -6,32 +6,40 @@
 
 @import 'https://fonts.googleapis.com/css?family=Roboto';
 body{
-  background-color: #EAEEF6;
+  background-color: #686b70;
+
+
 }
 .side-menu {
   font-family: 'Roboto', sans-serif;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100vh;
   width: 60px;
   list-style-type: none;
-  background: #FEFFFE;
+  background: #686b70;
   overflow: hidden;
-  transition: width 0.6s;
+  transition: width 0.6s ease-in-out;
 }
 
+
+
+
+
+
+
 .side-menu:hover {
-  width: 200px;
+  width: 250px; /* Change to auto */
 }
+
 
 .side-menu li {
   width: 300px;
   margin: 0;
 }
-
 .side-menu li span {
   font-size: 1rem;
   margin: 20px 30px 0 22px;
@@ -47,13 +55,14 @@ body{
   padding-top: 20px;
   font-size: .9rem;
   text-decoration: none;
-  color: #333;
   height: 60px;
+  color: #14081d;
 }
 
 .side-menu li a:hover,
 .side-menu li:first-child a {
-  background: #14081d;
+  background:#8a8ce7;
+  
   color: white;
   display: flex;
 }
@@ -96,3 +105,9 @@ body{
 .heading{
   margin: 0 0 0 0;
 }
+
+
+
+
+
+/* ==================================content=========================================== */
