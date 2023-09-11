@@ -57,7 +57,7 @@ export default function SideBar({ darkMode, user }) {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                        <Link href={route("admin.charts")}>
                                 <img
                                     src={Charts}
                                     alt=""
@@ -68,7 +68,7 @@ export default function SideBar({ darkMode, user }) {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                        <Link href={route("admin.pages")}>
                                 <img
                                     src={Pages}
                                     alt=""
