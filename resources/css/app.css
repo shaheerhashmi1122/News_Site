@@ -2,13 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+@import "~@fortawesome/fontawesome-free/css/all.css";
 /* =====================sidebar====================================== */
 
-@import 'https://fonts.googleapis.com/css?family=Roboto';
-body {
-  background-color:  "#000";
-  color:  "#fff" ;
+
+.main-body{
+  background:#191C24 !important;
+  fill: #6c7293;
+
 }
+
+/* 
+
 .side-menu {
   font-family: 'Roboto', sans-serif;
   position: relative;
@@ -19,7 +26,7 @@ body {
   min-height: 100vh;
   width: 60px;
   list-style-type: none;
-  background: #fff;
+
   overflow: hidden;
   transition: width 0.6s ease-in-out;
 }
@@ -31,7 +38,7 @@ body {
 
 
 .side-menu:hover {
-  width: 250px; /* Change to auto */
+  width: 250px; Change to auto
 }
 
 
@@ -46,47 +53,407 @@ body {
 .side-menu li img {
   font-size: 1rem;
   margin: 0 0 0 20px;
-}
+  width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+ 
+    background: #191c24;
+    color: #fff;
+    fill: #EB1616;
+    border-radius: 40px;
+  }
+
 
 .side-menu li a {
   display: flex;
  
   padding-top: 20px;
-  font-size: .9rem;
+  font-size: 16px;
   text-decoration: none;
   height: 60px;
-  color: #14081d;
+
 }
 
 .side-menu li a:hover,
 .side-menu li:first-child a {
-  background:#8a8ce7;
-  
-  color: white;
+  background:#000000;
+  padding: 7px 20px;
+
+  font-weight: 500;
+  border-left: 3px solid var(--secondary);
+  border-radius: 0 30px 30px 0;
+  outline: none;
+  fill:#EB1616 ;
   display: flex;
 }
 
 
-.side-menu li a img{
- background-color:#fff;
- /* background-color: #EAEEF6; */
+.side-menu li a img:hover{
+  background-color:#EB1616 ;
 }
 
 .setting{
 position: absolute;
 bottom: 10px;
-background-color: #fff;
+
 
 }
-.drop-side{
-margin: -160px 65px 0 0  ;
+.setting img{
+
+background-color: #fff;
 }
+.set-trigger{
+
+  left: 0px;
+  position: fixed;
+}
+
+
+
+
+.drop-side{
+  margin: -123px -178px 0 0;}
 .drop-side2{
 width:100px;
 }
 
+*/
+
+/********** Template CSS **********/
+:root {
+  --primary: #EB1616;
+  --secondary: #191C24;
+  --light: #6C7293;
+  --dark: #000000;
+}
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 45px;
+  bottom: 45px;
+  z-index: 99;
+}
 
 
+/*** Spinner ***/
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease-out, visibility 0s linear .5s;
+  z-index: 99999;
+}
+
+#spinner.show {
+  transition: opacity .5s ease-out, visibility 0s linear 0s;
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+  transition: .5s;
+}
+
+.btn-square {
+  width: 38px;
+  height: 38px;
+}
+
+.btn-sm-square {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-lg-square {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  border-radius: 50px;
+}
+
+
+/*** Layout ***/
+.sidebar {
+  position: relative;
+  width: 70px; /* Initial width of the sidebar */
+  height: 100vh;
+  background: var(--secondary);
+  /* z-index: 999; */
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow-y: auto;
+  overflow-x: auto;
+  transition: width 0.6s ease-in-out; /* Add a transition for smooth width changes */
+}
+
+.sidebar:hover {
+  width: 250px; 
+  overflow: hidden;
+}
+.admin{
+  padding-left: 9px;
+  margin-bottom:50px ;
+  
+}
+
+.admin img{
+  border-radius: 14px;
+  border: 15px;
+  background-color: #EB1616;
+}
+.admin-head{
+  position: absolute;
+  overflow-x: hidden;
+  margin: -28px 0px 16px 95px;
+  float: right;
+ 
+}
+
+
+/* ====================================Setting side ==========================================*/
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 992px) {
+  .sidebar {
+      margin-left: 0;
+  }
+
+  .sidebar.open {
+      margin-left: -250px;
+  }
+
+  .content {
+      width: calc(100% - 250px);
+  }
+
+  .content.open {
+      width: 100%;
+      margin-left: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+      margin-left: -250px;
+  }
+
+  .sidebar.open {
+      margin-left: 0;
+  }
+
+  .content {
+      width: 100%;
+      margin-left: 0;
+  }
+}
+
+
+/*** Navbar ***/
+.sidebar .navbar .navbar-nav .nav-link {
+  padding: 7px 20px;
+  color: var(--light);
+  font-weight: 500;
+  border-left: 3px solid var(--secondary);
+  border-radius: 0 30px 30px 0;
+  outline: none;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover,
+.sidebar .navbar .navbar-nav .nav-link.active {
+  color: var(--primary);
+  background: var(--dark);
+  border-color: var(--primary);
+}
+
+.sidebar .navbar .navbar-nav .nav-link img {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c7293;
+  /* background: var(--dark); */
+  background-color: whitesmoke;
+  border-radius: 40px;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover img,
+.sidebar .navbar .navbar-nav .nav-link.active img {
+  background: var(--secondary);
+}
+
+.sidebar .navbar .navbar-nav .nav-link span{
+  margin: 0 30px 0 22px;
+}
+
+.names{
+  margin: -35px 0 0 100px;
+  float: left;
+
+}
+
+.sidebar .navbar .dropdown-toggle::after {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  transition: .5s;
+}
+
+.sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
+  transform: rotate(-180deg);
+}
+
+.sidebar .navbar .dropdown-item {
+  padding-left: 25px;
+  border-radius: 0 30px 30px 0;
+  color: var(--light);
+}
+
+.sidebar .navbar .dropdown-item:hover,
+.sidebar .navbar .dropdown-item.active {
+  background: var(--dark);
+}
+
+.content .navbar .navbar-nav .nav-link {
+  margin-left: 25px;
+  padding: 12px 0;
+  color: var(--light);
+  outline: none;
+}
+
+.content .navbar .navbar-nav .nav-link:hover,
+.content .navbar .navbar-nav .nav-link.active {
+  color: var(--primary);
+}
+
+.content .navbar .sidebar-toggler,
+.content .navbar .navbar-nav .nav-link i {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark);
+  border-radius: 40px;
+}
+
+.content .navbar .dropdown-item {
+  color: var(--light);
+}
+
+.content .navbar .dropdown-item:hover,
+.content .navbar .dropdown-item.active {
+  background: var(--dark);
+}
+
+.content .navbar .dropdown-toggle::after {
+  margin-left: 6px;
+  vertical-align: middle;
+  border: none;
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  transition: .5s;
+}
+
+.content .navbar .dropdown-toggle[aria-expanded=true]::after {
+  transform: rotate(-180deg);
+}
+
+@media (max-width: 575.98px) {
+  .content .navbar .navbar-nav .nav-link {
+      margin-left: 15px;
+  }
+}
+
+
+/*** Date Picker ***/
+.bootstrap-datetimepicker-widget.bottom {
+  top: auto !important;
+}
+
+.bootstrap-datetimepicker-widget .table * {
+  border-bottom-width: 0px;
+}
+
+.bootstrap-datetimepicker-widget .table th {
+  font-weight: 500;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+  background: var(--primary);
+}
+
+.bootstrap-datetimepicker-widget table td.today::before {
+  border-bottom-color: var(--primary);
+}
+
+
+/*** Testimonial ***/
+.progress .progress-bar {
+  width: 0px;
+  transition: 2s;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-dots {
+  margin-top: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+  border: 5px solid var(--primary);
+  border-radius: 15px;
+  transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+  background: var(--dark);
+  border-color: var(--primary);
+}
 
 
 /* =============================================sidebar-finish============================================= */
@@ -99,8 +466,180 @@ width:100px;
 
 
 
-
 /* =====================================dark mode started======================== */
+
+/* label {
+  width:100px;
+  height:30px;
+  position: relative;
+  display: block;
+  background: #ebebeb;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+  cursor: pointer;
+}
+input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+input:checked + label {
+  background: #242424;
+}
+input:checked + label:after {
+  left:490px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg,#777,#3a3a3a);
+}
+label, label:after {
+  transition: 0.3s
+}
+label:active:after{ 
+  width: 260px; 
+} */
+
+
+
+
+
+
+
+
+
+/*  =====================================for darkmode teheme===================== */
+
+
+
+
+
+.toggle {
+  height: 25px;
+  width: 50px;
+  border-radius: 50px;
+  margin: auto;
+  background-image: linear-gradient(aqua, skyblue);
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle.night {
+  background-image: linear-gradient(midnightblue, rebeccapurple);
+}
+
+.notch {
+  height: 15px;
+  width: 13px;
+  border-radius: 50%;
+  background: yellow;
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  box-shadow: 0 0 5px yellow;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+
+.notch > .crater {
+  background: burlywood;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4) inset;
+}
+.night .crater {
+  opacity: 0.4;
+}
+
+.crater:first-child {
+  left: 5px;
+  top: 15px;
+  height: 15px;
+  width: 40px;
+  transform: rotate(-45deg);
+}
+
+.crater:last-child {
+  right: 10px;
+  top: 15px;
+  height: 15px;
+  width: 25px;
+  transform: rotate(45deg);
+}
+
+.night > .notch {
+  background: whitesmoke;
+  box-shadow: 0 0 5px whitesmoke;
+  transform: translate(100px, 0);
+  left: -69px;
+}
+
+.shape {
+  position: absolute;
+  background: whitesmoke;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.shape.sm {
+  height: 5px;
+  width: 50px;
+  top: 50%;
+  left: 60%;
+}
+
+.shape.md {
+  height: 10px;
+  width: 75px;
+  top: 25%;
+  left: 25%;
+  z-index: 2;
+}
+
+.shape.lg {
+  height: 15px;
+  width: 100px;
+  bottom: 20px;
+  left: 25%;
+}
+
+.night .shape {
+  background: lightgray;
+  box-shadow: 0 0 10px 2px violet;
+}
+
+.night .shape.sm {
+  height: 5px;
+  width: 5px;
+  transform: translate(-40px, 0);
+}
+
+.night .shape.sm:first-of-type {
+  transform: translate(-80px, -10px);
+}
+
+.night .shape.md {
+  height: 10px;
+  width: 10px;
+  transform: translate(10px, 0);
+}
+
+.night .shape.lg {
+  height: 15px;
+  width: 15px;
+  transform: translate(-10px, 0);
+}
+
+
+
+
+
+
+
+
+
+
 .light-theme{
     color: #333;
     background-color: #fff;
@@ -112,19 +651,3 @@ width:100px;
 
 
 
-
-/* 
-
-================================dashboard heading=====================
-
-*/
-
-.heading{
-  margin: 0 0 0 0;
-}
-
-
-
-
-
-/* ==================================drop-content=========================================== */

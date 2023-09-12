@@ -2,21 +2,13 @@ import React, { useState } from "react";
 
 
 import "../../css/app.css";
-import DarkMode from "@/Components/DarkMode";
 import SideBar from "@/Components/SideBar";
 
 function Authenticated({ user, header, children }) {
-    const [isDarkTheme, setIsDarkTheme] = useState(false);
-
-    const toggleTheme = () => {
-        setIsDarkTheme(!isDarkTheme);
-    };
-
+   
     return (
         <div
-            className={`min-h-screen ${
-                isDarkTheme ? "dark-theme" : "light-theme"
-            }`}
+            className="min-h-screen  main-body"
         >
             <div className="flex">
           
@@ -29,13 +21,8 @@ function Authenticated({ user, header, children }) {
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <div className="flex justify-between h-16">
                                     <div className="flex">
-                                        <div className="shrink-0 flex items-center">
-                                            <div className="dark-mode">
-                                                <DarkMode
-                                                    darkMode={isDarkTheme}
-                                                    toggleDarkMode={toggleTheme}
-                                                />
-                                            </div>
+                                        <div className="shrink-0 flex  items-center">
+                                            
                                         </div>
                                     </div>
                                    

@@ -1,119 +1,108 @@
 import React, { useState } from "react";
+import { Link } from "@inertiajs/react";
 import Dropdown from "@/Components/Dropdown";
 import Home from "@/assests/home.png";
 import Table from "@/assests/table.png";
 import Charts from "@/assests/charts.png";
-import Pages from "@/assests/pages.png";
-import Dash from "@/assests/dash.png";
+import Dash from "@/assests/dashboard.png";
 import Setting from "@/assests/setting.png";
-import { Link } from "@inertiajs/react";
 
+// import Dropdown from "@/Components/Dropdown";
+// import DarkMode from "@/Components/DarkMode";
+// import Pages from "@/assests/pages.png";
 import "../../css/app.css";
-import DarkMode from "@/Components/DarkMode";
+import "../../css/Sidebar.css";
 
-export default function SideBar() {
-
-        
-    // ===============================darkmode============================
-
-    const [isDarkTheme, setIsDarkTheme] = useState(false);
-
-    const toggleTheme = () => {
-        setIsDarkTheme(!isDarkTheme);
-    };
-
-
+export default function SideBar(user) {
     return (
-        <aside
-        className={`min-h-screen ${isDarkTheme ? "dark-theme" : "light-theme"} bg-white min-h-screen side-bar border-r border-gray-100`}>
+      <div>
 
-            <nav>
-                <div>
-                                <ul className="side-menu ">
-                        <li>
-                            <Link href={route("dashboard")}>
-                                <img
-                                    src={Dash}
-                                    alt=""
-                                    style={{ height: "24px" }}
-                                    />
-                                <span />
-                                DashBoard
+        <aside className="sidebar">
+            <nav className="navbar">
+                <Link to="/" className="navbar-brand mx-4 mb-3">
+                    <h3 className="text-primary">
+                        <i className="fa fa-user-edit me-2"></i>News Site
+                    </h3>
+                </Link>
+
+                <div className="admin align-items-center ms-4 mb-4">
+                    <div className="position-relative">
+                        <img
+                            className="rounded-circle"
+                            src={Dash}
+                            alt=""
+                            style={{
+                                width: "24px",
+                                height: "24px",
+                                color: "#EB1616",
+                            }}
+                        />
+                    </div>
+                    <div className="admin-head">
+                        <h6 className="mb-0">DashBoard</h6>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div className="navbar-nav w-100">
+                    <Link
+                        href={route("dashboard")}
+                        className="nav-item nav-link active"
+                    >
+                        <img
+                            src={Home}
+                            alt=""
+                            style={{ height: "24px", width: "24px" }}
+                        />
+                        <span></span>
+                        <div className="names">Home</div>
+                    </Link>
+                    <div className="nav-item dropdown">
+                        <Link
+                            href={route("admin.tables")}
+                            className="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                        >
+                            <img
+                                src={Table}
+                                alt=""
+                                style={{ height: "24px", width: "24px" }}
+                            />
+
+                            <span></span>
+                            <div className="names">Tables</div>
+                        </Link>
+                        <div className="dropdown-menu bg-transparent border-0">
+                            <Link to="button.html" className="dropdown-item">
+                                Buttons
                             </Link>
-                        </li>
-                        <li>
-                            <Link href={route("dashboard")}>
-                                <img
-                                    src={Home}
-                                    alt=""
-                                    style={{ height: "24px" }}
-                                    />
-                                <span />
-                                Home
+                            <Link
+                                to="typography.html"
+                                className="dropdown-item"
+                            >
+                                Typography
                             </Link>
-                        </li>
-                        <li>
-                            <Link href={route("admin.tables")}>
-                                <img
-                                    src={Table}
-                                    alt=""
-                                    style={{ height: "24px" }}
-                                />
-                                <span />
-                                Tables
+                            <Link to="element.html" className="dropdown-item">
+                                Other Elements
                             </Link>
-                        </li>
-                        <li>
-                        <Link href={route("admin.charts")}>
-                                <img
-                                    src={Charts}
-                                    alt=""
-                                    style={{ height: "24px" }}
-                                />
-                                <span />
-                                Charts
-                            </Link>
-                        </li>
-                        <li>
-                        <Link href={route("admin.pages")}>
-                                <img
-                                    src={Pages}
-                                    alt=""
-                                    style={{ height: "24px" }}
-                                />
-                                <span />
-                                Pages
-                            </Link>
-                        </li>
-                      
-                        <li className="setting">
-                            <Dropdown>
-                                <Dropdown.Trigger>
-                                  
-                                    <img className="setting" src={Setting} alt="" />
-                                </Dropdown.Trigger>
-                                <Dropdown.Content  >
-                                    <Dropdown.Link href={route("profile.edit")}>
-                                        Profile
-                                    </Dropdown.Link>
-                                    <Dropdown.Link
-                                        href={route("logout")}
-                                        method="post"
-                                        as="button"
-                                        >
-                                        Log Out
-                                    </Dropdown.Link>
-                                </Dropdown.Content>
-                            </Dropdown>
-                        </li>
-                                <li>
-                                      <DarkMode  darkMode={isDarkTheme}
-                                                    toggleDarkMode={toggleTheme}/>
-                                    
-                                    </li>      
-                    </ul>
+                        </div>
+                    </div>
+                    <Link
+                        href={route("admin.charts")}
+                        className="nav-item nav-link"
+                    >
+                        <img
+                            src={Charts}
+                            alt=""
+                            style={{ height: "24px", width: "24px" }}
+                        />
+                        <span></span>
+                        <div className="names">Charts</div>
+                    </Link>
+                  
                 </div>
             </nav>
         </aside>
+      </div>
+
     );
 }

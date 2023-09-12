@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 
-function DarkMode({ darkMode, toggleDarkMode }) {
+function DarkMode({  toggled, onClick }) {
   return (
-    <div className="dark-mode-toggle">
-      <label>
-        <input
-          type="checkbox"
-          checked={darkMode}
-          onChange={toggleDarkMode}
-        />
-        Dark Mode
-      </label>
-    </div>
+    <div onClick={onClick} className={`toggle${toggled ? " night" : ""}`}>
+            <div className="notch">
+                {/* <div className="crater" />
+                <div className="crater" /> */}
+            </div>
+            <div>
+                {/* <div className="shape sm" />
+                <div className="shape sm" />
+                <div className="shape md" />
+                <div className="shape lg" /> */}
+            </div>
+        </div>
   );
 }
 
