@@ -9,117 +9,11 @@
 
 
 .main-body{
-  background:#191C24 !important;
-  fill: #6c7293;
+  background-color:#000000 !important;
+  fill:  #6c7293;
 
 }
 
-/* 
-
-.side-menu {
-  font-family: 'Roboto', sans-serif;
-  position: relative;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  width: 60px;
-  list-style-type: none;
-
-  overflow: hidden;
-  transition: width 0.6s ease-in-out;
-}
-
-
-
-
-
-
-
-.side-menu:hover {
-  width: 250px; Change to auto
-}
-
-
-.side-menu li {
-  width: 300px;
-  margin: 0;
-}
-.side-menu li span {
-  font-size: 1rem;
-  margin: 20px 30px 0 22px;
-}
-.side-menu li img {
-  font-size: 1rem;
-  margin: 0 0 0 20px;
-  width: 40px;
-    height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
- 
-    background: #191c24;
-    color: #fff;
-    fill: #EB1616;
-    border-radius: 40px;
-  }
-
-
-.side-menu li a {
-  display: flex;
- 
-  padding-top: 20px;
-  font-size: 16px;
-  text-decoration: none;
-  height: 60px;
-
-}
-
-.side-menu li a:hover,
-.side-menu li:first-child a {
-  background:#000000;
-  padding: 7px 20px;
-
-  font-weight: 500;
-  border-left: 3px solid var(--secondary);
-  border-radius: 0 30px 30px 0;
-  outline: none;
-  fill:#EB1616 ;
-  display: flex;
-}
-
-
-.side-menu li a img:hover{
-  background-color:#EB1616 ;
-}
-
-.setting{
-position: absolute;
-bottom: 10px;
-
-
-}
-.setting img{
-
-background-color: #fff;
-}
-.set-trigger{
-
-  left: 0px;
-  position: fixed;
-}
-
-
-
-
-.drop-side{
-  margin: -123px -178px 0 0;}
-.drop-side2{
-width:100px;
-}
-
-*/
 
 /********** Template CSS **********/
 :root {
@@ -207,11 +101,6 @@ width:100px;
   width: 250px; 
   overflow: hidden;
 }
-.admin{
-  padding-left: 9px;
-  margin-bottom:50px ;
-  
-}
 
 .admin img{
   border-radius: 14px;
@@ -227,7 +116,6 @@ width:100px;
 }
 
 
-/* ====================================Setting side ==========================================*/
 
 
 
@@ -271,11 +159,15 @@ width:100px;
       margin-left: 0;
   }
 }
+/* ===============================for mobile sioxe 768px============================= */
+
+
+
 
 
 /*** Navbar ***/
 .sidebar .navbar .navbar-nav .nav-link {
-  padding: 7px 20px;
+  padding: 17px 20px;
   color: var(--light);
   font-weight: 500;
   border-left: 3px solid var(--secondary);
@@ -312,7 +204,7 @@ width:100px;
 }
 
 .names{
-  margin: -35px 0 0 100px;
+  margin: -24px 0 0 100px;
   float: left;
 
 }
@@ -389,6 +281,10 @@ width:100px;
   transform: rotate(-180deg);
 }
 
+
+
+
+
 @media (max-width: 575.98px) {
   .content .navbar .navbar-nav .nav-link {
       margin-left: 15px;
@@ -461,174 +357,17 @@ width:100px;
 
 
 
+/* =================================btn css======================== */
 
-
-
-
-
-/* =====================================dark mode started======================== */
-
-/* label {
-  width:100px;
-  height:30px;
-  position: relative;
-  display: block;
-  background: #ebebeb;
-  border-radius: 200px;
-  box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
-  cursor: pointer;
-}
-input {
-  width: 0;
-  height: 0;
-  visibility: hidden;
-}
-
-input:checked + label {
-  background: #242424;
-}
-input:checked + label:after {
-  left:490px;
-  transform: translateX(-100%);
-  background: linear-gradient(180deg,#777,#3a3a3a);
-}
-label, label:after {
-  transition: 0.3s
-}
-label:active:after{ 
-  width: 260px; 
-} */
-
-
-
-
-
-
-
-
-
-/*  =====================================for darkmode teheme===================== */
-
-
-
-
-
-.toggle {
-  height: 25px;
-  width: 50px;
+.btn-dark {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
   border-radius: 50px;
-  margin: auto;
-  background-image: linear-gradient(aqua, skyblue);
-  position: relative;
-  cursor: pointer;
 }
 
-.toggle.night {
-  background-image: linear-gradient(midnightblue, rebeccapurple);
-}
-
-.notch {
-  height: 15px;
-  width: 13px;
-  border-radius: 50%;
-  background: yellow;
-  position: absolute;
-  top: 4px;
-  left: 8px;
-  box-shadow: 0 0 5px yellow;
-  z-index: 1;
-  transition: all 0.3s ease;
-}
-
-
-.notch > .crater {
-  background: burlywood;
-  border-radius: 50%;
-  position: absolute;
-  opacity: 0;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4) inset;
-}
-.night .crater {
-  opacity: 0.4;
-}
-
-.crater:first-child {
-  left: 5px;
-  top: 15px;
-  height: 15px;
-  width: 40px;
-  transform: rotate(-45deg);
-}
-
-.crater:last-child {
-  right: 10px;
-  top: 15px;
-  height: 15px;
-  width: 25px;
-  transform: rotate(45deg);
-}
-
-.night > .notch {
-  background: whitesmoke;
-  box-shadow: 0 0 5px whitesmoke;
-  transform: translate(100px, 0);
-  left: -69px;
-}
-
-.shape {
-  position: absolute;
-  background: whitesmoke;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.shape.sm {
-  height: 5px;
-  width: 50px;
-  top: 50%;
-  left: 60%;
-}
-
-.shape.md {
-  height: 10px;
-  width: 75px;
-  top: 25%;
-  left: 25%;
-  z-index: 2;
-}
-
-.shape.lg {
-  height: 15px;
-  width: 100px;
-  bottom: 20px;
-  left: 25%;
-}
-
-.night .shape {
-  background: lightgray;
-  box-shadow: 0 0 10px 2px violet;
-}
-
-.night .shape.sm {
-  height: 5px;
-  width: 5px;
-  transform: translate(-40px, 0);
-}
-
-.night .shape.sm:first-of-type {
-  transform: translate(-80px, -10px);
-}
-
-.night .shape.md {
-  height: 10px;
-  width: 10px;
-  transform: translate(10px, 0);
-}
-
-.night .shape.lg {
-  height: 15px;
-  width: 15px;
-  transform: translate(-10px, 0);
+.btn-square{
+  border-radius: 50px;
 }
 
 
@@ -640,13 +379,42 @@ label:active:after{
 
 
 
-.light-theme{
-    color: #333;
-    background-color: #fff;
-}.dark-theme{
-    color: #fff;
-    background-color: #333;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================hiode button for home ================== in big screens */
+
+
+
 
 
 
