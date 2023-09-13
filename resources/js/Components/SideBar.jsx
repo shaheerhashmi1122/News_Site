@@ -25,7 +25,7 @@ export default function SideBar() {
         <nav className="navbar">
           <Link to="/" className="navbar-brand mx-4 mb-3">
             <h3 className="text-primary">
-              <i className="fa fa-user-edit me-2"></i>News Site
+              <i className="fa fa-user-edit me-2"></i>GlobLinks
             </h3>
           </Link>
 
@@ -99,7 +99,7 @@ export default function SideBar() {
                 style={{ height: "24px", width: "24px" }}
               />
               <span></span>
-              <div className="names">Charts</div>
+              <div className="names">Analytics</div>
             </Link>
           </div>
         </nav>
