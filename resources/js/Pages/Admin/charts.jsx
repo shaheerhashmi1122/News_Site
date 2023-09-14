@@ -1,4 +1,4 @@
-import SideBar from '@/Components/SideBar'
+import SideBar from '@/Components/AdminComponents/SideBar'
 import React from 'react'
 
 export default function Tables() {

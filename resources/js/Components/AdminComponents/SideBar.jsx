@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "@inertiajs/react";
 
-import "../../css/app.css";
-import "../../css/Sidebar.css";
+import "../../../css/Admin/app.css";
+import "../../../css/Admin/Sidebar.css";
 
 export default function SideBar() {
 

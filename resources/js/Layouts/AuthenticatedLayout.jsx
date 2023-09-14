@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import Dropdown from "@/Components/Dropdown";
+import Dropdown from "@/Components/AdminComponents/Dropdown";
 import "../../css/app.css";
-import SideBar from "@/Components/SideBar";
+import SideBar from "@/Components/AdminComponents/SideBar";
 
 function Authenticated({ user, header, children }) {
    

@@ -44,7 +44,7 @@ const data2 = {
 
 export default function MainPage() {
   return (
-    <div className=" ">
+    <div>
       <div className="row g-4">
         <div className="col-sm-12 col-xl-6">
           <div className="bg-secondary text-center rounded p-4">
