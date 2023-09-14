@@ -1,6 +1,8 @@
 // import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 // import { Head } from '@inertiajs/react';
+import UserSidebar from "@/Components/UserComponents/UserSidebar";
 import React from "react";
+import "../../../css/User/Udash.css"
 // export default function Dashboard({ auth }) {
 export default function UserDash() {
     return (
@@ -23,7 +25,8 @@ export default function UserDash() {
 
 
         <div>
-            <h1>pakistan</h1>
+          
+            <UserSidebar/>
         </div>
     );
 }
