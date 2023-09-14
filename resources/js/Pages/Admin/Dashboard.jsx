@@ -1,7 +1,6 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
-import import "../../../css/Admin/app.css";
-;
+import  "../../../css/Admin/app.css";
 import Revenue from "@/Components/AdminComponents/Revenue";
 import MainPage from "@/Components/AdminComponents/MainPage";
 export default function Dashboard({ auth }) {
