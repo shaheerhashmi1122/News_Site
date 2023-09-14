@@ -1,28 +1,28 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
-import '../../../css/app.css';
-import Revenue from '@/Components/Revenue';
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import { Head } from "@inertiajs/react";
+import "../../../css/app.css";
+import Revenue from "@/Components/Revenue";
+import MainPage from "@/Components/MainPage";
 export default function Dashboard({ auth }) {
-
     return (
-<div>
-        <AuthenticatedLayout
-            user={auth.user}
-         
-            // header={<h2 className="font-semibold text-xl heading h-10 py-2 px-16 text-gray-800 leading-tight">Dashboard</h2>}
-        >
-            <Head title="Dashboard" />
-          
-           
-            <Revenue/>
-            <div className="py-12 px-4 ">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">You're logged in!</div>
+        <>
+            <AuthenticatedLayout
+                user={auth.user}
+                header={
+                    <h2 className="font-semibold text-xl bg-secondary heading h-10 py-2 px-16 text-light leading-tight">
+                        Dashboard
+                    </h2>
+                }
+            >
+                <Head title="Dashboard" />
+
+                <Revenue />
+                <div className="py-3  ">
+                    <div className=" sm:px-6 lg:px-8">
+                        <MainPage />
                     </div>
                 </div>
-            </div>
-        </AuthenticatedLayout>
-        </div>
-    )
+            </AuthenticatedLayout>
+        </>
+    );
 }
