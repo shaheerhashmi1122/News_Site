@@ -1,8 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-
 
 
 /* Google Font Link */
@@ -22,8 +17,15 @@
   background: #11101D;
   padding: 6px 14px;
   z-index: 99;
-  transition: all 0.5s ease;
+  transition: all 0.6s ease-in-out;
 }
+
+.User-sidebar.logo-details.header{
+  transition: all 0.6s ease-in-out;
+
+}
+
+
 .User-sidebar:Hover{
   width: 250px;
 }
@@ -35,17 +37,17 @@
 }
 .User-sidebar .logo-details .icon{
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.6s ease-in-out;
 }
 .User-sidebar .logo-details .logo_name{
-  color: #fff;
+  color: red;
   font-size: 20px;
   font-weight: 600;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.6s ease-in-out;
 }
-.User-sidebar.open .logo-details .icon,
-.User-sidebar.open .logo-details .logo_name{
+.User-sidebar .logo-details .icon,
+.User-sidebar .logo-details .logo_name{
   opacity: 1;
 }
 .User-sidebar .logo-details #btn{
@@ -54,13 +56,13 @@
   right: 0;
   transform: translateY(-50%);
   font-size: 22px;
-  transition: all 0.4s ease;
+  transition: all 0.4s ease-in-out;
   font-size: 23px;
   text-align: center;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.6s ease-in-out;
 }
-.User-sidebar.open .logo-details #btn{
+.User-sidebar .logo-details #btn{
   text-align: right;
 }
 .User-sidebar i{
@@ -99,47 +101,12 @@
 .User-sidebar li:hover .tooltip{
   opacity: 1;
   pointer-events: auto;
-  transition: all 0.4s ease;
+  transition: all 0.4s ease-in-out;
   top: 50%;
   transform: translateY(-50%);
 }
-.User-sidebar.open li .tooltip{
-  display: none;
-}
-.User-sidebar input{
-  font-size: 15px;
-  color: #FFF;
-  font-weight: 400;
-  outline: none;
-  height: 50px;
-  width: 100%;
-  width: 50px;
-  border: none;
-  border-radius: 12px;
-  transition: all 0.5s ease;
-  background: #1d1b31;
-}
-.User-sidebar.open input{
-  padding: 0 20px 0 50px;
-  width: 100%;
-}
-.User-sidebar .bx-search{
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  font-size: 22px;
-  background: #1d1b31;
-  color: #FFF;
-}
-.User-sidebar.open .bx-search:hover{
-  background: #1d1b31;
-  color: #FFF;
-}
-.User-sidebar .bx-search:hover{
-  background: #FFF;
-  color: #11101d;
-}
+
+
 .User-sidebar li a{
   display: flex;
   height: 100%;
@@ -147,29 +114,38 @@
   border-radius: 12px;
   align-items: center;
   text-decoration: none;
-  transition: all 0.4s ease;
+  transition: all 0.4s ease-in-out;
   background: #11101D;
 }
 .User-sidebar li a:hover{
   background: #FFF;
 }
-.User-sidebar li a .links_name{
+
+
+.User-sidebar .li-names{
   color: #fff;
+  overflow: hidden;
   font-size: 15px;
   font-weight: 400;
   white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.4s;
+  padding-left: 30px;
+
+  transition: 0.4s; 
 }
-.User-sidebar.open li a .links_name{
-  opacity: 1;
-  pointer-events: auto;
-}
-.User-sidebar li a:hover .links_name,
-.User-sidebar li a:hover i{
-  transition: all 0.5s ease;
+
+
+
+
+ 
+
+.User-sidebar li a:hover .li-names{
+
   color: #11101D;
+}
+.User-sidebar li a:hover i{
+  transition: all 0.6s ease-in-out;
+  color: #11101D;
+  background-color: aqua;
 }
 .User-sidebar li i{
   height: 50px;
@@ -185,10 +161,10 @@
   bottom: -8px;
   padding: 10px 14px;
   background: #1d1b31;
-  transition: all 0.5s ease;
+  transition: all 0.6s ease-in-out;
   overflow: hidden;
 }
-.User-sidebar.open li.profile{
+.User-sidebar li.profile{
   width: 250px;
 }
 .User-sidebar li .profile-details{
@@ -223,9 +199,9 @@
   height: 60px;
   line-height: 60px;
   border-radius: 0px;
-  transition: all 0.5s ease;
+  transition: all 0.6s ease-in-out;
 }
-.User-sidebar.open .profile #log_out{
+.User-sidebar .profile #log_out{
   width: 50px;
   background: none;
 }
@@ -236,10 +212,10 @@
   top: 0;
   left: 78px;
   width: calc(100% - 78px);
-  transition: all 0.5s ease;
+  transition: all 0.6s ease-in-out;
   z-index: 2;
 }
-.User-sidebar.open ~ .home-section{
+.User-sidebar ~ .home-section{
   left: 250px;
   width: calc(100% - 250px);
 }

@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "@inertiajs/react";
+import { Link } from "@inertiajs/react";
 
 import "../../../css/User/Udash.css";
 
@@ -10,66 +10,73 @@ export default function UserSidebar() {
           <div className="User-sidebar ">
             <div className="logo-details">
                 
-              <i className='bx bxl-c-plus-plus icon'></i>
-                <div className="logo_name">News Site</div>
-                <i className='bx bx-menu' id="btn" ></i>
+           
+                {/* <i className='bx bx-menu' id="btn" ></i> */}
+                <div className="header"style={{color:"#fff"}}>News Site</div>
             </div>
             <ul className="nav-bar">
             
               <li>
-                <a href="#">
+                <Link href="#">
                   <i className='bx bx-grid-alt'></i>
-                  <span className="links_name">Dashboard</span>
-                </a>
-                 <span className="tooltip">Dashboard</span>
+                 
+                                                      <div className="li-names">Home</div>
+                  
+                 
+                </Link>
+                 <span className="tooltip">Home</span>
               </li>
               <li>
-               <a href="#">
+               <Link href="#">
                  <i className='bx bx-user' ></i>
-                 <span className="links_name">User</span>
-               </a>
-               <span className="tooltip">User</span>
+                
+                                                      <div className="li-names">General</div>
+               </Link>
+               <span className="tooltip">General</span>
              </li>
              <li>
-               <a href="#">
+               <Link href="#">
                  <i className='bx bx-chat' ></i>
-                 <span className="links_name">Messages</span>
-               </a>
-               <span className="tooltip">Messages</span>
+                
+                                                      <div className="li-names">Technology
+                                                      </div>
+               </Link>
+               <span className="tooltip">Technologys</span>
              </li>
              <li>
-               <a href="#">
+               <Link href="#">
                  <i className='bx bx-pie-chart-alt-2' ></i>
-                 <span className="links_name">Analytics</span>
-               </a>
-               <span className="tooltip">Analytics</span>
+                
+                                                      <div className="li-names">Sports</div>
+               </Link>
+               <span className="tooltip">Sports</span>
              </li>
-             <li>
-               <a href="#">
+             {/* <li>
+               <Link href="#">
                  <i className='bx bx-folder' ></i>
                  <span className="links_name">File Manager</span>
-               </a>
+               </Link>
                <span className="tooltip">Files</span>
              </li>
              <li>
-               <a href="#">
+               <Link href="#">
                  <i className='bx bx-cart-alt' ></i>
                  <span className="links_name">Order</span>
-               </a>
+               </Link>
                <span className="tooltip">Order</span>
              </li>
              <li>
-               <a href="#">
+               <Link href="#">
                  <i className='bx bx-heart' ></i>
                  <span className="links_name">Saved</span>
-               </a>
+               </Link>
                <span className="tooltip">Saved</span>
              </li>
              <li>
-               <a href="#">
+               <Link href="#">
                  <i className='bx bx-cog' ></i>
                  <span className="links_name">Setting</span>
-               </a>
+               </Link>
                <span className="tooltip">Setting</span>
              </li>
              <li className="profile">
@@ -81,7 +88,7 @@ export default function UserSidebar() {
                    </div>
                  </div>
                  <i className='bx bx-log-out' id="log_out" ></i>
-             </li>
+             </li> */}
             </ul>
             </div>
         

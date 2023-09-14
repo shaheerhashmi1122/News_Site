@@ -2,7 +2,7 @@
 // import { Head } from '@inertiajs/react';
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
 import React from "react";
-import "../../../css/User/Udash.css"
+// import "../../../css/User/Udash.css"
 // export default function Dashboard({ auth }) {
 export default function UserDash() {
     return (

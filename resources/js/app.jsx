@@ -1,5 +1,6 @@
 import './bootstrap';
 import  "../css/Admin/app.css";
+import "../css/User/Udash.css";
 
 
 import { createRoot } from 'react-dom/client';
