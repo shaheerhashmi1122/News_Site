@@ -27,7 +27,7 @@ export default function UserDash() {
 
         <div className="container">
           
-            {/* <UserSidebar/> */}
+            <UserSidebar/>
             <UserNav/>
         </div>
     );
