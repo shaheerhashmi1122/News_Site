@@ -6,6 +6,9 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Author\AuthorController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\GeneralController;
+use App\Http\Controllers\User\SportController;
+use App\Http\Controllers\User\TechnologyController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +58,9 @@ Route::middleware('author')->group(function () {
 
 Route::middleware('user')->group(function () {
     Route::get('user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
+    Route::get('user/general', [GeneralController::class, 'dashboard'])->name('user.general');
+    Route::get('user/sports', [SportController::class, 'dashboard'])->name('user.sports');
+    Route::get('user/technology', [TechnologyController::class, 'dashboard'])->name('user.technology');
 });
 Route::get('/message',function(){
 return "Ani deya Mzaak ay";
