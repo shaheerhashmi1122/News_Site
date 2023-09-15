@@ -1,0 +1,107 @@
+.container {
+    margin-top: 5px;
+    width: 65vw;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+    /* position: relative; */
+    /* background-color: black;
+    color: white; */
+}
+
+/* setting update */
+.update {
+    font-size: 14px;
+    float: left;
+    padding: 8px;
+    border: 1px solid;
+    color: #fff;
+    background-color: #616161ff;
+    /* width: 10vw; */
+}
+
+.update span {
+    background: #616161;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+}
+
+/* news-line */
+.news-line {
+    font-size: 14px;
+    margin-left: 110px;
+    padding: 10px 10px;
+    white-space: nowrap;
+}
+
+/* add media query for laptops: 1024px screen */
+@media screen and (max-width: 1024px) {
+    .container {
+        /* width: 60vw; */
+        min-width: auto;
+        /* position: relative; */
+    }
+
+    /* Adjust the update and news-line for smaller screens */
+    .update {
+        /* font-size: 12px; */
+
+        text-align: center; /* Center the content */
+        width: 105px;
+    }
+
+    .news-line {
+        font-size: 12px;
+    }
+}
+/* add media query for laptops: 1280px screen */
+@media screen and (max-width: 1280px) {
+    .container {
+        /* width: 60vw; */
+        min-width: auto;
+        /* position: relative; */
+    }
+
+    /* Adjust the update and news-line for smaller screens */
+    .update {
+        font-size: 14px;
+
+        text-align: center; /* Center the content */
+        width: 105px;
+    }
+
+    .news-line {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 960px) and (min-width: 900px) {
+    .container {
+        /* width: 60vw; */
+        min-width:max-content;
+        /* position: relative; */
+    }
+    
+  }
+
+
+/* media query for screen 786 px */
+@media (max-width: 768px) {
+    .container {
+        /* width: 60vw; */
+        min-width: fit-content;
+        /* position: relative; */
+    }
+
+    /* Adjust the update and news-line for smaller screens */
+    .update {
+        /* font-size: 12px; */
+
+        text-align: center; /* Center the content */
+        width: 105px;
+    }
+
+    .news-line {
+        font-size: 12px;
+    }
+}

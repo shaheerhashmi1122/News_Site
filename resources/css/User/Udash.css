@@ -10,10 +10,10 @@
 }
 
 
-body{
+/* body{
   transition: all;
   background-color: #1d1b31;
-}
+} */
 
 
 
@@ -32,6 +32,9 @@ body{
 .User-sidebar.logo-details.header{
   transition: all 0.6s ease-in-out;
 
+}
+.mobile{
+  display: none;
 }
 
 
@@ -249,3 +252,64 @@ padding-right:  30px;
     display: none;
   }
 }
+
+
+
+/* media query for screen 1280 px */
+@media (max-width:1280px){
+  .User-sidebar:hover{
+    width:205px ;
+  }
+  .mobile{
+    display: none;
+  }
+
+}
+
+
+
+
+/* media query for screen 1024 px */
+
+@media (max-width:1024px){
+  .User-sidebar:hover{
+    width:200px ;
+  }
+  .mobile{
+    display: none;
+  }
+
+}
+@media (max-width: 960px) and (min-width: 900px) {
+  .desktop {
+      display: none;
+  }
+
+}
+
+
+/* media query for screen 786 px */
+@media (max-width:768px )  {
+  .desktop{
+    display: none;
+  } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=================== mobile view side bar================ */
+

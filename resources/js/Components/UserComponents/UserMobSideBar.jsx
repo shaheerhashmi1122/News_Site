@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Link } from "@inertiajs/react";
 
-import "../../../css/User/Udash.css";
+import '../../../css/User/Udash.css';
 
-export default function UserSidebar() {
-    return (
-       
-      
-          <div className="User-sidebar desktop">
-            <div className="logo-details">
-          <i className='bx bx-menu'></i>
-          <div className="header" style={{ color: '#fff', paddingLeft:"13px" }}>GlobLink</div>
+export default function UserMobSideBar() {
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
+  };
+
+  return (
+    <div>
+      <div className={`mob-sidebar mobile ${sidebarVisible ? 'show' : ''}`}>
+        <div className="logo-details">
+          <i className='bx bx-menu' onClick={toggleSidebar}></i>
+          <div className="header" style={{ color: '#fff' }}>GlobLink</div>
         </div>
         <ul className="nav-bar">
             
@@ -99,14 +104,7 @@ export default function UserSidebar() {
             </ul>
             </div>
 
-
-
-
-
-
-
-
-// =================================for mobile view=================
-        
-    );
+      
+    </div>
+  )
 }

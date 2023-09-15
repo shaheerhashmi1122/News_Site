@@ -2,6 +2,7 @@
 // import { Head } from '@inertiajs/react';
 import UserNav from "@/Components/UserComponents/UserNav";
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
+import UserMobSideBar from "@/Components/UserComponents/UserMobSideBar";
 import React from "react";
 // import "../../../css/User/Udash.css"
 // export default function Dashboard({ auth }) {
@@ -25,9 +26,10 @@ export default function UserDash() {
 
 
 
-        <div className="container">
+        <div>
           
             <UserSidebar/>
+            <UserMobSideBar/>
             <UserNav/>
         </div>
     );
