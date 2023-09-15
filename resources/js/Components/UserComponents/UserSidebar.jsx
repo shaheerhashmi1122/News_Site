@@ -7,7 +7,7 @@ export default function UserSidebar() {
     return (
        
       
-          <div className="User-sidebar ">
+          <div className="User-sidebar desktop">
             <div className="logo-details">
                 
            
@@ -19,6 +19,9 @@ export default function UserSidebar() {
               <li>
                 <Link href="#">
                   <i className='bx bx-grid-alt'></i>
+                  <span></span>
+                 
+                                                       
                  
                                                       <div className="li-names">Home</div>
                   
@@ -30,6 +33,8 @@ export default function UserSidebar() {
                <Link href="#">
                  <i className='bx bx-user' ></i>
                 
+                                                       <span></span>
+                 
                                                       <div className="li-names">General</div>
                </Link>
                <span className="tooltip">General</span>
@@ -38,6 +43,8 @@ export default function UserSidebar() {
                <Link href="#">
                  <i className='bx bx-chat' ></i>
                 
+                                                       <span></span>
+                 
                                                       <div className="li-names">Technology
                                                       </div>
                </Link>
@@ -47,6 +54,8 @@ export default function UserSidebar() {
                <Link href="#">
                  <i className='bx bx-pie-chart-alt-2' ></i>
                 
+                                                       <span></span>
+                 
                                                       <div className="li-names">Sports</div>
                </Link>
                <span className="tooltip">Sports</span>

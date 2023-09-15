@@ -8,6 +8,15 @@
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
+
+
+body{
+  transition: all;
+  background-color: #1d1b31;
+}
+
+
+
 .User-sidebar{
   position: fixed;
   left: 0;
@@ -128,9 +137,18 @@
   font-size: 15px;
   font-weight: 400;
   white-space: nowrap;
-  padding-left: 30px;
 
   transition: 0.4s; 
+}
+
+.User-sidebar li span{
+  /* color: #fff; */
+  /* overflow: hidden; */
+  /* font-size: 15px; */
+  /* font-weight: 400; */
+  /* white-space: nowrap; */
+padding-right:  30px;
+  /* transition: 0.4s;  */
 }
 
 

@@ -1,5 +1,6 @@
 // import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 // import { Head } from '@inertiajs/react';
+import UserNav from "@/Components/UserComponents/UserNav";
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
 import React from "react";
 // import "../../../css/User/Udash.css"
@@ -24,9 +25,10 @@ export default function UserDash() {
 
 
 
-        <div>
+        <div className="container">
           
-            <UserSidebar/>
+            {/* <UserSidebar/> */}
+            <UserNav/>
         </div>
     );
 }
