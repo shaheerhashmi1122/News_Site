@@ -12,12 +12,12 @@ export default function UserSidebar() {
                 
            
                 {/* <i className='bx bx-menu' id="btn" ></i> */}
-                <div className="header"style={{color:"#fff"}}>News Site</div>
+                <div className="header"style={{color:"#fff"}}>GlobLink</div>
             </div>
             <ul className="nav-bar">
             
               <li>
-                <Link href="#">
+                <Link href={route("user.dashboard")}>
                   <i className='bx bx-grid-alt'></i>
                   <span></span>
                  
@@ -30,7 +30,7 @@ export default function UserSidebar() {
                  <span className="tooltip">Home</span>
               </li>
               <li>
-               <Link href="#">
+               <Link href={route("user.general")}>
                  <i className='bx bx-user' ></i>
                 
                                                        <span></span>
@@ -40,7 +40,7 @@ export default function UserSidebar() {
                <span className="tooltip">General</span>
              </li>
              <li>
-               <Link href="#">
+               <Link href={route("user.technology")}>
                  <i className='bx bx-chat' ></i>
                 
                                                        <span></span>
@@ -51,7 +51,7 @@ export default function UserSidebar() {
                <span className="tooltip">Technologys</span>
              </li>
              <li>
-               <Link href="#">
+               <Link href={route("user.sports")}>
                  <i className='bx bx-pie-chart-alt-2' ></i>
                 
                                                        <span></span>
