@@ -1,14 +1,13 @@
+/* Reset CSS */
+
+/* Container */
 .container {
-    margin-top: 5px;
     width: 65vw;
     border-bottom: 1px solid;
     padding-bottom: 10px;
-    /* position: relative; */
-    /* background-color: black;
-    color: white; */
 }
 
-/* setting update */
+/* Updates */
 .update {
     font-size: 14px;
     float: left;
@@ -16,7 +15,6 @@
     border: 1px solid;
     color: #fff;
     background-color: #616161ff;
-    /* width: 10vw; */
 }
 
 .update span {
@@ -26,7 +24,7 @@
     font-size: 14px;
 }
 
-/* news-line */
+/* News Line */
 .news-line {
     font-size: 14px;
     margin-left: 110px;
@@ -34,74 +32,88 @@
     white-space: nowrap;
 }
 
-/* add media query for laptops: 1024px screen */
-@media screen and (max-width: 1024px) {
+/* Media Queries */
+
+
+
+
+@media (min-width: 1440px) {
     .container {
-        /* width: 60vw; */
-        min-width: auto;
-        /* position: relative; */
-    }
-
-    /* Adjust the update and news-line for smaller screens */
-    .update {
-        /* font-size: 12px; */
-
-        text-align: center; /* Center the content */
-        width: 105px;
-    }
-
-    .news-line {
-        font-size: 12px;
-    }
-}
-/* add media query for laptops: 1280px screen */
-@media screen and (max-width: 1280px) {
-    .container {
-        /* width: 60vw; */
-        min-width: auto;
-        /* position: relative; */
-    }
-
-    /* Adjust the update and news-line for smaller screens */
-    .update {
-        font-size: 14px;
-
-        text-align: center; /* Center the content */
-        width: 105px;
-    }
-
-    .news-line {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 960px) and (min-width: 900px) {
-    .container {
-        /* width: 60vw; */
-        min-width:max-content;
-        /* position: relative; */
+        width: 65vw;
     }
     
-  }
+}
 
-
-/* media query for screen 786 px */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .container {
-        /* width: 60vw; */
-        min-width: fit-content;
-        /* position: relative; */
+        width: 90vw;
     }
 
-    /* Adjust the update and news-line for smaller screens */
     .update {
-        /* font-size: 12px; */
-
-        text-align: center; /* Center the content */
+        font-size: 14px;
+        text-align: center;
         width: 105px;
     }
 
     .news-line {
         font-size: 12px;
     }
+}
+
+@media (max-width: 834px) and (min-width: 768px) {
+    .container {
+        min-width: fit-content;
+    }
+
+    .update {
+        text-align: center;
+        width: 105px;
+    }
+
+    .news-line {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 599px)  and (min-width: 425px){
+    .container {
+        width: 80vw;
+        margin: 0 0 0 35px;
+    }
+
+    .update {
+        float: none;
+        width: 45%;
+        margin: 0px 0 10px 75px;
+        text-align: center;
+    }
+
+    .news-line {
+        font-size: 12px;
+        margin-left: 0;
+        padding: 5px 0;
+        white-space: normal;
+    }
+}
+
+/* Other CSS */
+
+/* Sidebar Styles */
+.User-sidebar {
+    /* Add your sidebar styles here */
+}
+
+/* Logo and Header Styles */
+.logo-details {
+    /* Add your logo and header styles here */
+}
+
+/* Mobile Sidebar Styles */
+.mobile {
+    /* Add your mobile sidebar styles here */
+}
+
+/* Home Section Styles */
+.home-section {
+    /* Add your home section styles here */
 }

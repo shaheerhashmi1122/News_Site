@@ -1,12 +1,13 @@
-// import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-// import { Head } from '@inertiajs/react';
+
 import UserNav from "@/Components/UserComponents/UserNav";
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
-import UserMobSideBar from "@/Components/UserComponents/UserMobSideBar";
-import React from "react";
-// import "../../../css/User/Udash.css"
-// export default function Dashboard({ auth }) {
+// import MobBar from "@/Components/UserComponents/MobBar";
+import React, {useState} from 'react'
+
+
 export default function UserDash() {
+    const [showNav, setShowNav] = useState(false);
+
     return (
         // <AuthenticatedLayout
         //     user={auth.user}
@@ -28,9 +29,21 @@ export default function UserDash() {
 
         <div>
           
-            <UserSidebar/>
-            <UserMobSideBar/>
             <UserNav/>
+
+
+          
+
+            <div className="toggle-btn">
+            <div className="btn btn-primary btn-sm" onClick={()=> setShowNav(!showNav)}>btn</div>
+            </div>
+           
+            <UserSidebar show={showNav}/>
+         
+          
+            
+
+    
         </div>
     );
 }

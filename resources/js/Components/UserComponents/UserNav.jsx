@@ -4,7 +4,12 @@ import Dropdown from "../AdminComponents/Dropdown";
 
 export default function UserNav(user) {
     return (
-        <div className="container justi">
+
+<>
+
+        <div className="container">
+
+
             <div className="row">
                 <div className="col-lg-7 col-md-9 col-sm-12 col-12">
                     <div className="contact-intro p-2">
@@ -20,7 +25,7 @@ export default function UserNav(user) {
                     </div>
                 </div>
 
-                <div className="col-lg-5 col-md-3 col-sm-12 col-12 text-right py-2">
+                <div className="col-lg-5 col-md-3 col-sm-12 col-12 text-right py-2 drop-down">
                     {/* Use text-right to align the content to the right */}
                     <Dropdown>
                         <Dropdown.Trigger>
@@ -29,7 +34,7 @@ export default function UserNav(user) {
                                     type="button"
                                     className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                 >
-                                  Admin {user.name}
+                                  User {user.name}
                                     <svg
                                         className="ml-2 -mr-0.5 h-4 w-4"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -61,5 +66,7 @@ export default function UserNav(user) {
                 </div>
             </div>
         </div>
+
+</>
     );
 }
