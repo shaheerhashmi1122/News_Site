@@ -3686,6 +3686,7 @@ fieldset:disabled .btn {
 
    /* min-height: 100vh; */
    /* width: 70px; */
+   margin-left: -14px;
    list-style-type: none;
  
    overflow: hidden;
@@ -6819,10 +6820,10 @@ fieldset:disabled .btn {
 }
 .text-primary {
   color: #eb1616 !important;
-  margin: 0 0 5px 11px;
+  margin: 0 0 0 11px;
 }.text-primary2 {
   color: #eb1616 !important;
-  margin: 0 0 15px 11px;
+  margin: 0 0 15px 22px;
 }
 .text-secondary {
   color: #191c24 !important;

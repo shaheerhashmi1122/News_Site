@@ -111,8 +111,11 @@
   position: absolute;
   overflow-x: hidden;
   margin: -28px 0px 16px 95px;
-  float: right;
+  /* float: right; */
  
+}.admin-head span{
+color: #6c7293;
+ font-size: 14px;
 }
 
 
