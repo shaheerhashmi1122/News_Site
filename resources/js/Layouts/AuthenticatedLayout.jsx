@@ -36,6 +36,7 @@ function Authenticated({ user, header, children }) {
                                                             type="button"
                                                             className="inline-flex items-center px-3 py-2  border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-secondary hover:text-red-700 focus:outline-none transition ease-in-out duration-150"
                                                         >
+                                                            
                                                             {user.name}
                                                             <svg
                                                                 className="ml-2 -mr-0.5 h-4 w-4"

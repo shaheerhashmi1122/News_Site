@@ -1,0 +1,9 @@
+.charts-head{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: azure;
+    float: right;
+    /* width:.0px; */
+
+}
