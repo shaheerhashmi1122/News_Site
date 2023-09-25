@@ -83,9 +83,9 @@
 .sidebar {
   position: relative;
   width: 70px; /* Initial width of the sidebar */
-  height: 100vh;
+  /* height: 100vh; */
   background: var(--secondary);
-  /* z-index: 999; */
+  z-index: 999;
   top: 0;
   left: 0;
   right: 0;

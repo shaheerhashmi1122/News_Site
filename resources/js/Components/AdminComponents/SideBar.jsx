@@ -13,9 +13,9 @@ export default function SideBar() {
             <nav className="navbar">
                 <Link
                     href={route("admin.dashboard")}
-                    className="navbar-brand mx-4 mb-3"
+                    className="navbar-brand  mb-4"
                 >
-                    <h3 className="text-primary">
+                    <h3 className="text-primary2">
                         <i className="fa fa-user-edit me-2"></i>News Site
                     </h3>
                 </Link>
