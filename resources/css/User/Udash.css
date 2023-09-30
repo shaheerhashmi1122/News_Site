@@ -261,126 +261,101 @@
 /* media query for screen 1024 px */
 
 /* Media query for screen 1024px or below */
-@media (max-width: 1024px) {
-   
-    .mob-sidebar.active {
-        left: 0;
-    }
-
+@media screen and (max-width: 1024px) {
     .desktop {
-        display: none;
+      display: none;
     }
-
+  
     .mob-sidebar {
- position: fixed;
-    top: 0;
-    bottom: 0;
-    background: #11101d;
-    /* height: 100vh; */
-    width: 147px;
-    margin: -66px 0 0 0;
-}
-
-    .btn {
-        transition: margin 0.5s;
-        margin: 10px 0 0 140px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      background: #11101d;
+      width: 150px;
+      transition: transform 0.3s ease-in-out;
     }
-}
-
-.mob-sidebar .logo-details {
-    height: 50px;
-    display: flex;
-    font-size: 14px;
-    align-items: center;
-    position: relative;
-}
-
-.mob-sidebar .logo-details .icon,
-.mob-sidebar .logo-details .logo_name {
-    opacity: 0;
-    transition: all 0.6s ease-in-out;
-}
-
-.mob-sidebar .logo-details .icon,
-.mob-sidebar .logo-details .logo_name {
-    opacity: 1;
-}
-
-.mob-sidebar .logo-details #btn {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    font-size: 23px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.6s ease-in-out;
-}
-
-.mob-sidebar .logo-details #btn {
-    text-align: right;
-}
-
-.mob-sidebar i {
-    color: #fff;
-    height: 60px;
-    min-width: 50px;
-    font-size: 28px;
-    text-align: center;
-    line-height: 60px;
-}
-
-.mob-sidebar .nav-bar {
-    margin-top: 14px;
-    height: 100%;
-}
-
-.mob-sidebar li {
-    position: relative;
-    margin: 8px 0;
-    font-size: 14px;
-    list-style: none;
-}
-
-.mob-sidebar li:hover .tooltip {
-    opacity: 1;
-    pointer-events: auto;
-    transition: all 0.4s ease-in-out;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.mob-sidebar li a {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    border-radius: 12px;
-    align-items: center;
-    text-decoration: none;
-    transition: all 0.4s ease-in-out;
-    background: #11101d;
-}
-
-.mob-sidebar li a:hover {
-    background: #fff;
-}
-
-.mob-sidebar .li-names {
-    color: #fff;
-    overflow: hidden;
-    font-size: 12px;
-    font-weight: 400;
-    white-space: nowrap;
-    transition: 0.4s;
-}
-
-.mob-sidebar li i {
-    font-size: 14px;
-}
-
-
-
-
+  
+    .mob-sidebar.open {
+      transform: translateX(0);
+    }
+  
+    .btn {
+      transition: margin 0.5s;
+      margin: 10px 0 0 140px;
+    }
+  
+    .mob-sidebar .logo-details {
+      height: 50px;
+      display: flex;
+      font-size: 14px;
+      align-items: center;
+    }
+  
+    .mob-sidebar i {
+      color: #fff;
+      height: 60px;
+      min-width: 50px;
+      font-size: 28px;
+      text-align: center;
+      line-height: 60px;
+    }
+  
+    .mob-sidebar .nav-bar {
+      margin-top: 14px;
+    }
+  
+    .mob-sidebar li {
+      position: relative;
+      margin: 8px 0;
+      font-size: 14px;
+      list-style: none;
+    }
+  
+    .mob-sidebar li .active .tooltip {
+      opacity: 1;
+      pointer-events: auto;
+      transition: all 0.4s ease-in-out;
+      top: 50%;
+      padding-left: 45px;
+      transform: translateY(-50%);
+    }
+  
+    .mob-sidebar li a {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      border-radius: 12px;
+      align-items: center;
+      text-decoration: none;
+      transition: all 0.4s ease-in-out;
+      background: #11101d;
+    }
+  
+    .mob-sidebar li a .active {
+      background: #fff;
+    }
+  
+    .mob-sidebar .li-names {
+      color: #fff;
+      overflow: hidden;
+      font-size: 12px;
+      font-weight: 400;
+      white-space: nowrap;
+      transition: 0.4s;
+    }
+  
+    /* Apply "active" styles to the active menu item */
+    .mob-sidebar .li-names.active {
+      color: #ff6600;
+      font-weight: bold; /* You can adjust this as needed */
+    }
+  
+    .mob-sidebar li i {
+      font-size: 14px;
+      border-radius: 10px;
+    }
+  }
+  
 
 
 

@@ -3,6 +3,8 @@ import { Head } from "@inertiajs/react";
 import  "../../../css/Admin/app.css";
 import Revenue from "@/Components/AdminComponents/Revenue";
 import MainPage from "@/Components/AdminComponents/MainPage";
+
+
 export default function Dashboard({ auth }) {
     return (
         <>
