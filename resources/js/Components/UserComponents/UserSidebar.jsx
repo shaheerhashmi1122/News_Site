@@ -1,41 +1,58 @@
-import React, { useState } from "react";
-import { InertiaLink as NavLink, usePage } from "@inertiajs/react";
-import "../../../css/User/Udash.css";
+import React, { useState, useEffect } from "react";
+import { Link } from "@inertiajs/inertia-react"; // Assuming you have Inertia.js installed
 
 export default function UserSidebar() {
-  const [activeRoute, setActiveRoute] = useState("user.dashboard");
+  const [activeLink, setActiveLink] = useState("");
 
-  const handleClick = (route) => {
-    setActiveRoute(route);
-  };
 
-  const navigation = [
-    { name: "Home", route: "user.dashboard", icon: "fas fa-home" },
-    { name: "General", route: "user.general", icon: "fas fa-globe" },
-    { name: "Sports", route: "user.sports", icon: "fas fa-futbol" },
-    { name: "Technology", route: "user.technology", icon: "fas fa-laptop" },
-  ];
+
+  const handleClick =(link)=>{
+    console.log('Link clicked:', link);
+setActiveLink(link)
+  }
+
+ 
 
   return (
-    <div className="User-sidebar desktop">
+    <div className="User-sidebar deskhrefp shadow-md">
       <div className="logo-details">
         <i className="bx bx-menu"></i>
         <div className="head">GlobLink</div>
       </div>
       <div className="list-items">
-        {navigation.map((item, index) => (
-          <NavLink
-            key={index}
-            href={route(item.route, [], { preserveScroll: true })}
-            className={`li-names ${
-              activeRoute === item.route ? "active-link" : ""
-            }`}
-            onClick={() => handleClick(item.route)}
+        <Link
+          href={route("user.dashboard")}
+          className={`li-names ${activeLink === "user.dashboard" ? "active-link" : ""}`}
+        onClick={() => handleClick( "user.dashboard")} 
+        >
+          <i className="fas fa-home"></i>
+          <span>Home</span>
+        </Link>
+        <Link
+          href={route("user.general")}
+          className={`li-names ${activeLink === "user.general" ? "active-link" : ""}`}
+          onClick={() => handleClick( "user.general")} 
+          // onClick={() => handleClick("user.general")} 
           >
-            <i className={item.icon}></i>
-            <span>{item.name}</span>
-          </NavLink>
-        ))}
+          <i className="fas fa-globe"></i>
+          <span>General</span>
+        </Link>
+        <Link
+          href={route("user.sports")}
+          className={`li-names ${activeLink === "user.sports" ? "active-link" : ""}`}
+          onClick={() => handleClick( "user.sports")}
+          >
+          <i className="fas fa-futbol"></i>
+          <span>Sports</span>
+        </Link>
+        <Link
+        href={route("user.technology")}
+        className={`li-names ${activeLink === "user.technology" ? "active-link" : ""}`}
+        onClick={() => handleClick( "user.technology")}
+        >
+          <i className="fas fa-laptop"></i>
+          <span>Technology</span>
+        </Link>
       </div>
     </div>
   );
