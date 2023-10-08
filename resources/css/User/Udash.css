@@ -1,23 +1,15 @@
 /* Google Font Link */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
 
-/* body{
-  transition: all;
-  background-color: #1d1b31;
-} */
+
+
 
 .User-sidebar {
     position: fixed;
     left: 0;
     top: 0;
     height: 100%;
-    width: 78px;
+    width:78px;
     background: #11101d;
     padding: 6px 14px;
     z-index: 99;
@@ -25,142 +17,107 @@
     overflow: hidden;
 }
 
-.User-sidebar.logo-details.head {
-    transition: all 0.6s ease-in-out;
-}
-.mobile {
-    display: none;
-}
 
 .User-sidebar:hover {
     width: 250px;
 }
+
+/* hide tha mob display */
+.mobile {
+    display: none;
+}
+
+
 .User-sidebar .logo-details {
     height: 60px;
     display: flex;
+    padding-left: 15px;
     align-items: center;
+    padding-left: 5px;
     position: relative;
-}
-.User-sidebar .logo-details .icon {
-    opacity: 0;
-    transition: all 0.6s ease-in-out;
-}
-.User-sidebar .logo-details .logo_name {
-    color: red;
-    font-size: 20px;
-    font-weight: 600;
-    opacity: 0;
-    transition: all 0.6s ease-in-out;
-}
-.User-sidebar .logo-details .icon,
-.User-sidebar .logo-details .logo_name {
-    opacity: 1;
-}
-.User-sidebar .logo-details #btn {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    font-size: 22px;
-    transition: all 0.4s ease-in-out;
-    font-size: 23px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.6s ease-in-out;
-}
-.User-sidebar .logo-details #btn {
-    text-align: right;
-}
-.User-sidebar i {
-    color: #fff;
-    height: 60px;
-    min-width: 50px;
-    font-size: 28px;
-    text-align: center;
-    line-height: 60px;
-}
-.User-sidebar .nav-bar {
-    margin-top: 20px;
-    height: 100%;
-}
-.User-sidebar li {
-    position: relative;
-    margin: 8px 0;
-    list-style: none;
-}
-.User-sidebar li .tooltip {
-    position: absolute;
-    top: -20px;
-    left: calc(100% + 15px);
-    z-index: 3;
-    background: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 15px;
-    font-weight: 400;
-    opacity: 0;
-    white-space: nowrap;
-    pointer-events: none;
-    transition: 0s;
-}
-.User-sidebar li:hover .tooltip {
-    opacity: 1;
-    pointer-events: auto;
-    transition: all 0.4s ease-in-out;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
-.User-sidebar li a {
+.User-sidebar .logo-details .head {
+    transition: all 0.6s ease-in-out;
+    color: #fff;
+    /* margin:  10px 0 0 ; */
+    padding-left: 35px;
+}
+
+
+
+.User-sidebar i {
+    color: #fff;
+    height: 55px;
+    min-width: 30px;
+    font-size: 26px;
+    text-align: center;
+    line-height: 55px;
+}
+
+
+.User-sidebar .list-items  {
+    position: absolute;
+    margin-top: 15px;
+    
+    transition: all 0.4s ease-in-out;
+    
+}
+.User-sidebar .list-items a {
     display: flex;
     height: 100%;
     width: 100%;
     border-radius: 12px;
+    margin-bottom: 15px;
+  
+
     align-items: center;
     text-decoration: none;
     transition: all 0.4s ease-in-out;
     background: #11101d;
 }
-.User-sidebar li a:hover {
-    background: #fff;
-}
 
-.User-sidebar .li-names {
+.li-names{
     color: #fff;
-    overflow: hidden;
-    font-size: 15px;
-    font-weight: 400;
-    white-space: nowrap;
 
-    transition: 0.4s;
 }
 
-.User-sidebar li span {
-    /* color: #fff; */
-    /* overflow: hidden; */
-    /* font-size: 15px; */
-    /* font-weight: 400; */
-    /* white-space: nowrap; */
-    padding-right: 30px;
-    /* transition: 0.4s;  */
+    .active-link {
+        /* background-color: red; */
+        color: red;
+      }
+      
+
+.User-sidebar .list-items span{
+    padding-left: 35px;
 }
 
-.User-sidebar li a:hover .li-names {
+
+
+
+.User-sidebar .list-items a:hover {
+    background: #fff;
     color: #11101d;
+  
+
 }
-.User-sidebar li a:hover i {
+.User-sidebar .list-items a:hover i {
     transition: all 0.6s ease-in-out;
     color: #11101d;
+ 
     background-color: aqua;
-}
-.User-sidebar li i {
+    border-radius: 13px;
+  }
+  
+.User-sidebar .list-items i {
     height: 50px;
-    line-height: 50px;
-    font-size: 18px;
+    width: 50px;
+    line-height:50px;
+    font-size: 20px;
+ /* padding-right: -2px; */
     border-radius: 12px;
 }
-.User-sidebar li.profile {
+.User-sidebar .list-items.profile {
     position: fixed;
     height: 60px;
     width: 78px;
@@ -171,31 +128,29 @@
     transition: all 0.6s ease-in-out;
     overflow: hidden;
 }
-.User-sidebar li.profile {
+.User-sidebar .list-items.profile {
     width: 250px;
 }
-.User-sidebar li .profile-details {
+.User-sidebar .list-items .profile-details {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
 }
-.User-sidebar li img {
+/* .User-sidebar li img {
     height: 45px;
     width: 45px;
     object-fit: cover;
     border-radius: 6px;
     margin-right: 10px;
-}
-.User-sidebar li.profile .name,
-.User-sidebar li.profile .job {
+} */
+.User-sidebar .list-items.profile .name,
+.User-sidebar .list-items.profile .job {
     font-size: 15px;
     font-weight: 400;
     color: #fff;
     white-space: nowrap;
 }
-.User-sidebar li.profile .job {
-    font-size: 12px;
-}
+
 .User-sidebar .profile #log_out {
     position: absolute;
     top: 50%;

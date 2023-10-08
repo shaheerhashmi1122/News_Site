@@ -1,165 +1,42 @@
 import React, { useState } from "react";
-import { Link } from "@inertiajs/react";
+import { InertiaLink as NavLink, usePage } from "@inertiajs/react";
 import "../../../css/User/Udash.css";
 
-export default function UserSidebar({ show }) {
-  const [activeItem, setActiveItem] = useState("Home");
+export default function UserSidebar() {
+  const [activeRoute, setActiveRoute] = useState("user.dashboard");
 
-  const handleItemClick = (itemName) => {
-    setActiveItem(itemName);
+  const handleClick = (route) => {
+    setActiveRoute(route);
   };
 
-  return (
-    <>
-      <div className="User-sidebar desktop">
-        <div className="logo-details">
-          <i className="bx bx-menu"></i>
-          <div className="head" style={{ color: "#fff", paddingLeft: "13px" }}>
-            GlobLink
-          </div>
-        </div>
-        <ul className="nav-bar">
-          <li>
-            <Link href={route("user.dashboard")}>
-              <i
-                className={`bx bx-grid-alt ${
-                  activeItem === "Home" ? "active" : ""
-                }`}
-              ></i>
-              <div
-                className={`li-names ${activeItem === "Home" ? "active" : ""}`}
-                onClick={() => handleItemClick("Home")}
-              >
-                Home
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href={route("user.general")}>
-              <i
-                className={`bx bx-user ${
-                  activeItem === "General" ? "active" : ""
-                }`}
-              ></i>
-              <div
-                className={`li-names ${
-                  activeItem === "General" ? "active" : ""
-                }`}
-                onClick={() => handleItemClick("General")}
-              >
-                General
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href={route("user.technology")}>
-              <i
-                className={`bx bx-chat ${
-                  activeItem === "Technology" ? "active" : ""
-                }`}
-              ></i>
-              <div
-                className={`li-names ${
-                  activeItem === "Technology" ? "active" : ""
-                }`}
-                onClick={() => handleItemClick("Technology")}
-              >
-                Technology
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href={route("user.sports")}>
-              <i
-                className={`bx bx-pie-chart-alt ${
-                  activeItem === "Sports" ? "active" : ""
-                }`}
-              ></i>
-              <div
-                className={`li-names ${activeItem === "Sports" ? "active" : ""}`}
-                onClick={() => handleItemClick("Sports")}
-              >
-                Sports
-              </div>
-            </Link>
-          </li>
-        </ul>
-      </div>
+  const navigation = [
+    { name: "Home", route: "user.dashboard", icon: "fas fa-home" },
+    { name: "General", route: "user.general", icon: "fas fa-globe" },
+    { name: "Sports", route: "user.sports", icon: "fas fa-futbol" },
+    { name: "Technology", route: "user.technology", icon: "fas fa-laptop" },
+  ];
 
-      <div className={show ? "mob-sidebar " : "mob-sidebar mobile active"}>
-        <div className="logo-details">
-          <i className="bx bx-menu"></i>
-          <div className="head" style={{ color: "#fff", paddingLeft: "13px" }}>
-            GlobLink
-          </div>
-        </div>
-        <ul className="nav-bar">
-          <li>
-            <Link href={route("user.dashboard")}>
-              <i
-                className={`bx bx-grid-alt ${
-                  activeItem === "Home" ? "active" : ""
-                }`}
-              ></i>
-              <div
-                className={`li-names ${activeItem === "Home" ? "active" : ""}`}
-                onClick={() => handleItemClick("Home")}
-              >
-                Home
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href={route("user.general")}>
-              <i
-                className={`bx bx-user ${
-                  activeItem === "General" ? "active" : ""
-                }`}
-              ></i>
-              <div
-                className={`li-names ${
-                  activeItem === "General" ? "active" : ""
-                }`}
-                onClick={() => handleItemClick("General")}
-              >
-                General
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href={route("user.technology")}>
-              <i
-                className={`bx bx-chat ${
-                  activeItem === "Technology" ? "active" : ""
-                }`}
-              ></i>
-              <div
-                className={`li-names ${
-                  activeItem === "Technology" ? "active" : ""
-                }`}
-                onClick={() => handleItemClick("Technology")}
-              >
-                Technology
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href={route("user.sports")}>
-              <i
-                className={`bx bx-pie-chart-alt ${
-                  activeItem === "Sports" ? "active" : ""
-                }`}
-              ></i>
-              <div
-                className={`li-names ${activeItem === "Sports" ? "active" : ""}`}
-                onClick={() => handleItemClick("Sports")}
-              >
-                Sports
-              </div>
-            </Link>
-          </li>
-        </ul>
+  return (
+    <div className="User-sidebar desktop">
+      <div className="logo-details">
+        <i className="bx bx-menu"></i>
+        <div className="head">GlobLink</div>
       </div>
-    </>
+      <div className="list-items">
+        {navigation.map((item, index) => (
+          <NavLink
+            key={index}
+            href={route(item.route, [], { preserveScroll: true })}
+            className={`li-names ${
+              activeRoute === item.route ? "active-link" : ""
+            }`}
+            onClick={() => handleClick(item.route)}
+          >
+            <i className={item.icon}></i>
+            <span>{item.name}</span>
+          </NavLink>
+        ))}
+      </div>
+    </div>
   );
 }

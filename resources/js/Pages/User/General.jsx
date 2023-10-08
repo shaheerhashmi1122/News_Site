@@ -1,5 +1,6 @@
 import UserNav from "@/Components/UserComponents/UserNav";
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
+// import { NavLink } from "react-router-dom";
 
 import React, { useState } from "react";
 
@@ -17,7 +18,10 @@ export default function General() {
                     btn
                 </div>
             </div>
+        
+
             <UserSidebar show={showNav} />
+           
         </div>
     );
 }
