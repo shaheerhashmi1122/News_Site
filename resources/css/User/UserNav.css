@@ -1,81 +1,157 @@
-/* Reset CSS */
 
-/* Container */
-.container {
-    width: 65vw;
-    border-bottom: 1px solid;
-    padding-bottom: 10px;
+.topbar{
+    color: #444;
+    font-size: 16px;
+    margin: 0;
 }
 
-/* Updates */
-.update {
-    font-size: 14px;
+
+
+ body .container {
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 100%; */
+   
+}
+.topbar .row{
+    border-bottom: 1px solid #eee;
+}
+
+/* .topbar .contact-intro ul {
+    float: none;
+    justify-content: flex-start;
+    margin-bottom: 0;
+} */
+
+.topbar .update {
+    
+    padding: 15px 10px;
+    line-height: 1em;
     float: left;
-    padding: 8px;
-    border: 1px solid;
-    color: #fff;
-    background-color: #616161ff;
+    
+    
 }
 
-.update span {
+.topbar .update span {
     background: #616161;
+   
     color: #fff;
     display: block;
     font-size: 14px;
+    margin-top: -8px;
+    padding: 8px;
+}
+.topbar ul li:first-child{
+    padding-left: 0;
+    
 }
 
-/* News Line */
-.news-line {
-    font-size: 14px;
+.topbar .news-line{
+    font-size: 16px;
+   
+    white-space: nowrap;
     margin-left: 110px;
     padding: 10px 10px;
-    white-space: nowrap;
 }
 
-/* Media Queries */
 
 
 
 
-@media (min-width: 1440px) {
+
+@media (max-width: 1440px) {
     .container {
         width: 65vw;
     }
     
 }
-
 @media screen and (max-width: 1024px) {
-    .container {
+     .container {
         width: 90vw;
     }
 
-    .update {
+
+
+
+ .topbar  .news-line{
+    font-size: 14px;
+}
+
+
+
+
+
+/*
+    .topbar .contact-intro ul{
+        float: none;
+    }
+    .topbar  ul li{
+        padding: 15px 10px;
+        font-size: 12px;
+    } */
+
+    /* .update { */
+        /* font-size: 14px; */
+        /* height: 35px; */
+        /* text-align: center; */
+        /* width: 80px; */
+        /* padding: 15px 10px 15px 0; */
+        /* float: left; */
+    /* }  */
+    /* .update span{ */
+        /* font: 14px "Nunito Sans, Sans-serif" ; */
+        /* background: #616161; */
+        /* margin: -8px 0 0 0; */
+        /* padding: 8px; */
+        /* fontfont-size: 10px; */
+        /* font-weight: 500; */
+        
+    /* } */
+
+
+    /* .topbar ul li.update span {
+        background: #616161;
+        color: #fff;
+        display: block;
         font-size: 14px;
-        text-align: center;
-        width: 105px;
+        margin-top: -8px;
+        padding: 8px;
+    } */
+
+    /* .news-line { */
+        /* font-size: 12px; */
+        /* float: right; */
+        /* margin-left: -1px; */
+        /* margin-right:-20px; */
+    /* } */
+}
+
+@media (max-width: 768px) {
+   /* .container{
+       width: 100%;
+       font-size: 10px;
+   } */
+    /* .topbar{
+     text-align: center;
+        padding: 10px 0;
+    } */
+    /* .topbar .col-12{
+    flex: 0 0 auto;
+    width: 100%;
+    } */
+
+    .topbar .contact-intro ul {
+        justify-content: center;
+    
     }
 
-    .news-line {
-        font-size: 12px;
+    .topbar .update {
+        justify-content: center;
+        padding: 8px 6px;
     }
 }
 
-@media (max-width: 834px) and (min-width: 768px) {
-    .container {
-        min-width: fit-content;
-    }
-
-    .update {
-        text-align: center;
-        width: 105px;
-    }
-
-    .news-line {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 599px)  and (min-width: 425px){
+/* @media (max-width: 599px)  and (min-width: 425px){
     .container {
         width: 80vw;
         margin: 0 0 0 35px;
@@ -93,27 +169,5 @@
         margin-left: 0;
         padding: 5px 0;
         white-space: normal;
-    }
-}
-
-/* Other CSS */
-
-/* Sidebar Styles */
-.User-sidebar {
-    /* Add your sidebar styles here */
-}
-
-/* Logo and Header Styles */
-.logo-details {
-    /* Add your logo and header styles here */
-}
-
-/* Mobile Sidebar Styles */
-.mobile {
-    /* Add your mobile sidebar styles here */
-}
-
-/* Home Section Styles */
-.home-section {
-    /* Add your home section styles here */
-}
+    } */
+/* } */

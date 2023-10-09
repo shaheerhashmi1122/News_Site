@@ -6,7 +6,11 @@ import React, {useState} from 'react'
 
 
 export default function UserDash() {
-    const [showNav, setShowNav] = useState(false);
+    const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+    // const [closeNav, setCloseNav] = useState(false);
+    const toggleMobileSidebar = () => {
+        setShowMobileSidebar(!showMobileSidebar);
+      };
 
     return (
         // <AuthenticatedLayout
@@ -35,10 +39,10 @@ export default function UserDash() {
           
 
             <div className="toggle-btn">
-            <div className="btn btn-primary btn-sm" onClick={()=> setShowNav(!showNav)}>btn</div>
+            <div className="btn btn-primary " onClick={()=> setShowMobileSidebar(!showMobileSidebar)}> <i className="bx bx-menu" style={{fontSize:"24px"}} ></i> </div>
             </div>
            
-            <UserSidebar show={showNav}/>
+            <UserSidebar show={showMobileSidebar}   onClose={toggleMobileSidebar} />
          
           
             

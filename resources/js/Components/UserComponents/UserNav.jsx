@@ -6,6 +6,7 @@ export default function UserNav(user) {
     return (
 
 <>
+<div className="topbar">
 
         <div className="container">
 
@@ -26,7 +27,7 @@ export default function UserNav(user) {
                 </div>
 
                 <div className="col-lg-5 col-md-3 col-sm-12 col-12 text-right py-2 drop-down">
-                    {/* Use text-right to align the content to the right */}
+                   
                     <Dropdown>
                         <Dropdown.Trigger>
                             <span className="rounded-md">
@@ -67,6 +68,7 @@ export default function UserNav(user) {
             </div>
         </div>
 
+</div>
 </>
     );
 }

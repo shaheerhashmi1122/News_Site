@@ -98,6 +98,7 @@
 .User-sidebar .list-items a:hover {
     background: #fff;
     color: #11101d;
+    width: 15vw;
   
 
 }
@@ -114,85 +115,13 @@
     width: 50px;
     line-height:50px;
     font-size: 20px;
- /* padding-right: -2px; */
     border-radius: 12px;
 }
-.User-sidebar .list-items.profile {
-    position: fixed;
-    height: 60px;
-    width: 78px;
-    left: 0;
-    bottom: -8px;
-    padding: 10px 14px;
-    background: #1d1b31;
-    transition: all 0.6s ease-in-out;
-    overflow: hidden;
-}
-.User-sidebar .list-items.profile {
-    width: 250px;
-}
-.User-sidebar .list-items .profile-details {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-/* .User-sidebar li img {
-    height: 45px;
-    width: 45px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-right: 10px;
-} */
-.User-sidebar .list-items.profile .name,
-.User-sidebar .list-items.profile .job {
-    font-size: 15px;
-    font-weight: 400;
-    color: #fff;
-    white-space: nowrap;
-}
 
-.User-sidebar .profile #log_out {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    background: #1d1b31;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    border-radius: 0px;
-    transition: all 0.6s ease-in-out;
-}
-.User-sidebar .profile #log_out {
-    width: 50px;
-    background: none;
-}
-.home-section {
-    position: relative;
-    background: #e4e9f7;
-    min-height: 100vh;
-    top: 0;
-    left: 78px;
-    width: calc(100% - 78px);
-    transition: all 0.6s ease-in-out;
-    z-index: 2;
-}
-.User-sidebar ~ .home-section {
-    left: 250px;
-    width: calc(100% - 250px);
-}
-.home-section .text {
-    display: inline-block;
-    color: #11101d;
-    font-size: 25px;
-    font-weight: 500;
-    margin: 18px;
-}
-@media (max-width: 420px) {
-    .User-sidebar li .tooltip {
-        display: none;
-    }
-}
+
+
+
+
 
 /* for 4kscreen */
 /* Media query for screen 2560px and below */
@@ -205,18 +134,30 @@
 /* media query for screen 1280 px */
 @media screen and (max-width: 1280px) {
     .User-sidebar:hover {
-        width: 205px;
+        width: 218px;
     }
 
     .mobile {
         display: none;
     }
+    .User-sidebar .list-items a:hover {
+        background: #fff;
+        color: #11101d;
+        width: 15vw;
+      
+    
+    }
+
+
 }
 
 /* media query for screen 1024 px */
 
 /* Media query for screen 1024px or below */
 @media screen and (max-width: 1024px) {
+    body{
+        transition: all 0.6s ease-in-out;
+    }
     .desktop {
       display: none;
     }
@@ -230,18 +171,42 @@
       transition: transform 0.3s ease-in-out;
     }
   
-    .mob-sidebar.open {
+    /* .mob-sidebar.open {
       transform: translateX(0);
-    }
+    } */
+
+
+
+.close-menu{
+    /* align-content: end; */
+    margin: 10px 0 -40px 100px;
+}
+
   
     .btn {
       transition: margin 0.5s;
-      margin: 10px 0 0 140px;
+      margin: 15px 0 0 45px;
+      /* padding: 10px 5px 10px  5px; */
+     padding: 5px;
+      /* color: #fff; */
+      /* font-size: 20px; */
+    }.btn i {
+      /* transition: margin 0.5s; */
+      padding: 5px;
+      /* margin: 15px 0 0 45px; */
+      /* color: #fff; */
+      /* font-size: 20px; */
     }
+
+
+
   
     .mob-sidebar .logo-details {
       height: 50px;
       display: flex;
+      margin: 10px 0 13px 0 ;
+      /* padding-right: ; */
+      color: #fff;
       font-size: 14px;
       align-items: center;
     }
@@ -250,46 +215,19 @@
       color: #fff;
       height: 60px;
       min-width: 50px;
-      font-size: 28px;
+      font-size: 20px;
+
       text-align: center;
-      line-height: 60px;
+      /* line-height: 60px; */
     }
   
-    .mob-sidebar .nav-bar {
-      margin-top: 14px;
-    }
+   
   
-    .mob-sidebar li {
-      position: relative;
-      margin: 8px 0;
-      font-size: 14px;
-      list-style: none;
-    }
   
-    .mob-sidebar li .active .tooltip {
-      opacity: 1;
-      pointer-events: auto;
-      transition: all 0.4s ease-in-out;
-      top: 50%;
-      padding-left: 45px;
-      transform: translateY(-50%);
-    }
+ 
   
-    .mob-sidebar li a {
-      display: flex;
-      height: 100%;
-      width: 100%;
-      border-radius: 12px;
-      align-items: center;
-      text-decoration: none;
-      transition: all 0.4s ease-in-out;
-      background: #11101d;
-    }
   
-    .mob-sidebar li a .active {
-      background: #fff;
-    }
-  
+   
     .mob-sidebar .li-names {
       color: #fff;
       overflow: hidden;
@@ -297,18 +235,22 @@
       font-weight: 400;
       white-space: nowrap;
       transition: 0.4s;
-    }
+      /* margin: 10px; */
+      /* padding: 10px; */
+      float: left;
+    } 
+    
   
-    /* Apply "active" styles to the active menu item */
-    .mob-sidebar .li-names.active {
+    
+    .mob-sidebar .sp-name {
+    float: right; 
+    }
+  .mob-sidebar .active-link {
       color: #ff6600;
       font-weight: bold; /* You can adjust this as needed */
     }
   
-    .mob-sidebar li i {
-      font-size: 14px;
-      border-radius: 10px;
-    }
+  
   }
   
 
@@ -327,39 +269,90 @@
 
 
 
-@media (max-width: 960px) and (min-width: 900px) {
+/* @media (max-width: 960px) and (min-width: 900px) {
     .mobile {
         display: block;
     }
     .desktop {
         display: none;
     }
-}
+} */
 
-/* media query for screen 786 px */
-@media (max-width: 834px) and (min-width: 768px) {
+/* media   (max-width: 834px) and query for screen 786 px */
+@media  (max-width: 768px) {
     .desktop {
         display: none;
     }
-    /*==-=============================================mob side bar======================= */
+
+
+
+
+
+    .mob-sidebar .logo-details {
+        height: 50px;
+        display: flex;
+        color: #fff;
+        font-size: 14px;
+        align-items: center;
+      }
+    
+      .mob-sidebar i {
+        color: #fff;
+        height: 60px;
+        min-width: 50px;
+        font-size: 20px;
+        
+      }
+    
+     
+    
+    
+   
+    
+    
+     
+      .mob-sidebar .li-names {
+        color: #fff;
+        overflow: hidden;
+        font-size: 12px;
+        font-weight: 400;
+        white-space: nowrap;
+        transition: 0.4s;
+        margin: 4px;
+      } 
+      
+    
+      .mob-sidebar .active-link {
+        color: #ff6600;
+        font-weight: bold; 
+      }
+
+
+
+  
 }
 
 /* 800 screen size */
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     .desktop {
         display: none;
     }
-}
+} */
 
 /* for mobile view================================== */
-@media (max-width: 599px) {
-    /* Your mobile-specific CSS rules go here */
+/* Your mobile-specific CSS rules go here */
+/* @media (max-width: 599px) {
     .desktop {
         display: none;
     }
     .drop-down {
         display: none;
     }
-}
+} */
 
 /*=================== mobile view side bar================ */
+@media (max-width: 420px) {
+    .desktop {
+        display: none;
+    }
+}
