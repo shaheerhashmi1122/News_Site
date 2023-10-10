@@ -1,4 +1,5 @@
 
+import Content from "@/Components/UserComponents/Content";
 import UserNav from "@/Components/UserComponents/UserNav";
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
 // import MobBar from "@/Components/UserComponents/MobBar";
@@ -43,6 +44,12 @@ export default function UserDash() {
             </div>
            
             <UserSidebar show={showMobileSidebar}   onClose={toggleMobileSidebar} />
+
+<div className="container">
+
+            <Content/>
+
+</div>
          
           
             

@@ -1,4 +1,7 @@
 
+.container {
+    width: 75vw;
+}
 .topbar{
     color: #444;
     font-size: 16px;
@@ -7,12 +10,7 @@
 
 
 
- body .container {
-    margin-left: auto;
-    margin-right: auto;
-    /* width: 100%; */
-   
-}
+
 .topbar .row{
     border-bottom: 1px solid #eee;
 }
