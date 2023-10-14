@@ -1,9 +1,10 @@
 import React from "react";
-import "../../../css/User/Content.css"
-import Tech from "../../Images/tech-2.jpg"
-import Sports from "../../Images/sports.jpg"
-import Travel from "../../Images/Traveling-the-travel.jpg"
-import Business from "../../Images/business.jpg"
+import "../../../css/User/Content.css";
+import Tech from "../../Images/tech-2.jpg";
+import Sports from "../../Images/sports.jpg";
+import Travel from "../../Images/Traveling-the-travel.jpg";
+import Business from "../../Images/business.jpg";
+import Dot from "../../Images/dot.png"; // Assuming you have the correct path to the dot image
 
 export default function Content() {
     return (
@@ -17,18 +18,22 @@ export default function Content() {
                                 <div className="blog-grids gallery-container clearfix">
                                     <div className="grid">
                                         <div className="img-holder">
-                                            <img 
+                                            <img
                                                 src={Tech}
                                                 className="img img-responsive"
                                             />
                                             <div className="blog-content">
                                                 <div className="thumb">
-                                                   Technology
+                                                    Technology
                                                 </div>
                                                 <h2>
-                                                    <a href={route("user.technology")}>
+                                                    <a
+                                                        href={route(
+                                                            "user.technology"
+                                                        )}
+                                                    >
                                                         What’s In Trend In
-                                                        Womens Sports Summer?
+                                                        World's Technology?
                                                     </a>
                                                 </h2>
                                                 <p>
@@ -45,13 +50,24 @@ export default function Content() {
                                                             alt=""
                                                         />
                                                     </li>
-                                                    <li>
+                                                    <li className="auth-name">
                                                         By{" "}
-                                                        <a href={route("user.technology")}>
+                                                        <a
+                                                            href={route(
+                                                                "user.technology"
+                                                            )}
+                                                        >
                                                             Marilou Kelleher
                                                         </a>
                                                     </li>
-                                                    <li>25 Dec, 2023</li>
+                                                    <li>
+                                                        <img src={Dot} alt="" />
+                                                    </li>
+                                                    <li
+                                                      className="date"
+                                                    >
+                                                        25 Dec, 2023
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -63,12 +79,16 @@ export default function Content() {
                                                 className="img img-responsive"
                                             />
                                             <div className="blog-content blg-2">
-                                                <div className="thumb" >
-                                                   Sports
+                                                <div className="thumb">
+                                                    Sports
                                                 </div>
                                                 <h2>
-                                                    <a href={route("user.sports")}>
-                                                        Traveling Makes You More
+                                                    <a
+                                                        href={route(
+                                                            "user.sports"
+                                                        )}
+                                                    >
+                                                       Sports Makes You More
                                                         Interesting
                                                     </a>
                                                 </h2>
@@ -80,19 +100,34 @@ export default function Content() {
                                                             alt=""
                                                         />
                                                     </li>
-                                                    <li>
+                                                    <li className="auth-name">
                                                         By{" "}
-                                                        <a href={route("user.sports")}>
+                                                        <a
+                                                            href={route(
+                                                                "user.sports"
+                                                            )}
+                                                        >
                                                             Konal Biry
                                                         </a>
                                                     </li>
-                                                    <li>13 Dec,2022</li>
+                                                    <li>
+                                                        <img src={Dot} alt="" />
+                                                    </li>
+
+                                                    <li
+                                                      className="date"
+                                                    >
+                                                        13 Dec,2022
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="grid s2" style={{paddingLeft:"16px"}}>
-                                        <div className="img-holder" >
+                                    <div
+                                        className="grid s2"
+                                        
+                                    >
+                                        <div className="img-holder">
                                             <img
                                                 src={Travel}
                                                 className="img img-responsive"
@@ -102,18 +137,34 @@ export default function Content() {
                                                     Travel
                                                 </div>
                                                 <h2>
-                                                <a href={route("user.general")}>
-                                                        Top 10 Healthy Food
+                                                    <a
+                                                        href={route(
+                                                            "user.general"
+                                                        )}
+                                                    >
+                                                       Traveling The World
                                                     </a>
                                                 </h2>
                                                 <ul>
-                                                    <li>
+                                                    <li className="auth-name">
                                                         By{" "}
-                                                        <a href={route("user.general")}>
+                                                        <a
+                                                            href={route(
+                                                                "user.general"
+                                                            )}
+                                                        >
                                                             Aliza
                                                         </a>
                                                     </li>
-                                                    <li>22 Dec,2022</li>
+                                                    <li>
+                                                        <img src={Dot} alt="" />
+                                                    </li>
+
+                                                    <li
+                                                      className="date"
+                                                    >
+                                                        22 Dec,2022
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -121,10 +172,9 @@ export default function Content() {
                                             <img
                                                 src={Business}
                                                 className="img img-responsive"
-                                                
                                             />
-                                            <div className="blog-content" >
-                                                <div className="thumb" >
+                                            <div className="blog-content">
+                                                <div className="thumb">
                                                     Business
                                                 </div>
                                                 <h2>
@@ -133,13 +183,18 @@ export default function Content() {
                                                     </a>
                                                 </h2>
                                                 <ul>
-                                                    <li>
-                                                        By{" "}
-                                                        <a >
-                                                            Anny
-                                                        </a>
+                                                    <li className="auth-name">
+                                                        By <a>Anny</a>
                                                     </li>
-                                                    <li>22 Dec,2022</li>
+                                                    <li>
+                                                        <img src={Dot} alt="" />
+                                                    </li>
+
+                                                    <li 
+                                                      className="date"
+                                                    >
+                                                        22 Dec,2022
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
