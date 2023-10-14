@@ -169,6 +169,7 @@
       background: #11101d;
       width: 150px;
       transition: transform 0.3s ease-in-out;
+      z-index: 10;
     }
   
     /* .mob-sidebar.open {
