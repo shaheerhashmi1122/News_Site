@@ -7,6 +7,18 @@ import React, {useState} from 'react'
 
 
 export default function UserDash() {
+
+const styleHead={
+    fontSize:"45px",
+    textAlign:"center",
+
+
+    margin:"12px",
+    
+}
+
+
+
     const [showMobileSidebar, setShowMobileSidebar] = useState(false);
     // const [closeNav, setCloseNav] = useState(false);
     const toggleMobileSidebar = () => {
@@ -46,7 +58,7 @@ export default function UserDash() {
             <UserSidebar show={showMobileSidebar}   onClose={toggleMobileSidebar} />
 
 <div className="container">
-
+  <h1 style={styleHead}>GlobeLink</h1>
             <Content/>
 
 </div>

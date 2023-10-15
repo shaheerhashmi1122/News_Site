@@ -50,6 +50,8 @@
 /*** Button ***/
 .btn {
   transition: .5s;
+  float: left;
+
 }
 
 .btn-square {
