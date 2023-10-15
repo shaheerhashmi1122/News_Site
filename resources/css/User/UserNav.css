@@ -4,7 +4,7 @@
 }
 .topbar{
     color: #444;
-    font-size: 16px;
+    font-size:16px;
     margin: 0;
 }
 
@@ -125,27 +125,64 @@
 }
 
 @media (max-width: 768px) {
-   /* .container{
-       width: 100%;
-       font-size: 10px;
-   } */
-    /* .topbar{
-     text-align: center;
-        padding: 10px 0;
-    } */
-    /* .topbar .col-12{
-    flex: 0 0 auto;
-    width: 100%;
+    /* .container {
+        width: 75vw;
     } */
 
-    .topbar .contact-intro ul {
-        justify-content: center;
-    
+.drop-down{
+    display: none;
+}
+
+    .topbar{
+        color: #444;
+        /* font-size:2vw; */
+        /* margin: 0; */
     }
-
+    
+    
+    
+    
+   
+    
+   
+    
     .topbar .update {
+    
+    
+        text-align: center;
+ 
+        width: 40%;
+      
+        float: none;
+        
+        
+    }
+    
+    .topbar .update span {
+        background: #616161;
+       float: none;
+        color: #fff;
+        display: block;
+        font-size: 14px;
+        margin-top: -8px;
+        padding: 8px;
+    }
+    .topbar ul li:first-child{
+        display: flex;
         justify-content: center;
-        padding: 8px 6px;
+        width: 100%;
+    }
+    
+    .topbar .news-line{
+        font-size: 12px;
+        /* position: absolute; */
+        /* top: 0; */
+        left: 0;
+        /* bottom: 0; */
+        text-align: center;
+        white-space: normal;
+        margin-left: 0px;
+        padding: 1px 1px;
     }
 }
 

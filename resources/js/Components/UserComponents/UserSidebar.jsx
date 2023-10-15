@@ -1,8 +1,10 @@
 
 import React, { useState, useEffect } from "react";
 import { Head, Link } from "@inertiajs/react"; 
+import Dropdown from "../AdminComponents/Dropdown";
 
-export default function UserSidebar({show, onClose}) {
+
+export default function UserSidebar({show, onClose},user) {
   const [closeMenu, setCloseMenu] = useState(false)
   
  const [activeLink, setActiveLink] = useState("");
@@ -70,8 +72,44 @@ export default function UserSidebar({show, onClose}) {
             >
               <i className={link.icon}></i>
               <span className="sp-name">{link.name}</span>
+
+
+
+
+
+              
             </Link>
+
+           
+            
+            
           ))}
+          <div className="drop-down2">
+                   
+                   <Dropdown>
+                       <Dropdown.Trigger>
+                             <i className="bx bx-cog"></i>
+                           <span className="rounded-md text-light sets">
+                             Setting
+                              
+                           </span>
+                       </Dropdown.Trigger>
+                    <div className="drop-content">
+                    <Dropdown.Content >
+                           <Dropdown.Link href={route("profile.edit")}>
+                               Profile
+                           </Dropdown.Link>
+                           <Dropdown.Link
+                               href={route("logout")}
+                               method="post"
+                               as="button"
+                           >
+                               Log Out
+                           </Dropdown.Link>
+                       </Dropdown.Content>
+                    </div>
+                   </Dropdown>
+               </div>
         </div>
       </div>
 
