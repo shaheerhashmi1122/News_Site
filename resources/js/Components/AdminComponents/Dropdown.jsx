@@ -30,7 +30,7 @@ const Trigger = ({ children }) => {
     );
 };
 
-const Content = ({ align = 'right', width = '48', contentClasses = ' ', children }) => {
+const Content = ({ align = 'right', width = '35', maxWidth = '48', contentClasses = 'py-1 bg-white', children }) => {
     const { open, setOpen } = useContext(DropDownContext);
 
     let alignmentClasses = 'origin-top';
@@ -43,7 +43,9 @@ const Content = ({ align = 'right', width = '48', contentClasses = ' ', children
 
     let widthClasses = '';
 
-    if (width === '48') {
+    if (width === '35' && maxWidth === '35') {
+        widthClasses = 'w-35';
+    } else if (width === '48' && maxWidth === '48') {
         widthClasses = 'w-48';
     }
 
@@ -63,12 +65,12 @@ const Content = ({ align = 'right', width = '48', contentClasses = ' ', children
                     className={`absolute z-50 mt-2 drop-side rounded-md shadow-lg ${alignmentClasses} ${widthClasses}`}
                     onClick={() => setOpen(false)}
                 >
-                    <div className={`rounded-md ring-1 ring-black ring-opacity-5 drop-side2 ` + contentClasses}>{children}</div>
+                    <div className={`rounded-md ring-1 ring-black ring-opacity-5  ` + contentClasses}>{children}</div>
                 </div>
             </Transition>
         </>
     );
-};
+}
 
 const DropdownLink = ({ className = '', children, ...props }) => {
     return (

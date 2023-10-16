@@ -306,27 +306,31 @@
     }
     .drop-down2{
         display: block;
-        position: absolute;
+        position: fixed;
+       
+        
         bottom: 0;
+        margin-bottom: 30px;
+       
     }
     .drop-down2 i{
-        /* display: block; */
-        /* position: absolute; */
+     
+        padding: 1px 0 0 0;
         float: left;
-        /* top: 0; */
+     
     }
 
 
 
-   .drop-down2 .drop-content{
+    .drop-content{
         /* display: flex; */
         position: fixed;
-        padding: 10px;
+        padding: 330px 120px 19px 0;
         /* top: 0; */
         /* right: 0; */
-        margin :-30% 0  0 60% ;
+        /* margin :-30% 0  0 60% ; */
         /* overflow: hidden; */
-        background: transparent;
+        /* background: transparent; */
     
     }
     .pop-ups{
