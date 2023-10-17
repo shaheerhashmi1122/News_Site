@@ -126,7 +126,7 @@
 /* for 4kscreen */
 /* Media query for screen 2560px and below */
 @media  (max-width: 2560px) {
-  .mob-sidebar.mobile {
+  .mob-sidebar.mobile ,.toggle-btn{
       display: none;
   }
 }
@@ -174,8 +174,11 @@
     }
     .desktop,.drop-down2 {
       display: none;
+
     }
-  
+  .toggle-btn{
+    display: block;
+  }
     .mob-sidebar {
     
       position: fixed;

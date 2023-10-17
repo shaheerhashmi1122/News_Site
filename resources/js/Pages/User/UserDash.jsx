@@ -1,29 +1,24 @@
-
+// import Carousal from "@/Components/UserComponents/Slider";
 import Content from "@/Components/UserComponents/Content";
 import UserNav from "@/Components/UserComponents/UserNav";
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
 // import MobBar from "@/Components/UserComponents/MobBar";
-import React, {useState} from 'react'
-
+import React, { useState } from "react";
+import Slider from "@/Components/UserComponents/Slider";
 
 export default function UserDash() {
+    const styleHead = {
+        fontSize: "45px",
+        textAlign: "center",
 
-const styleHead={
-    fontSize:"45px",
-    textAlign:"center",
-
-
-    margin:"12px",
-    
-}
-
-
+        margin: "12px",
+    };
 
     const [showMobileSidebar, setShowMobileSidebar] = useState(false);
     // const [closeNav, setCloseNav] = useState(false);
     const toggleMobileSidebar = () => {
         setShowMobileSidebar(!showMobileSidebar);
-      };
+    };
 
     return (
         // <AuthenticatedLayout
@@ -40,33 +35,36 @@ const styleHead={
         //         </div>
         //     </div>
         // </AuthenticatedLayout>
-
-
-
-
-        <div>
           
-            <UserNav/>
+        <div className="container">
+                <header>
+                <UserNav />
 
+                </header>
 
-          
+                <div className="toggle-btn">
+                    <div
+                        className="btn btn-primary "
+                        onClick={() => setShowMobileSidebar(!showMobileSidebar)}
+                    >
+                        {" "}
+                        <i
+                            className="bx bx-menu"
+                            style={{ fontSize: "24px" }}
+                        ></i>{" "}
+                    </div>
+                </div>
 
-            <div className="toggle-btn">
-            <div className="btn btn-primary " onClick={()=> setShowMobileSidebar(!showMobileSidebar)}> <i className="bx bx-menu" style={{fontSize:"24px"}} ></i> </div>
-            </div>
-           
-            <UserSidebar show={showMobileSidebar}   onClose={toggleMobileSidebar} />
+                <UserSidebar
+                    show={showMobileSidebar}
+                    onClose={toggleMobileSidebar}
+                />
 
-<div className="container">
-  <h1 style={styleHead}>GlobeLink</h1>
-            <Content/>
+                <h1 style={styleHead}>GlobeLink</h1>
+                <Content />
 
-</div>
-         
-          
-            
-
-    
+               <Slider/>
+            {/* </div> */}
         </div>
     );
 }

@@ -58,13 +58,13 @@
 
 
 @media (max-width: 1440px) {
-    .container {
+  .topbar  .container {
         width: 68vw;
     }
     
 }
 @media screen and (max-width: 1024px) {
-     .container {
+   .topbar  .container {
         width: 90vw;
     }
 
@@ -192,7 +192,7 @@
         
 
     display: flex;
-    justify-content: end;
+    justify-content: center;
 
         /* width: 74%; */
       }
