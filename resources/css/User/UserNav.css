@@ -1,3 +1,10 @@
+body{
+    color: #fff;
+   background-color: rgb(247, 251, 254);
+   background-image: url('../../js/Images/technology.jpg');
+   background-size: cover;
+
+}
 
 .container {
     width: 75vw;
@@ -12,7 +19,7 @@
 
 
 .topbar .row{
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #a9a3a3;
 }
 
 /* .topbar .contact-intro ul {
@@ -66,6 +73,8 @@
 @media screen and (max-width: 1024px) {
    .topbar  .container {
         width: 90vw;
+        /* margin: 0; */
+        margin-left: -95px;
     }
 
 
@@ -122,12 +131,16 @@
         /* margin-left: -1px; */
         /* margin-right:-20px; */
     /* } */
+
+
+
+    
 }
 
 @media (max-width: 768px) {
-    /* .container {
-        width: 75vw;
-    } */
+   .topbar .container {
+    margin-left: -60px;
+}
 
 .drop-down{
     display: none;
@@ -192,7 +205,7 @@
         
 
     display: flex;
-    justify-content: center;
+    justify-content: right;
 
         /* width: 74%; */
       }
@@ -218,3 +231,21 @@
         white-space: normal;
     } */
 /* } */
+
+@media (max-width:426px) {
+
+.topbar .container{
+   
+        margin-left: -45px;
+    
+}
+
+    .contact-intro {
+        /* flex: 0 0 auto; */
+        margin-left: -15px;
+
+
+
+        /* width: 74%; */
+      }
+}
