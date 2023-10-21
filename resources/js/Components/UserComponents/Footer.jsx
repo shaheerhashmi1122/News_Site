@@ -2,6 +2,7 @@ import React from "react";
 import "../../../css/User/Footer.css";
 import { BiLogoFacebook } from "react-icons/bi";
 import { FaSquareXTwitter} from "react-icons/fa6";
+import { FaSquareInstagram} from "react-icons/fa6";
 
 
 export default function Footer() {
@@ -55,7 +56,7 @@ export default function Footer() {
                                     data-placement="top"
                                     title="Instagram"
                                 >
-                                    <span className="ion-logo-instagram"></span>
+                               <  FaSquareInstagram  /> 
                                 </a>
                             </li>
                         </ul>

@@ -8,7 +8,7 @@ export default function General() {
     const [showNav, setShowNav] = useState(false);
 
     return (
-        <div>
+        <>
             <UserNav />
             <div className="toggle-btn">
                 <div
@@ -21,7 +21,12 @@ export default function General() {
         
 
             <UserSidebar show={showNav} />
+
+
+{/*  */}
+
+
            
-        </div>
+        </>
     );
 }
