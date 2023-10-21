@@ -44,17 +44,7 @@ export default function SideBar() {
                         >
                             <i className="fa fa-laptop me-2"></i><div className="names">Tables</div>
                         </Link>
-                        <div className="dropdown-menu bg-transparent border-0">
-                            <Link href="button.html" className="dropdown-item">
-                                Author
-                            </Link>
-                            <Link
-                                href="typography.html"
-                                className="dropdown-item"
-                            >
-                                User
-                            </Link>
-                        </div>
+                    
                     </div>
 
                     <Link
