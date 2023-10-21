@@ -1,129 +1,284 @@
-import React, { useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import Techcard from "../../Images/technology.jpg";
 import "../../../css/User/Slider.css";
-import pico from "../../../js/Images/pico.png";
 
 export default function Slider() {
-    useEffect(() => {
-        const slideCarousel = document.getElementById("slideCarousel");
-        const myCarousel = new window.bootstrap.Carousel(slideCarousel, {
-            interval: 4000,
-        });
-    }, []);
-
-    //     const imgStyle={
-    // width:"40%",
-    // height:"100%",
-    // margin:"10px",
-    // padding:"10px",
-    // marginLeft:"auto",
-    // float:"left"
-    //     }
-
     return (
         <>
-            <div className="slider-head">
-                <h4>Breaking News</h4>
-            </div>
-            <div className="slider">
-                <div
-                    id="slideCarousel"
-                    className="carousel slide"
-                    data-ride="carousel"
-                >
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <div className="row">
-                                <div className="col-sm-3 slide-news">
-                                    <a className="thumbnail">
-                                        <img src={pico} alt="" />
-                                    25 Dec, 23
-                                    </a>
-                                    <div className="slide-lines">
-                                        Develop the nurture business
-                                    </div>
-                                </div>
-                                <div className="col-sm-3 slide-news">
-                                    <a className="thumbnail">
-                                        <img src={pico} alt="" />
-                                        25 Dec, 23
-                                    </a>
-                                    <div className="slide-lines">
-                                        Develop the nurture business
-                                    </div>
-                                </div>
-                                <div className="col-sm-3 slide-news">
-                                    <a className="thumbnail">
-                                        <img src={pico} alt="" />
-                                        25 Dec, 23
-                                    </a>
-                                    <div className="slide-lines">
-                                        Develop the nurture business
-                                    </div>
-                                </div>
-                                
-                                {/* More slides go here */}
-                            </div>
+            <div className="cards">
+                <div className="container">
+                    <div className="row">
+                        <div className="col  mb-5">
+                            <h1 className="display-4 font-weight-bolder card-header">
+                              <span>Freature</span> <span>News</span>
+                            </h1>
+                           
                         </div>
-                        <div className="carousel-item">
-                            <div className="row">
-                                <div className="col-sm-3 slide-news">
-                                    <a className="thumbnail">
-                                        <img src={pico} alt="" />
-                                        25 Dec, 23
-                                    </a>
-                                    <div className="slide-lines">
-                                        Develop the nurture business
-                                    </div>
-                                </div>{" "}
-                                <div className="col-sm-3 slide-news">
-                                    <a className="thumbnail">
-                                        <img src={pico} alt="" />
-                                        25 Dec, 23
-                                    </a>
-                                    <div className="slide-lines">
-                                        Develop the nurture business
-                                    </div>
-                                </div>{" "}
-                                <div className="col-sm-3 slide-news">
-                                    <a className="thumbnail">
-                                        <img src={pico} alt="" />
-                                        25 Dec, 23
-                                    </a>
-                                    <div className="slide-lines">
-                                        Develop the nurture business
-                                    </div>
-                                </div>
-                                
-                                {/* More slides go here */}
-                            </div>
-                        </div>
-                        {/* Additional carousel items */}
                     </div>
-                    <a
-                        className="carousel-control-prev"
-                        href="#slideCarousel"
-                        role="button"
-                        data-slide="prev"
-                    >
-                        <span
-                            className="carousel-control-prev-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span className="visually-hidden">Previous</span>
-                    </a>
-                    <a
-                        className="carousel-control-next"
-                        href="#slideCarousel"
-                        role="button"
-                        data-slide="next"
-                    >
-                        <span
-                            className="carousel-control-next-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span className="visually-hidden">Next</span>
-                    </a>
+                    <div className="row">
+                        <div className="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <div
+                                className="card text-dark card-has-bg click-col"
+                                style={{
+                                    backgroundImage: "url('https://source.unsplash.com/600x900/?tech,street')",
+                                }}
+                            >
+                                <img
+                                    className="card-img d-none"
+                                    src={Techcard}
+                                    alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
+                                />
+                                <div className="card-img-overlay d-flex flex-column">
+                                    <div className="card-body">
+                                        <small className="card-meta mb-2">
+                                            Technology
+                                        </small>
+                                        <h4 className="card-title mt-0">
+                                            <a
+                                                className="text-dark"
+                                                href="https://creativemanner.com"
+                                            >
+                                                Web Development Lorem Ipsum Sit
+                                                Amet Consectetur dipisi?
+                                            </a>
+                                        </h4>
+                                        <small>
+                                            <i className="far fa-clock"></i> October
+                                            15, 2020
+                                        </small>
+                                    </div>
+                                    <div className="card-footer">
+                                        <div className="media">
+                                            <div className="media-body">
+                                                <h6 className="my-0 text-dark d-block">
+                                                    Oz Coruhlu
+                                                </h6>
+                                                <small>Director of UI/UX</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <div
+                                className="card text-dark card-has-bg click-col"
+                                style={{
+                                    backgroundImage: "url('https://source.unsplash.com/600x900/?tech,street')",
+                                }}
+                            >
+                                <img
+                                    className="card-img d-none"
+                                    src={Techcard}
+                                    alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
+                                />
+                                <div className="card-img-overlay d-flex flex-column">
+                                    <div className="card-body">
+                                        <small className="card-meta mb-2">
+                                            Technology
+                                        </small>
+                                        <h4 className="card-title mt-0">
+                                            <a
+                                                className="text-dark"
+                                                href="https://creativemanner.com"
+                                            >
+                                                Web Development Lorem Ipsum Sit
+                                                Amet Consectetur dipisi?
+                                            </a>
+                                        </h4>
+                                        <small>
+                                            <i className="far fa-clock"></i> October
+                                            15, 2020
+                                        </small>
+                                    </div>
+                                    <div className="card-footer">
+                                        <div className="media">
+                                            <div className="media-body">
+                                                <h6 className="my-0 text-dark d-block">
+                                                    Oz Coruhlu
+                                                </h6>
+                                                <small>Director of UI/UX</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div className="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <div
+                                className="card text-dark card-has-bg click-col"
+                                style={{
+                                    backgroundImage: "url('https://source.unsplash.com/600x900/?tech,street')",
+                                }}
+                            >
+                                <img
+                                    className="card-img d-none"
+                                    src={Techcard}
+                                    alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
+                                />
+                                <div className="card-img-overlay d-flex flex-column">
+                                    <div className="card-body">
+                                        <small className="card-meta mb-2">
+                                            Technology
+                                        </small>
+                                        <h4 className="card-title mt-0">
+                                            <a
+                                                className="text-dark"
+                                                href="https://creativemanner.com"
+                                            >
+                                                Web Development Lorem Ipsum Sit
+                                                Amet Consectetur dipisi?
+                                            </a>
+                                        </h4>
+                                        <small>
+                                            <i className="far fa-clock"></i> October
+                                            15, 2020
+                                        </small>
+                                    </div>
+                                    <div className="card-footer">
+                                        <div className="media">
+                                            <div className="media-body">
+                                                <h6 className="my-0 text-dark d-block">
+                                                    Oz Coruhlu
+                                                </h6>
+                                                <small>Director of UI/UX</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                           <div className="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <div
+                                className="card text-dark card-has-bg click-col"
+                                style={{
+                                    backgroundImage: "url('https://source.unsplash.com/600x900/?tech,street')",
+                                }}
+                            >
+                                <img
+                                    className="card-img d-none"
+                                    src={Techcard}
+                                    alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
+                                />
+                                <div className="card-img-overlay d-flex flex-column">
+                                    <div className="card-body">
+                                        <small className="card-meta mb-2">
+                                            Technology
+                                        </small>
+                                        <h4 className="card-title mt-0">
+                                            <a
+                                                className="text-dark"
+                                                href="https://creativemanner.com"
+                                            >
+                                                Web Development Lorem Ipsum Sit
+                                                Amet Consectetur dipisi?
+                                            </a>
+                                        </h4>
+                                        <small>
+                                            <i className="far fa-clock"></i> October
+                                            15, 2020
+                                        </small>
+                                    </div>
+                                    <div className="card-footer">
+                                        <div className="media">
+                                            <div className="media-body">
+                                                <h6 className="my-0 text-dark d-block">
+                                                    Oz Coruhlu
+                                                </h6>
+                                                <small>Director of UI/UX</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <div className="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <div
+                                className="card text-dark card-has-bg click-col"
+                                style={{
+                                    backgroundImage: "url('https://source.unsplash.com/600x900/?tech,street')",
+                                }}
+                            >
+                                <img
+                                    className="card-img d-none"
+                                    src={Techcard}
+                                    alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
+                                />
+                                <div className="card-img-overlay d-flex flex-column">
+                                    <div className="card-body">
+                                        <small className="card-meta mb-2">
+                                            Technology
+                                        </small>
+                                        <h4 className="card-title mt-0">
+                                            <a
+                                                className="text-dark"
+                                                href="https://creativemanner.com"
+                                            >
+                                                Web Development Lorem Ipsum Sit
+                                                Amet Consectetur dipisi?
+                                            </a>
+                                        </h4>
+                                        <small>
+                                            <i className="far fa-clock"></i> October
+                                            15, 2020
+                                        </small>
+                                    </div>
+                                    <div className="card-footer">
+                                        <div className="media">
+                                            <div className="media-body">
+                                                <h6 className="my-0 text-dark d-block">
+                                                    Oz Coruhlu
+                                                </h6>
+                                                <small>Director of UI/UX</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <div className="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <div
+                                className="card text-dark card-has-bg click-col"
+                                style={{
+                                    backgroundImage: "url('https://source.unsplash.com/600x900/?tech,street')",
+                                }}
+                            >
+                                <img
+                                    className="card-img d-none"
+                                    src={Techcard}
+                                    alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
+                                />
+                                <div className="card-img-overlay d-flex flex-column">
+                                    <div className="card-body">
+                                        <small className="card-meta mb-2">
+                                            Technology
+                                        </small>
+                                        <h4 className="card-title mt-0">
+                                            <a
+                                                className="text-dark"
+                                                href="https://creativemanner.com"
+                                            >
+                                                Web Development Lorem Ipsum Sit
+                                                Amet Consectetur dipisi?
+                                            </a>
+                                        </h4>
+                                        <small>
+                                            <i className="far fa-clock"></i> October
+                                            15, 2020
+                                        </small>
+                                    </div>
+                                    <div className="card-footer">
+                                        <div className="media">
+                                            <div className="media-body">
+                                                <h6 className="my-0 text-dark d-block">
+                                                    Oz Coruhlu
+                                                </h6>
+                                                <small>Director of UI/UX</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Other card elements go here */}
+                    </div>
                 </div>
             </div>
         </>

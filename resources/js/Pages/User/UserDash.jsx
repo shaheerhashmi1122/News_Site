@@ -2,6 +2,7 @@
 import Content from "@/Components/UserComponents/Content";
 import UserNav from "@/Components/UserComponents/UserNav";
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
+import Footer from "@/Components/UserComponents/Footer";
 // import MobBar from "@/Components/UserComponents/MobBar";
 import React, { useState } from "react";
 import Slider from "@/Components/UserComponents/Slider";
@@ -35,8 +36,8 @@ export default function UserDash() {
         //         </div>
         //     </div>
         // </AuthenticatedLayout>
-          
-        <div className="container">
+          <>
+           <div className="container">
                 <header>
                 <UserNav />
 
@@ -64,7 +65,15 @@ export default function UserDash() {
                 <Content />
 
                <Slider/>
+
+
+
+{/* foooter */}
+<Footer/>
+
             {/* </div> */}
         </div>
+          </>
+       
     );
 }

@@ -18,7 +18,7 @@ export default function UserNav(user) {
                             <li className="update">
                                 <span>New Update</span>
                             </li>
-                            <li className="news-line">
+                            <li className="news-line text-light">
                                 Betting against meme stocks could get you
                                 seriously burned
                             </li>
