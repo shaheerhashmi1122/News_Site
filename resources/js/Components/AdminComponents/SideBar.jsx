@@ -16,7 +16,7 @@ export default function SideBar() {
                     className="navbar-brand  mb-4"
                 >
                     <h3 className="text-primary2">
-                        <i className="fa fa-user-edit me-2"></i>News Site
+                        <i className="fa fa-user-edit me-2"></i>GlobLink
                     </h3>
                 </Link>
                 <div className=" admin ms-4 mb-4">
@@ -32,21 +32,17 @@ export default function SideBar() {
                 <div className="navbar-nav w-100">
                     <Link
                         href={route("admin.dashboard")}
-                        className="nav-item nav-link active"
+                        className="nav-item nav-link"
                     >
                         <i className="fa fa-tachometer-alt me-2"></i><div className="names">Home</div>
                     </Link>
-                    <div className="nav-item dropdown">
-                        <Link
-                            href={route("admin.tables")}
-                            className="nav-link dropdown-toggle"
-                            data-bs-toggle="dropdown"
-                        >
-                            <i className="fa fa-laptop me-2"></i><div className="names">Tables</div>
-                        </Link>
-                    
-                    </div>
-
+                    <Link
+                        href={route("admin.tables")}
+                        className="nav-item nav-link"
+                    >
+                        <i className="fa fa-laptop me-2"></i><div className="names">Table</div>
+                    </Link>
+                  
                     <Link
                         href={route("admin.charts")}
                         className="nav-item nav-link"

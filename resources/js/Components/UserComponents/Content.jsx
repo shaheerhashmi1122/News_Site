@@ -178,7 +178,9 @@ export default function Content() {
                                                     Business
                                                 </div>
                                                 <h2>
-                                                    <a href="/hero-blog-single/What-Makes">
+                                                    <a href={route(
+                                                            "user.general"
+                                                        )}>
                                                         What Makes a Leader?
                                                     </a>
                                                 </h2>
