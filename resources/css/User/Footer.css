@@ -400,17 +400,17 @@
 }
 
 @media (max-width: 426px) {
-    .footer-59391 {
+    .page-footer {
         width: 158vw;
     }
 }
 @media (max-width: 375px) {
-    .footer-59391 {
+    .page-footer {
         width: 170vw;
     }
 }
 @media (max-width: 325px) {
-    .footer-59391 {
+    .page-footer {
         width: 188vw;
     }
 }

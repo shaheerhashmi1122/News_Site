@@ -108,7 +108,7 @@ export default function UserSidebar({ show, onClose }, user) {
                             </Dropdown.Trigger>
                         </div>
                         
-                        <div className="drop-content">
+                        {/* <div className="drop-content"> */}
                             <Dropdown.Content>
                                 <Dropdown.Link href={route("profile.edit")}>
                                     Profile
@@ -121,7 +121,7 @@ export default function UserSidebar({ show, onClose }, user) {
                                     Log Out
                                 </Dropdown.Link>
                             </Dropdown.Content>
-                        </div>
+                        {/* </div> */}
                     </Dropdown>
                 </div>
             </div>

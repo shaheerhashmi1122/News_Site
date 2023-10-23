@@ -182,7 +182,10 @@ export default function General() {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <div className="page-footer" >
+
+            <Footer  />
+            </div>
         </>
     );
 }
