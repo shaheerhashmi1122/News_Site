@@ -2,39 +2,54 @@ import React, { useState } from "react";
 import UserNav from "@/Components/UserComponents/UserNav";
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
 import "../../../css/User/Pages.css";
+import "../../../css/User/Udash.css";
 
 import "../../../css/User/UserNav.css";
 import Clgirls from "../../../js/Images/clg-girls.jpg";
 import ReadSection from "../../../js/Images/news-read-sec.jpg";
 import PageHead from "@/Components/UserComponents/PageHead";
 import Category from "@/Components/UserComponents/Category";
+import Footer from "@/Components/UserComponents/Footer";
 
-export default function Sports() {
-    const [showNav, setShowNav] = useState(false);
+export default function General() {
+    const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+    // const [closeNav, setCloseNav] = useState(false);
+    const toggleMobileSidebar = () => {
+        setShowMobileSidebar(!showMobileSidebar);
+    };
     const breadcrumbs = [
         { label: "Home", url: route("user.dashboard") },
-        { label: "Sports" },
+        { label: "General" },
     ];
 
     return (
         <>
-            <UserNav />
-            <div className="toggle-btn">
+            <div className="page-nav">
+                <UserNav />
+            </div>
+            <div className="toggle-btn m-0">
                 <div
-                    className="btn btn-primary btn-sm"
-                    onClick={() => setShowNav(!showNav)}
+                    className="btn btn-primary "
+                    onClick={() => setShowMobileSidebar(!showMobileSidebar)}
                 >
-                    btn
+                    {" "}
+                    <i
+                        className="bx bx-menu"
+                        style={{ fontSize: "24px" }}
+                    ></i>{" "}
                 </div>
             </div>
 
-            <UserSidebar show={showNav} />
+            <UserSidebar
+                show={showMobileSidebar}
+                onClose={toggleMobileSidebar}
+            />
             <PageHead breadcrumbs={breadcrumbs} />
 
-            <div className="news-content py-3 mx-auto">
+            <div className="news-content py-3 ">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-8 col-sm-10 mx-auto ">
+                        <div className="col-md-8 col-sm-10 order-md-1 order-2 read-part ">
                             <div className="news-image">
                                 <img src={Clgirls} alt="" />
                             </div>
@@ -56,32 +71,28 @@ export default function Sports() {
                                 </p>
                             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div className="artical-section w-100 py-4 px-2">
-                               <h1>Title</h1>
+                            <div className="artical-section ">
+                                <h1>Title</h1>
 
                                 <div className="under-line "></div>
                                 <p>
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe, deserunt nisi libero dicta rem, error incidunt eaque delectus repellat quasi corrupti pariatur cumque facere. Fugiat optio, unde, eius et voluptatum doloremque ipsam culpa quae repellat ullam quas eum voluptates enim molestiae sed numquam ducimus expedita dignissimos eveniet exercitationem, dolores itaque.
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Saepe, deserunt nisi
+                                    libero dicta rem, error incidunt eaque
+                                    delectus repellat quasi corrupti pariatur
+                                    cumque facere. Fugiat optio, unde, eius et
+                                    voluptatum doloremque ipsam culpa quae
+                                    repellat ullam quas eum voluptates enim
+                                    molestiae sed numquam ducimus expedita
+                                    dignissimos eveniet exercitationem, dolores
+                                    itaque.
                                 </p>
                             </div>
                         </div>
 
                         {/* ======================================section 2================================== */}
 
-                        <div className="col-md-4 col-sm-10 mx-auto  about-section ">
+                        <div className="col-md-4 col-sm-10 about-section order-md-2 order-1 ">
                             <div className="about-profile">
                                 <div className=" text-center">
                                     <div className="">
@@ -89,7 +100,7 @@ export default function Sports() {
                                             <img
                                                 src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg"
                                                 alt=""
-                                                className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm w-50 mx-auto"
+                                                className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm  mx-auto"
                                             />
                                             <h5 className="mb-4">
                                                 Manuella Nevoresky
@@ -145,28 +156,35 @@ export default function Sports() {
                                     </div>
                                 </div>
                             </div>
-                                                       <Category />
-<div className="help-section py-4">
-    
-<div className="card  bg-primary text-light text-center" style={{width: "23rem", height:"25rem"}}>
-                                <div className="card-body">
-                                    <h3 className="card-title display-5 ">How can we help you!</h3>
-                                   
-                                    <p className="card-text py-3">
-                                        Some quick example text to build on the
-                                        card title and make up the bulk of the
-                                        card's content.
-                                    </p>
-                                    <button href="#" className=" card-link  ">
-                                        Contact Us
-                                    </button>
-                                  
+                            <Category />
+                            <div className="help-section py-4">
+                                <div className="card  bg-primary text-light text-center">
+                                    <div className="card-body">
+                                        <h3 className="card-title display-5 ">
+                                            How can we help you!
+                                        </h3>
+
+                                        <p className="card-text py-3">
+                                            Some quick example text to build on
+                                            the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                        <button
+                                            href="#"
+                                            className=" card-link  "
+                                        >
+                                            Contact Us
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-</div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="page-footer" >
+
+            <Footer  />
             </div>
         </>
     );
