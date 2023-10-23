@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import Checkbox from '@/Components/AdminComponents/Checkbox';
+import React, { useEffect, useState } from 'react';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/AdminComponents/InputError';
 import InputLabel from '@/Components/AdminComponents/InputLabel';
@@ -12,6 +11,7 @@ export default function Login({ status, canResetPassword }) {
         email: '',
         password: '',
         remember: false,
+        role: 'user', // Added role state with a default value
     });
 
     useEffect(() => {
@@ -23,7 +23,18 @@ export default function Login({ status, canResetPassword }) {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('login'));
+        post(route('login'), data, {
+            onSuccess: (page) => {
+                // Check the user's role and redirect accordingly
+                if (data.role === 'author') {
+                    // Redirect to the Author Dashboard
+                    window.location.href = route('author.dashboard');
+                } else {
+                    // Redirect to the User Dashboard
+                    window.location.href = route('user.dashboard');
+                }
+            },
+        });
     };
 
     return (
@@ -66,14 +77,44 @@ export default function Login({ status, canResetPassword }) {
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
+                <div className="mt-4">
+                    <InputLabel htmlFor="role" value="Role" />
+                    <div className="mt-2">
+                        <label>
+                            <input
+                                type="radio"
+                                name="role"
+                                value="user"
+                                checked={data.role === 'user'}
+                                onChange={() => setData('role', 'user')}
+                                className="mr-2"
+                            />
+                            User
+                        </label>
+                        <label className="ml-4">
+                            <input
+                                type="radio"
+                                name="role"
+                                value="author"
+                                checked={data.role === 'author'}
+                                onChange={() => setData('role', 'author')}
+                                className="mr-2"
+                            />
+                            Author
+                        </label>
+                    </div>
+                </div>
+
                 <div className="block mt-4">
                     <label className="flex items-center">
-                        <Checkbox
+                        <input
+                            type="checkbox"
                             name="remember"
                             checked={data.remember}
                             onChange={(e) => setData('remember', e.target.checked)}
+                            className="mr-2"
                         />
-                        <span className="ml-2 text-sm text-gray-600">Remember me</span>
+                        <span className="text-sm text-gray-600">Remember me</span>
                     </label>
                 </div>
 

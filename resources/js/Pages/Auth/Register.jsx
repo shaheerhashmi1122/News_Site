@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/AdminComponents/InputError';
 import InputLabel from '@/Components/AdminComponents/InputLabel';
@@ -14,6 +14,8 @@ export default function Register() {
         password_confirmation: '',
     });
 
+    const [role, setRole] = useState('user'); // Added role state
+
     useEffect(() => {
         return () => {
             reset('password', 'password_confirmation');
@@ -23,7 +25,10 @@ export default function Register() {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('register'));
+        post(route('register'), {
+            ...data,
+            role, // Include the selected role in the data object
+        });
     };
 
     return (
@@ -97,6 +102,34 @@ export default function Register() {
                     />
 
                     <InputError message={errors.password_confirmation} className="mt-2" />
+                </div>
+
+                <div className="mt-4">
+                    <InputLabel htmlFor="role" value="Role" />
+                    <div className="mt-2">
+                        <label>
+                            <input
+                                type="radio"
+                                name="role"
+                                value="user"
+                                checked={role === 'user'}
+                                onChange={() => setRole('user')}
+                                className="mr-2"
+                            />
+                            User
+                        </label>
+                        <label className="ml-4 text-dark">
+                            <input
+                                type="radio"
+                                name="role"
+                                value="author"
+                                checked={role === 'author'}
+                                onChange={() => setRole('author')}
+                                className="mr-2"
+                            />
+                            Author
+                        </label>
+                    </div>
                 </div>
 
                 <div className="flex items-center justify-end mt-4">

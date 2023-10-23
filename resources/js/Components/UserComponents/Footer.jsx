@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../../css/User/Footer.css";
-import { Link } from '@inertiajs/react';
-import {FacebookTwoToneIcon} from '@mui/icons-material/FacebookTwoTone';
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaSquareInstagram } from "react-icons/fa6";
+import { Link } from "@inertiajs/inertia-react"; // Correct import statement
+// import ContactUs from "./ContactUs";
+import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone"; // Correct import statement
+import { FaTwitterSquare, FaInstagram } from "react-icons/fa"; // Correct import statement
+import ImportExportIcon from "@mui/icons-material/ImportExport"; // Correct import statement
+
 
 export default function Footer() {
+
+// ============ pop up contat page   // 
+// const [seen, setSeen] = useState(false)   ;
+// function togglePop () {
+//   setSeen(!seen);
+
+// };
   const currentYear = new Date().getFullYear();
 
   return (
@@ -51,7 +60,11 @@ export default function Footer() {
               <li><a href="#">Terms</a></li>
               <li><a href="#">About</a></li>
               <li><a href="#">Privacy</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a >Contact</a>
+{/* {seen ? <ContactUs toggle={togglePop} /> : null} */}
+{/* onClick={togglePop} */}
+
+              </li>
             </ul>
           </div>
           

@@ -22,6 +22,9 @@ export default function General() {
         { label: "General" },
     ];
 
+
+
+    
     return (
         <>
             <div className="page-nav">
