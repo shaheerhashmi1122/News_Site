@@ -69,10 +69,10 @@ export default function UserDash() {
 
 
 {/* foooter */}
-<Footer/>
 
             {/* </div> */}
         </div>
+<Footer/>
           </>
        
     );

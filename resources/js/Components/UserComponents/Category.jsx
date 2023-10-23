@@ -4,7 +4,7 @@ import "../../../css/User/Category.css"
 export default function Category() {
   return (
     <>
-       <div className="container">
+       <div className="category">
 <div className="row">
 <div className="col-sm-4">
 

@@ -1,0 +1,255 @@
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.social-link:hover, .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+}
+
+.news-content .read-section {
+    float: left;
+    margin-top: 15px;
+    padding-right: 10px;
+    background: rgba(255, 255, 255, 0.11);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.news-content .read-section img {
+    float: left;
+    padding-right: 10px;
+    border-radius: 50px;
+}
+
+.news-content .read-section h2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: "Tilt Neon", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 2em;
+}
+
+.news-content .read-section p {
+    text-align: center;
+    font-size: 14px;
+    font-family: "Tilt Neon", sans-serif;
+}
+
+.news-content .about-section {
+    color: #6b5555;
+    width: 21vw;
+    font-size: large;
+    font-family: "Tilt Neon", sans-serif;
+    font-weight: 600;
+}
+
+.news-content .about-section .about-profile h5 {
+    color: #000000;
+    font-size: large;
+    font-family: "Tilt Neon", sans-serif;
+    font-weight: 600;
+}
+
+.news-content .about-section .about-profile .about-card {
+    background: rgba(255, 255, 255, 0.11);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}.news-content .about-section .about-profile .about-card img{
+  width: 10vw;
+}
+
+.news-content .artical-section {
+    margin-top: 41%;
+    background: rgba(255, 255, 255, 0.11);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    margin-bottom: 25px;
+}
+
+.news-content .artical-section h1 {
+    text-align: center;
+    font-family: "Tilt Neon", sans-serif;
+    font-weight: 600;
+    font-size: 3vw;
+    margin-bottom: 10px;
+}
+
+.news-content .artical-section .under-line {
+    border-bottom: 3px solid #000000;
+    width: 10vw;
+    margin: auto;
+}
+
+.news-content .artical-section p {
+    padding-top: 20px;
+    font-size: medium;
+    text-align: center;
+}
+
+.news-content .help-section .card-link {
+    padding: 20px;
+    font-size: 0.8vw;
+    border: 1px solid #fff;
+    width: 10vw;
+}
+
+.news-content .help-section .card-link::after {
+    content: "->";
+    padding: 20px;
+}
+
+.news-content .help-section .card {
+    width: 23rem;
+    height: 25rem;
+}
+
+@media (max-width: 1440px) {
+    .news-content .container {
+        width: 67vw;
+    }
+
+    .news-content .about-section .about-profile p {
+        font-size: 0.8vw;
+    }
+
+    .news-content .about-section .about-profile {
+        width: 19rem;
+    }
+
+    .news-content .artical-section {
+        margin-top: 47%;
+    }
+
+    .news-content .artical-section p {
+        font-size: medium;
+        text-align: center;
+    }
+
+    .news-content .help-section .card {
+        width: 19rem;
+    }
+}
+
+
+
+
+@media (max-width:1280px) {
+    .news-content .artical-section {
+        margin-top: 300px;
+        /* padding-top: 150px; */
+    }
+} 
+
+
+@media (max-width: 1024px) {
+    .page-nav {
+        margin-left: 140px;
+    }
+
+    .news-content .container {
+        display: contents;
+    }
+
+    .news-content .container .row {
+        margin: 0 30px;
+    }
+
+    .news-content .help-section .card-link {
+        font-size: 1.1vw;
+        width: 20vw;
+    }
+
+    .news-content .help-section .card-link::after {
+        content: "->";
+        font-size: large;
+    }
+
+    .news-content .about-section .about-profile {
+        width: 19rem;
+        font-size: 0.8vw;
+    }
+}
+
+@media (max-width: 834px) {
+   
+
+   
+
+    .news-content .about-section .about-profile .about-card, .news-content .about-section .help-section .card {
+        font-size: large;
+        width: 14.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .news-content .read-part, .news-content .about-section {
+        display: contents;
+    }
+
+    .news-content .about-section .about-profile p {
+        font-size: medium;
+    }
+
+    .news-content .artical-section {
+        margin-top: 15px;
+    }
+
+    .news-content .about-section .about-profile .about-card, .news-content .about-section .help-section .card {
+        font-size: large;
+        width: 44rem;
+    }
+
+    .news-content .about-section .about-profile .about-card img{
+        width: 20vw;
+      }
+}
+
+@media (max-width: 426px) {
+    .news-content {
+        width: 158vw;
+    }
+
+    .news-content .about-section .about-profile .about-card, .news-content .about-section .help-section .card {
+        width: 38rem;
+    }
+    .news-content .about-section .about-profile .about-card img{
+        width: 35vw;
+      }
+}
+@media (max-width: 375px) {
+    .news-content {
+        width: 170vw;
+    }
+
+    .news-content .about-section .about-profile .about-card, .news-content .about-section .help-section .card {
+        width: 35rem;
+    }
+}@media (max-width: 325px) {
+    .news-content {
+        width: 188vw;
+    }
+
+    .news-content .about-section .about-profile .about-card, .news-content .about-section .help-section .card {
+        width: 34rem;
+    }
+}

@@ -10,7 +10,7 @@ export default function Slider() {
                     <div className="row">
                         <div className="col  mb-5">
                             <h1 className="display-4 font-weight-bolder card-header">
-                              <span>Freature</span> <span>News</span>
+                              <span>Feature-</span> <span>News</span>
                             </h1>
                            
                         </div>

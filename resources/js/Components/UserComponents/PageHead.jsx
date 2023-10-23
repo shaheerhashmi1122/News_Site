@@ -1,19 +1,21 @@
-import React from 'react'
-import "../../../css/User/PageHead.css"
-import ImgHead from "../../../js/Images/news-head.jpg"
+import React from 'react';
+import "../../../css/User/PageHead.css";
+import { MDBBreadcrumb, MDBBreadcrumbItem } from 'mdb-react-ui-kit';
 
-
-export default function PageHead() {
+export default function PageHead({ breadcrumbs }) {
   return (
-    <div>
-      <div className="page-name">
-    <div className="container">
-        {/* <h1 className="title">General</h1> */}
-        <img src={ImgHead} alt="" />
-
-
+    <div className='container bread-crum py-4 px-4'>
+      <MDBBreadcrumb>
+        {breadcrumbs.map((breadcrumb, index) => (
+          <MDBBreadcrumbItem key={index}>
+            {breadcrumb.url ? (
+              <a href={breadcrumb.url}>{breadcrumb.label}</a>
+            ) : (
+              breadcrumb.label
+            )}
+          </MDBBreadcrumbItem>
+        ))}
+      </MDBBreadcrumb>
     </div>
-</div>
-    </div>
-  )
+  );
 }
