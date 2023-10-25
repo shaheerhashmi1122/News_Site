@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Head, Link } from "@inertiajs/react";
+import { Link } from "@inertiajs/react";
 import Dropdown from "../../Components/AdminComponents/Dropdown";
 
 export default function UserSidebar({ show, onClose }, user) {
@@ -25,7 +25,7 @@ export default function UserSidebar({ show, onClose }, user) {
 
     return (
         <>
-            <Head title="Home" />
+            
 
             <div className="User-sidebar desktop shadow-md">
                 <div className="logo-details">
