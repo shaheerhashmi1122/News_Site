@@ -77,34 +77,6 @@ export default function Login({ status, canResetPassword }) {
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="role" value="Role" />
-                    <div className="mt-2">
-                        <label>
-                            <input
-                                type="radio"
-                                name="role"
-                                value="user"
-                                checked={data.role === 'user'}
-                                onChange={() => setData('role', 'user')}
-                                className="mr-2"
-                            />
-                            User
-                        </label>
-                        <label className="ml-4">
-                            <input
-                                type="radio"
-                                name="role"
-                                value="author"
-                                checked={data.role === 'author'}
-                                onChange={() => setData('role', 'author')}
-                                className="mr-2"
-                            />
-                            Author
-                        </label>
-                    </div>
-                </div>
-
                 <div className="block mt-4">
                     <label className="flex items-center">
                         <input

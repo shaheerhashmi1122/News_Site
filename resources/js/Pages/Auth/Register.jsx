@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/AdminComponents/InputError';
 import InputLabel from '@/Components/AdminComponents/InputLabel';
@@ -12,9 +12,10 @@ export default function Register() {
         email: '',
         password: '',
         password_confirmation: '',
+        role: '',
     });
 
-    const [role, setRole] = useState('user'); // Added role state
+   
 
     useEffect(() => {
         return () => {
@@ -25,10 +26,7 @@ export default function Register() {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('register'), {
-            ...data,
-            role, // Include the selected role in the data object
-        });
+        post(route('register'));
     };
 
     return (
@@ -47,6 +45,23 @@ export default function Register() {
                         autoComplete="name"
                         isFocused={true}
                         onChange={(e) => setData('name', e.target.value)}
+                        required
+                    />
+
+                    <InputError message={errors.name} className="mt-2" />
+                </div>
+                
+                <div>
+                    <InputLabel htmlFor="role" value="Role" />
+
+                    <TextInput
+                        id="role"
+                        name="role"
+                        value={data.role}
+                        className="mt-1 block w-full"
+                        autoComplete="role"
+                        isFocused={true}
+                        onChange={(e) => setData('role', e.target.value)}
                         required
                     />
 
@@ -104,33 +119,6 @@ export default function Register() {
                     <InputError message={errors.password_confirmation} className="mt-2" />
                 </div>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="role" value="Role" />
-                    <div className="mt-2">
-                        <label>
-                            <input
-                                type="radio"
-                                name="role"
-                                value="user"
-                                checked={role === 'user'}
-                                onChange={() => setRole('user')}
-                                className="mr-2"
-                            />
-                            User
-                        </label>
-                        <label className="ml-4 text-dark">
-                            <input
-                                type="radio"
-                                name="role"
-                                value="author"
-                                checked={role === 'author'}
-                                onChange={() => setRole('author')}
-                                className="mr-2"
-                            />
-                            Author
-                        </label>
-                    </div>
-                </div>
 
                 <div className="flex items-center justify-end mt-4">
                     <Link
