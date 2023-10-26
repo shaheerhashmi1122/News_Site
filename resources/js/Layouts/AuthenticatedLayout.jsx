@@ -2,33 +2,40 @@ import React, { useState } from "react";
 
 import Dropdown from "@/Components/AdminComponents/Dropdown";
 
-import  "../../css/Admin/app.css";
+import "../../css/Admin/app.css";
 
 import SideBar from "@/Components/AdminComponents/SideBar";
 
 function Authenticated({ user, header, children }) {
-   
+    const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+    // const [closeNav, setCloseNav] = useState(false);
+    const toggleMobileSidebar = () => {
+        setShowMobileSidebar(!showMobileSidebar);
+    };
     return (
-        <div
-            className="min-h-screen  main-body"
-        >
+        <div className="min-h-screen  main-body">
             <div className="flex">
-          
+                <SideBar user={user.name}  show={showMobileSidebar}
+                    onClose={toggleMobileSidebar} />
 
-                <SideBar  user={user.name} />
-              
                 <div className="flex-1 min-h-screen content">
-                   
-                        <nav className="bg-secondary border-b border-gray-100 ">
-                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <div className="flex justify-between h-16">
-                                <button type="button" className="btn btn-square btn-dark m-2"><i className="fa fa-bars"></i></button><a href="#" className="sidebar-toggler flex-shrink-0">
-                    
-                </a>
-                                    <div className="flex">
-                                        
-                                        <div className="shrink-0 flex  items-center">
-                                        
+                    <nav className="bg-secondary border-b border-gray-100 ">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="flex justify-between h-16">
+                                <button
+                                    type="button"
+                                    className="btn btn-square btn-dark m-2"
+                                    onClick={() => setShowMobileSidebar(!showMobileSidebar)}
+
+                                >
+                                    <i className="fa fa-bars"></i>
+                                </button>
+                                <a
+                                    href="#"
+                                    className="sidebar-toggler flex-shrink-0"
+                                ></a>
+                                <div className="flex">
+                                    <div className="shrink-0 flex  items-center">
                                         <div className="ml-3 relative">
                                             <Dropdown>
                                                 <Dropdown.Trigger>
@@ -37,7 +44,6 @@ function Authenticated({ user, header, children }) {
                                                             type="button"
                                                             className="inline-flex items-center px-3 py-2  border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-secondary hover:text-red-700 focus:outline-none transition ease-in-out duration-150"
                                                         >
-                                                            
                                                             {user.name}
                                                             <svg
                                                                 className="ml-2 -mr-0.5 h-4 w-4"
@@ -71,19 +77,15 @@ function Authenticated({ user, header, children }) {
                                                     </Dropdown.Link>
                                                 </Dropdown.Content>
                                             </Dropdown>
-                                       
-                                    </div>
                                         </div>
                                     </div>
-                                   
-
-
-                                   {/* mobile menuuuuu */}
-                                   
                                 </div>
+
+                                {/* mobile menuuuuu */}
                             </div>
-                        </nav>
-                
+                        </div>
+                    </nav>
+
                     {header && (
                         <header className="bg-white shadow">
                             <div className="dash">{header}</div>

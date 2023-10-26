@@ -2826,7 +2826,7 @@ fieldset:disabled .btn {
 
 
 /* ===============================hide on large screen================= */
-@media screen and (max-width: 2560px) and (min-width: 1024px) {
+@media (max-width: 2560px) and (min-width: 1024px) {
   /* Your CSS styles for this screen size range */
   .btn-square {
     display: none;
