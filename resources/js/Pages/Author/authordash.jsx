@@ -1,21 +1,104 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
+import { useEffect } from 'react';
+import GuestLayout from '@/Layouts/GuestLayout';
+import InputError from '@/Components/AdminComponents/InputError';
+import InputLabel from '@/Components/AdminComponents/InputLabel';
+import PrimaryButton from '@/Components/AdminComponents/PrimaryButton';
+import TextInput from '@/Components/AdminComponents/TextInput';
+import { Head, Link, useForm } from '@inertiajs/react';
 
-export default function Dashboard({ auth }) {
+export default function Register() {
+    const { data, setData, post, processing, errors, reset } = useForm({
+        heading: '',
+        description: '',
+        text: '',
+        image: '',
+    });
+
+    const submit = (e) => {
+        e.preventDefault();
+
+        post(route('author.add_news'));
+    };
+
     return (
-        <AuthenticatedLayout
-            user={auth.user}
-            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">AuthorDashboard</h2>}
-        >
-            <Head title="Dashboard" />
+        <GuestLayout>
+            <Head title="Add News" />
 
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">You're logged in!</div>
-                    </div>
+            <form onSubmit={submit}>
+                <div>
+                    <InputLabel htmlFor="heading" value="Heading" />
+
+                    <TextInput
+                        id="heading"
+                        name="heading"
+                        value={data.heading}
+                        className="mt-1 block w-full"
+                        autoComplete="heading"
+                        isFocused={true}
+                        onChange={(e) => setData('heading', e.target.value)}
+                        required
+                    />
+
+                    <InputError message={errors.heading} className="mt-2" />
                 </div>
-            </div>
-        </AuthenticatedLayout>
+                <div>
+                    <InputLabel htmlFor="description" value="Description" />
+
+                    <TextInput
+                        id="description"
+                        name="description"
+                        value={data.description}
+                        className="mt-1 block w-full"
+                        autoComplete="description"
+                        isFocused={true}
+                        onChange={(e) => setData('description', e.target.value)}
+                        required
+                    />
+
+                    <InputError message={errors.description} className="mt-2" />
+                </div>
+                <div>
+                    <InputLabel htmlFor="text" value="Text" />
+
+                    <textarea 
+                        id="text"
+                        name="text"
+                        value={data.text}
+                        className="mt-1 block w-full"
+                        autoComplete="text"
+                        isFocused={true}
+                        onChange={(e) => setData('text', e.target.value)}
+                        required
+                    />
+                    <InputError message={errors.text} className="mt-2" />
+                </div>
+
+                <div>
+                    <InputLabel htmlFor="image" value="Chooose Image" />
+
+
+                    <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        value={data.image}
+                        className="mt-1 block w-full"
+                        autoComplete="image"
+                        isFocused={true}
+                        onChange={(e) => setData('image', e.target.value)}
+                        required
+                    />
+
+                    <InputError message={errors.image} className="mt-2" />
+                </div>
+
+                <div className="flex items-center justify-end mt-4">
+                <PrimaryButton className="ml-4" disabled={processing}>
+                    Add News
+                </PrimaryButton>
+                </div>
+
+        </form>
+        </GuestLayout >
     );
 }
