@@ -5,6 +5,8 @@ import InputLabel from '@/Components/AdminComponents/InputLabel';
 import PrimaryButton from '@/Components/AdminComponents/PrimaryButton';
 import TextInput from '@/Components/AdminComponents/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import AuthorSidebar from '@/Components/Author Components/AuthorSidebar';
+import Header from '@/Components/Author Components/Header';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -21,8 +23,29 @@ export default function Register() {
     };
 
     return (
+        <>
+        
+<Header/>
+        
+<AuthorSidebar/>
         <GuestLayout>
             <Head title="Add News" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <form onSubmit={submit}>
                 <div>
@@ -53,7 +76,7 @@ export default function Register() {
                         isFocused={true}
                         onChange={(e) => setData('description', e.target.value)}
                         required
-                    />
+                        />
 
                     <InputError message={errors.description} className="mt-2" />
                 </div>
@@ -87,7 +110,7 @@ export default function Register() {
                         isFocused={true}
                         onChange={(e) => setData('image', e.target.value)}
                         required
-                    />
+                        />
 
                     <InputError message={errors.image} className="mt-2" />
                 </div>
@@ -100,5 +123,6 @@ export default function Register() {
 
         </form>
         </GuestLayout >
+                        </>
     );
 }
