@@ -43,4 +43,10 @@ class AuthorController extends Controller
         // return "Tables";
         return Inertia::render('Author/tables');
     }
+
+    public function data()
+    {
+        $Newsdata=NewsData::all();
+        return $Newsdata;    
+    }
 }

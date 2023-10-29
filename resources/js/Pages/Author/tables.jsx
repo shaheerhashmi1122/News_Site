@@ -10,8 +10,11 @@ import { Head, Link, useForm } from '@inertiajs/react';
 import UploadNews from '@/Components/AuthorComponents/UploadNews';
 import Footer from '@/Components/AdminComponents/Footer';
 import NewsTable from '@/Components/AuthorComponents/NewsTable';
+import axios from 'axios';
 
 export default function AuthorDashboard({auth}) {
+
+
  
 
     return (
@@ -29,7 +32,6 @@ export default function AuthorDashboard({auth}) {
 
 <NewsTable/>
 
-<Footer/>
         </AuthLayout >
                         </>
     );

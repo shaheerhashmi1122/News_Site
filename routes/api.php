@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\Author\AuthorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('tableData',[TableController::class, 'data']);
+
+Route::get('newsdata',[AuthorController::class, 'data']);
