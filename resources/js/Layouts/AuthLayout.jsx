@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/AdminComponents/InputError';
 import InputLabel from '@/Components/AdminComponents/InputLabel';
 import PrimaryButton from '@/Components/AdminComponents/PrimaryButton';
