@@ -29,45 +29,45 @@ export default function SideBar() {
         <h6 className="mb-4">Upload News</h6>
         <div className="form-floating mb-3">
           <input
-            type="email"
+            type="text"
+            name="heading"
             className="form-control"
             id="floatingInput"
-            placeholder="name@example.com"
+            placeholder="Heading"
           />
-          <label htmlFor="floatingInput">Email address</label>
+          <label htmlFor="floatingInput">Heading</label>
+        </div>
+        <div className="form-floating mb-3">
+          <input
+            type="text"
+            name="description"
+            className="form-control"
+            id="floatingInput"
+            placeholder="description"
+          />
+          <label htmlFor="floatingInput">Description</label>
+        </div>
+        <div className="form-floating mb-3">
+          <textarea
+            className="form-control"
+            name="text"
+            placeholder="Leave a comment here"
+            id="floatingTextarea"
+            style={{ height: "150px" }}
+          ></textarea>
+          <label htmlFor="floatingTextarea">Write Content</label>
         </div>
         {/* Add an input for file upload */}
         <div className="form-floating mb-3">
           <input
             type="file"
+            name="image"
             className="form-control"
             id="fileUpload"
             accept="image/*"
             onChange={handleImageChange}
           />
           <label htmlFor="fileUpload">Choose an image</label>
-        </div>
-        <div className="form-floating mb-3">
-          <select
-            className="form-select"
-            id="floatingSelect"
-            aria-label="Floating label select example"
-          >
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <label htmlFor="floatingSelect">Works with selects</label>
-        </div>
-        <div className="form-floating">
-          <textarea
-            className="form-control"
-            placeholder="Leave a comment here"
-            id="floatingTextarea"
-            style={{ height: "150px" }}
-          ></textarea>
-          <label htmlFor="floatingTextarea">Comments</label>
         </div>
       </div>
     </div>

@@ -33,7 +33,7 @@ class AuthorController extends Controller
          //store in public folder "product"
          $image->move('news', $imagename);
          $post->image = $imagename;
-        // dd($newsdata);
+        dd($post);
         $post->save();
         return redirect()->back();
     }
