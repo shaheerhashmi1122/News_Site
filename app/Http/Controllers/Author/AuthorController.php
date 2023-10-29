@@ -40,6 +40,7 @@ class AuthorController extends Controller
 
     public function show_data()
     {
+        // return "Tables";
         return Inertia::render('Author/tables');
     }
 }
