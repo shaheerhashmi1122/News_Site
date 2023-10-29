@@ -13,5 +13,6 @@ class NewsData extends Model
        'heading',
        'description',
        'text',
+       'image',
     ];
 }

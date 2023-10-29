@@ -25,7 +25,7 @@ export default function SideBar() {
   
 
   return (
-    <form action="submit" className="mb-4">
+    <form onSubmit={submit} className="mb-4">
     <div className="col-sm-12 col-xl-6 ml-4">
       <div className="bg-secondary rounded h-100 p-4">
         <h6 className="mb-4">Upload News</h6>
@@ -33,9 +33,11 @@ export default function SideBar() {
           <input
             type="text"
             name="heading"
+            value={data.heading}
             className="form-control"
             id="floatingInput"
             placeholder="Heading"
+            onChange={(e) => setData('heading', e.target.value)}
           />
           <label htmlFor="floatingInput">Heading</label>
         </div>
@@ -43,9 +45,11 @@ export default function SideBar() {
           <input
             type="text"
             name="description"
+            value={data.description}
             className="form-control"
             id="floatingInput"
             placeholder="description"
+            onChange={(e) => setData('description', e.target.value)}
           />
           <label htmlFor="floatingInput">Description</label>
         </div>
@@ -53,9 +57,11 @@ export default function SideBar() {
           <textarea
             className="form-control"
             name="text"
+            value={data.text}
             placeholder="Write A text"
             id="floatingTextarea"
             style={{ height: "150px" }}
+            onChange={(e) => setData('text', e.target.value)}
           ></textarea>
           <label htmlFor="floatingTextarea">Text</label>
         </div>
@@ -73,9 +79,9 @@ export default function SideBar() {
         </div>
       </div>
       <div className="btn btn-danger" style={{marginLeft:"550px"}}>
-        Submit
+        <button type="submit">Submit</button>
       </div>
     </div>
-            </form>
+</form>
   );
 }
