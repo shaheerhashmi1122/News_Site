@@ -22,8 +22,10 @@ export default function SideBar() {
 
     post(route("author.add_news"));
   };
+  
 
   return (
+    <form action="submit" className="mb-4">
     <div className="col-sm-12 col-xl-6 ml-4">
       <div className="bg-secondary rounded h-100 p-4">
         <h6 className="mb-4">Upload News</h6>
@@ -35,9 +37,7 @@ export default function SideBar() {
             placeholder="name@example.com"
           />
           <label htmlFor="floatingInput">Email address</label>
-        </div>
-        {/* Add an input for file upload */}
-        <div className="form-floating mb-3">
+        </div>        <div className="form-floating mb-3">
           <input
             type="file"
             className="form-control"
@@ -67,9 +67,13 @@ export default function SideBar() {
             id="floatingTextarea"
             style={{ height: "150px" }}
           ></textarea>
-          <label htmlFor="floatingTextarea">Comments</label>
+          <label htmlFor="floatingTextarea">Description</label>
         </div>
       </div>
+      <div className="btn btn-danger" style={{marginLeft:"550px"}}>
+        Submit
+      </div>
     </div>
+            </form>
   );
 }
