@@ -16,7 +16,6 @@ export default function Welcome({ auth}) {
     };
 
     const [showMobileSidebar, setShowMobileSidebar] = useState(false);
-    // const [closeNav, setCloseNav] = useState(false);
     const toggleMobileSidebar = () => {
         setShowMobileSidebar(!showMobileSidebar);
     };
@@ -59,11 +58,7 @@ export default function Welcome({ auth}) {
                     )}
                 </div>
                 <div className="container">
-                <header>
-                <UserNav />
-
-                </header>
-
+         
                 <div className="toggle-btn">
                     <div
                         className="btn btn-primary "
