@@ -1,34 +1,40 @@
 import { useEffect } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
+import AuthLayout from '@/Layouts/AuthLayout';
 import InputError from '@/Components/AdminComponents/InputError';
 import InputLabel from '@/Components/AdminComponents/InputLabel';
 import PrimaryButton from '@/Components/AdminComponents/PrimaryButton';
 import TextInput from '@/Components/AdminComponents/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
-import AuthorSidebar from '@/Components/Author Components/AuthorSidebar';
-import Header from '@/Components/Author Components/Header';
 
-export default function Register() {
-    const { data, setData, post, processing, errors, reset } = useForm({
-        heading: '',
-        description: '',
-        text: '',
-        image: '',
-    });
+// import AuthorSidebar from '@/Components/AuthorComponents/AuthorSidebar';
+import UploadNews from '@/Components/AuthorComponents/UploadNews';
+import Footer from '@/Components/AdminComponents/Footer';
 
-    const submit = (e) => {
-        e.preventDefault();
+export default function AuthorDashboard({auth}) {
+    // const { data, setData, post, processing, errors, reset } = useForm({
+    //     heading: '',
+    //     description: '',
+    //     text: '',
+    //     image: '',
+    // });
 
-        post(route('author.add_news'));
-    };
+    // const submit = (e) => {
+    //     e.preventDefault();
+
+    //     post(route('author.add_news'));
+    // };
 
     return (
         <>
         
-<Header/>
-        
-<AuthorSidebar/>
-        <GuestLayout>
+
+        <AuthLayout
+         user={auth.user}
+         header={
+             <h2 className="font-semibold text-xl bg-secondary heading h-10 py-2 px-16 text-light leading-tight">
+                 Dashboard
+             </h2>
+         }>
             <Head title="Add News" />
 
 
@@ -47,7 +53,7 @@ export default function Register() {
 
 
 
-            <form onSubmit={submit}>
+            {/* <form onSubmit={submit}>
                 <div>
                     <InputLabel htmlFor="heading" value="Heading" />
 
@@ -121,8 +127,14 @@ export default function Register() {
                 </PrimaryButton>
                 </div>
 
-        </form>
-        </GuestLayout >
+        </form> */}
+
+
+
+<UploadNews/>
+
+<Footer/>
+        </AuthLayout >
                         </>
     );
 }
