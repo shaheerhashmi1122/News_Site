@@ -14,21 +14,32 @@ class AuthorController extends Controller
         return Inertia::render('Author/authordash');
     }
 
-    public function add_news(Request $request)
+    public function add_news(Request $req)
     {
-        $request->validate([
+        $post = new NewsData();
+        $req->validate([
             'heading' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'text' => 'required',
+            'image' => 'required'
         ]);
 
-        $newsdata = NewsData::create([
-            'heading' => $request->heading,
-            'description' => $request->description,
-            'text' => $request->text,
-        ]);
+        $post->heading = $req->heading;
+        $post->description = $req->description;
+        $post->text = $req->text;
+         //upload image:
+         $image = $req->image;
+         $imagename = time() . '.' . $image->getClientOriginalExtension();
+         //store in public folder "product"
+         $image->move('news', $imagename);
+         $post->image = $imagename;
         // dd($newsdata);
-        $newsdata->save();
+        $post->save();
         return redirect()->back();
+    }
+
+    public function show_data()
+    {
+        return Inertia::render('Author/tables');
     }
 }

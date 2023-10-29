@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('heading');
             $table->string('description');
             $table->string('text');
+            $table->string('image');
+            $table->integer('total_views')->default('0');
             $table->timestamps();
         });
     }

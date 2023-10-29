@@ -112,12 +112,11 @@ export default function AuthorDashboard({auth}) {
                         name="image"
                         value={data.image}
                         className="mt-1 block w-full"
-                        autoComplete="image"
+                        // autoComplete="image"
                         isFocused={true}
                         onChange={(e) => setData('image', e.target.value)}
                         required
                         />
-
                     <InputError message={errors.image} className="mt-2" />
                 </div>
 
