@@ -49,4 +49,10 @@ class AuthorController extends Controller
         $Newsdata=NewsData::all();
         return $Newsdata;    
     }
+  
+    public function edit()
+    {
+        return Inertia::render('Author/editform');
+    }
+
 }

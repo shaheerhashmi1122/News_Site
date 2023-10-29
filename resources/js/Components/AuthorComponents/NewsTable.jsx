@@ -1,4 +1,4 @@
-
+import { Link } from "@inertiajs/react";
 import Footer from '../AdminComponents/Footer';
 import React, { useEffect, useState } from "react";
 import axios from 'axios'; // Don't forget to import axios
@@ -16,6 +16,10 @@ export default function NewsTable() {
                 console.error(error);
             });
     }, []); // empty dependency array
+
+    const routes = [
+        { route: "/author/editnews/{id}" },
+    ]
 
     return (
         <div>
@@ -42,8 +46,8 @@ export default function NewsTable() {
                                             <td>{row.description}</td>
                                             <td><img src={`/news/${row.image}`} alt="No image!!" /></td>
                                             <td>
-                                                <button className='btn btn-primary'>Update</button>
-                                                <button className='btn btn-danger'>Delete</button>
+                                                <link to={'author/editnews/${row.id}'} className="btn btn-success" >Update</link>
+                                                <button className='btn '><a href="#">Delete</a></button>
                                             </td>
                                         </tr>
                                     ))}
