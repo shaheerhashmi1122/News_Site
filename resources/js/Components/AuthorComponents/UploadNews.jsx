@@ -22,8 +22,10 @@ export default function SideBar() {
 
     post(route("author.add_news"));
   };
+  
 
   return (
+    <form action="submit" className="mb-4">
     <div className="col-sm-12 col-xl-6 ml-4">
       <div className="bg-secondary rounded h-100 p-4">
         <h6 className="mb-4">Upload News</h6>
@@ -45,17 +47,7 @@ export default function SideBar() {
             id="floatingInput"
             placeholder="description"
           />
-          <label htmlFor="floatingInput">Description</label>
-        </div>
-        <div className="form-floating mb-3">
-          <textarea
-            className="form-control"
-            name="text"
-            placeholder="Leave a comment here"
-            id="floatingTextarea"
-            style={{ height: "150px" }}
-          ></textarea>
-          <label htmlFor="floatingTextarea">Write Content</label>
+          <label htmlFor="floatingInput">Email address</label>
         </div>
         {/* Add an input for file upload */}
         <div className="form-floating mb-3">
@@ -69,7 +61,33 @@ export default function SideBar() {
           />
           <label htmlFor="fileUpload">Choose an image</label>
         </div>
+        <div className="form-floating mb-3">
+          <select
+            className="form-select"
+            id="floatingSelect"
+            aria-label="Floating label select example"
+          >
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <label htmlFor="floatingSelect">Works with selects</label>
+        </div>
+        <div className="form-floating">
+          <textarea
+            className="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextarea"
+            style={{ height: "150px" }}
+          ></textarea>
+          <label htmlFor="floatingTextarea">Comments</label>
+        </div>
+      </div>
+      <div className="btn btn-danger" style={{marginLeft:"550px"}}>
+        Submit
       </div>
     </div>
+            </form>
   );
 }
