@@ -24,9 +24,9 @@ export default function AuthorDashboard({auth}) {
                  Dashboard
              </h2>
          }>
-            <Head title="Add News" />
+            <Head title="Update News" />
 
-<UploadNews/>
+<UpdateNews/>
 
 <Footer/>
         </AuthLayout >

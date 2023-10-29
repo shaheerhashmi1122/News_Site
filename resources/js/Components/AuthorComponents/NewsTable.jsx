@@ -1,51 +1,63 @@
-import React from 'react';
-import AuthorSidebar from '@/Components/AuthorComponents/AuthorSidebar';
+import { Link } from "@inertiajs/react";
+import Footer from '../AdminComponents/Footer';
+import React, { useEffect, useState } from "react";
+import axios from 'axios'; // Don't forget to import axios
 
 export default function NewsTable() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        // Fetch data when the component mounts
+        axios.get('http://127.0.0.1:8000/api/newsdata')
+            .then((response) => {
+                setData(response.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []); // empty dependency array
+
+    const routes = [
+        { route: "/author/editnews/{id}" },
+    ]
+
     return (
-
-<AuthorSidebar/>
-
-        <div className="container-fluid pt-4 px-4">
-            <div className="row g-4">
-                <div className="col-sm-12 col-xl-6">
-                    <div className="bg-secondary rounded h-100 p-4">
-                        <h6 className="mb-4">Basic Table</h6>
-                        <table className="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First Name</th>
-                                    <th scope="col">Last Name</th>
-                                    <th scope="col">Email</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>John</td>
-                                    <td>Doe</td>
-                                    <td>john@email.com</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>mark@email.com</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>jacob@email.com</td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <div>
+            <div className="container-fluid pt-4 px-4">
+                <div className="row g-4">
+                    <div className="col-sm-12 col-xl-6">
+                        <div className="bg-secondary rounded h-100 p-4">
+                            <h6 className="mb-4">Basic Table</h6>
+                            <table className="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Heading</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {data.map((row) => (
+                                        <tr key={row.id}>
+                                            <th scope="row">{row.id}</th>
+                                            <td>{row.heading}</td>
+                                            <td>{row.description}</td>
+                                            <td><img src={`/news/${row.image}`} alt="No image!!" /></td>
+                                            <td>
+                                                <link to={'author/editnews/${row.id}'} className="btn btn-success" >Update</link>
+                                                <button className='btn '><a href="#">Delete</a></button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-             
             </div>
+            <Footer />
         </div>
-        <Footer/>
     );
 }

@@ -40,6 +40,19 @@ class AuthorController extends Controller
 
     public function show_data()
     {
+        // return "Tables";
         return Inertia::render('Author/tables');
     }
+
+    public function data()
+    {
+        $Newsdata=NewsData::all();
+        return $Newsdata;    
+    }
+  
+    public function edit()
+    {
+        return Inertia::render('Author/editform');
+    }
+
 }

@@ -15,7 +15,7 @@ class TableController extends Controller
     }
     public function data()
     {
-        $data=User::where('role','user')->get();
+        $data=User::where('role','user')->orwhere('role','author')->get();
         return $data;
     }
 

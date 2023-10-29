@@ -46,14 +46,14 @@ useEffect(() => {
                         <div className="row g-4">
                             <div className="col-sm-12 col-xl-6">
                                 <div className="bg-secondary rounded h-100 p-4">
-                                    <h6 className="mb-4">Author Table</h6>
+                                    <h6 className="mb-4">Data Table</h6>
                                     <table className="table">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Name</th>
-                                                <th scope="col"></th>
-                                                                                                <th scope="col">Email</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Role</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -63,37 +63,8 @@ useEffect(() => {
                                                     <tr key={row.id}>
                                                         <th scope="row">{row.id}</th>
                                                         <td>{row.name}</td>
-                                                 <td></td>
                                                         <td>{row.email}</td>
-                                                        </tr>
-                                                );
-                                            })
-                                          }
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div className="col-sm-12 col-xl-6">
-                                <div className="bg-secondary rounded h-100 p-4">
-                                    <h6 className="mb-4">User Table</h6>
-                                    <table className="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">First Name</th>
-                                                <th scope="col"></th>
-                                                <th scope="col">Email</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        {
-                                            data.map(row=>{
-                                                return(
-                                                    <tr key={row.id}>
-                                                        <th scope="row">{row.id}</th>
-                                                        <td>{row.name}</td>
-                                                        <td></td>
-                                                        <td>{row.email}</td>
+                                                        <td>{row.role}</td>
                                                         </tr>
                                                 );
                                             })
