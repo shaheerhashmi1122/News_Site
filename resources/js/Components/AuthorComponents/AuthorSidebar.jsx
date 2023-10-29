@@ -16,7 +16,7 @@ export default function SideBar({ show }) {
 
   const routes = [
     { route: "/author/dashboard", icon: "fa-home", name: "Home" },
-    { route: "/author/tables", icon: "fa-laptop", name: "Tables" },
+    { route: "/author/shownews", icon: "fa-laptop", name: "Tables" },
     // { route: "/admin/charts", icon: "fa-chart-bar", name: "Analytics" },
   ];
 
