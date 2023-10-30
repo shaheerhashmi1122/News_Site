@@ -38,7 +38,6 @@
         "cdbreact": "^1.5.18",
         "chart.js": "^4.4.0",
         "flowbite-react": "^0.6.4",
-        "i18next": "^23.6.0",
         "i18next-browser-languagedetector": "^7.1.0",
         "mdb-react-ui-kit": "^6.3.0",
         "react-alice-carousel": "^2.8.0",

@@ -17,10 +17,8 @@ export default function NewsTable() {
             });
     }, []); // empty dependency array
 
-    const routes = [
-        { route: "/author/editnews/{id}" },
-    ]
 
+    
     return (
         <div>
             <div className="container-fluid pt-4 px-4">
@@ -46,7 +44,7 @@ export default function NewsTable() {
                                             <td>{row.description}</td>
                                             <td><img src={`/news/${row.image}`} alt="No image!!" /></td>
                                             <td>
-                                                <link to={'author/editnews/${row.id}'} className="btn btn-success" >Update</link>
+                                                <button className='btn '><a href={`http://127.0.0.1:8000/api/editnews/${row.id}`}>Update</a></button>
                                                 <button className='btn '><a href="#">Delete</a></button>
                                             </td>
                                         </tr>
