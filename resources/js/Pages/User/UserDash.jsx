@@ -1,83 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import UserNav from "@/Components/UserComponents/UserNav";
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
 import Footer from "@/Components/UserComponents/Footer";
-import Slider from "@/Components/UserComponents/Slider";
-import Language from "@/Components/UserComponents/Language";
 import Content from "@/Components/UserComponents/Content";
-import { useLanguage } from '../../../js/Components/UserComponents/LanguageContext';
+import Slider from "@/Components/UserComponents/Slider";
 
-const LanguageChanger = () => {
-  const { currentLanguage, changeLanguage } = useLanguage();
+export default function UserDash() {
+  const styleHead = {
+    fontSize: "45px",
+    textAlign: "center",
+    margin: "12px",
+  };
 
-  const handleLanguageChange = (newLanguage) => {
-    changeLanguage(newLanguage);
+  const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+  const toggleMobileSidebar = () => {
+    setShowMobileSidebar(!showMobileSidebar);
   };
 
   return (
-    <div>
-    <button onClick={() => handleLanguageChange('en')}>English</button>
-    <button onClick={() => handleLanguageChange('fr')}>French</button>
-    </div>
-  )
-}
+    <>
+      <div className="container">
+        <header>
+          <UserNav />
+        </header>
 
+        <div className="toggle-btn">
+          <div
+            className="btn btn-primary "
+            onClick={() => setShowMobileSidebar(!showMobileSidebar)}
+          >
+            {" "}
+            <i className="bx bx-menu" style={{ fontSize: "24px" }}></i>{" "}
+          </div>
+        </div>
 
+        <UserSidebar show={showMobileSidebar} onClose={toggleMobileSidebar} />
 
-export default function UserDash() {
-    const styleHead = {
-        fontSize: "45px",
-        textAlign: "center",
-        margin: "12px",
-    };
+        <h1 style={styleHead}>GlobeLink</h1>
 
-    const { currentLanguage, changeLanguage } = useLanguage();
+        
 
-    const handleLanguageChange = (newLanguage) => {
-        changeLanguage(newLanguage);
-    };
-    const [showMobileSidebar, setShowMobileSidebar] = useState(false);
-    const toggleMobileSidebar = () => {
-        setShowMobileSidebar(!showMobileSidebar);
-    };
+        <Content />
+        <Slider />
 
-    const content = {
-        en: {
-            pageTitle: "GlobeLink",
-        },
-        fr: {
-            pageTitle: "GlobeLink (français)"
-            ,
-        },
-    };
-
-    return (
-        <>
-            <div className="container">
-                <header>
-                    <UserNav />
-                    <LanguageChanger />
-                    
-
-                </header>
-
-                <div className="toggle-btn">
-                    <div
-                        className="btn btn-primary"
-                        onClick={() => setShowMobileSidebar(!showMobileSidebar)}
-                    >
-                        {" "}
-                        <i className="bx bx-menu" style={{ fontSize: "24px" }}></i>{" "}
-                    </div>
-                </div>
-
-                <UserSidebar show={showMobileSidebar} onClose={toggleMobileSidebar} />
-
-                <h1 style={styleHead}>{content[currentLanguage].pageTitle}</h1>
-                <Content />
-                <Slider />
-            </div>
-            <Footer />
-        </>
-    );
+        {/* Display the translated text */}
+        <div>{translatedText}</div>
+      </div>
+      <Footer />
+    </>
+  );
 }
