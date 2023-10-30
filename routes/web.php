@@ -56,7 +56,7 @@ Route::middleware('author')->group(function () {
     Route::get('author/dashboard', [AuthorController::class, 'dashboard'])->name('author.dashboard');
     Route::post('author/addnews', [AuthorController::class, 'add_news'])->name('author.add_news');
     Route::get('author/shownews', [AuthorController::class, 'show_data'])->name('author.shownews');
-    Route::get('author/editnews/{id}', [AuthorController::class, 'edit'])->name('author.editnews');
+    Route::post('author/editform', [AuthorController::class, 'edit_form'])->name('author.editform');
 });
 
 Route::middleware('user')->group(function () {

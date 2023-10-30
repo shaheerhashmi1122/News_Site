@@ -23,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('tableData',[TableController::class, 'data']);
 
 Route::get('newsdata',[AuthorController::class, 'data']);
+
+Route::get('editnews/{id}', [AuthorController::class, 'edit']);
