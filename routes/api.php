@@ -24,4 +24,4 @@ Route::get('tableData',[TableController::class, 'data']);
 
 Route::get('newsdata',[AuthorController::class, 'data']);
 
-Route::get('editnews/{id}', [AuthorController::class, 'edit']);
+Route::get('editnews/{id}', [AuthorController::class, 'edit'])->name('edit.news');
