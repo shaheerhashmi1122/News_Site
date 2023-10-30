@@ -21,21 +21,7 @@ const LanguageChanger = () => {
     </div>
   )
 }
-  const MyComponent = () => {
-    const { currentLanguage } = useLanguage();
-  
-    // Define language-specific content
-    const translations = {
-      en: {
-        greeting: 'Hello!',
-        description: 'This is a React app.',
-      },
-      fr: {
-        greeting: 'Bonjour!',
-        description: 'Ceci est une application React.',
-      },
-    };
-  }
+
 
 
 export default function UserDash() {
@@ -60,9 +46,9 @@ export default function UserDash() {
             pageTitle: "GlobeLink",
         },
         fr: {
-            pageTitle: "GlobeLink (French)",
+            pageTitle: "GlobeLink (français)"
+            ,
         },
-        // Add more translations as needed
     };
 
     return (

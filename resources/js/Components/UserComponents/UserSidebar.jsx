@@ -1,9 +1,41 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "@inertiajs/react";
-import Dropdown from "../../Components/AdminComponents/Dropdown";
+import { useLanguage } from '../../../js/Components/UserComponents/LanguageContext';
 
-export default function UserSidebar({ show, onClose }, user) {
-    const [closeMenu, setCloseMenu] = useState(false);
+import Dropdown from "../../Components/AdminComponents/Dropdown";
+const LanguageChanger = () => {
+    const { currentLanguage, changeLanguage } = useLanguage();
+  
+    const handleLanguageChange = (newLanguage) => {
+      changeLanguage(newLanguage);
+    };
+  
+    return (
+      <div>
+      <button onClick={() => handleLanguageChange('en')}>English</button>
+      <button onClick={() => handleLanguageChange('fr')}>French</button>
+      </div>
+    )
+  }
+
+  export default function UserSidebar({ show, onClose }, user) {
+    const { currentLanguage } = useLanguage();
+
+    // Define language-specific content for menu items
+    const content = {
+        en: {
+            Home: "Home",
+            General: "General",
+            Sports: "Sports",
+            Technology: "Technology",
+        },
+        fr: {
+            Home: "Accueil",
+            General: "Général",
+            Sports: "Sports",
+            Technology: "Technologie",
+        },
+    };
 
     const [activeLink, setActiveLink] = useState("");
 
@@ -25,8 +57,6 @@ export default function UserSidebar({ show, onClose }, user) {
 
     return (
         <>
-            
-
             <div className="User-sidebar desktop shadow-md">
                 <div className="logo-details">
                     <i className="bx bx-menu"></i>
@@ -43,13 +73,11 @@ export default function UserSidebar({ show, onClose }, user) {
                             onClick={() => handleClick(link.route)}
                         >
                             <i className={link.icon}></i>
-                            <span>{link.name}</span>
+                            <span>{content[currentLanguage].sidebar[link.name]}</span>
                         </Link>
                     ))}
                 </div>
             </div>
-
-            {/* ================mobile view toogle sidebar======================================= */}
 
             <div
                 className={show ? "mob-sidebar " : "mob-sidebar mobile active"}
@@ -76,55 +104,42 @@ export default function UserSidebar({ show, onClose }, user) {
                             onClick={() => handleClick(link.route)}
                         >
                             <i className={link.icon}></i>
-                            <span className="sp-name">{link.name}</span>
+                            <span className="sp-name">
+                                {content[currentLanguage][link.name]}
+                            </span>
                         </Link>
                     ))}
 
                     <Dropdown>
                         <div className="drop-down2">
                             <Dropdown.Trigger>
-                               <i className="bx bx-cog"></i>
-                                <span style={{color:"#fff", fontSize:"14px"}}>
-                                  Setting {user.name}
-                                    {/* <button
-                                        type="button"
-                                        className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
-                                    >
-                                        User {user.name}
-                                        <svg
-                                            className="ml-2 -mr-0.5 h-4 w-4"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                fillRule="evenodd"
-                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                clipRule="evenodd"
-                                            ></path>
-                                        </svg>
-                                    </button> */}
+                                <i className="bx bx-cog"></i>
+                                <span style={{ color: "#fff", fontSize: "14px" }}>
+                                    Setting {user.name}
                                 </span>
                             </Dropdown.Trigger>
                         </div>
-                        
-                        {/* <div className="drop-content"> */}
-                            <Dropdown.Content>
-                                <Dropdown.Link href={route("profile.edit")}>
-                                    Profile
-                                </Dropdown.Link>
-                                <Dropdown.Link
-                                    href={route("logout")}
-                                    method="post"
-                                    as="button"
-                                >
-                                    Log Out
-                                </Dropdown.Link>
-                            </Dropdown.Content>
-                        {/* </div> */}
+
+                        <Dropdown.Content>
+                            <Dropdown.Link href={route("profile.edit")}>
+                                Profile
+                            </Dropdown.Link>
+                            <Dropdown.Link
+                                href={route("logout")}
+                                method="post"
+                                as="button"
+                            >
+                                Log Out
+                            </Dropdown.Link>
+                        </Dropdown.Content>
                     </Dropdown>
                 </div>
             </div>
         </>
     );
 }
+
+
+
+
+
