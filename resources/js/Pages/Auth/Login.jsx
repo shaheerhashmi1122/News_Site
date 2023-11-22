@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/AdminComponents/InputError';
-import InputLabel from '@/Components/AdminComponents/InputLabel';
-import PrimaryButton from '@/Components/AdminComponents/PrimaryButton';
-import TextInput from '@/Components/AdminComponents/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import Login_Image from "../../Images/login-design.jpg"
+import "../../../css/Auth/login.css"
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -38,73 +35,102 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <GuestLayout>
-            <Head title="Log in" />
+     
 
-            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-            <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="email" value="Email" />
+<>
+<Head title="Log in" />
 
-                    <TextInput
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        onChange={(e) => setData('email', e.target.value)}
-                    />
 
-                    <InputError message={errors.email} className="mt-2" />
-                </div>
+  <div className="container position-sticky z-index-sticky top-0">
+    <div className="row">
+      <div className="col-12">
+        <nav className="navbar navbar-expand-lg blur blur-rounded top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+          <div className="container-fluid justify-content-center">
+          
+              <p  className="btn   btn-round mb-0 me-1 bg-gradient-dark not-allowed">Globe-Link</p>
+          
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  
+  <main className="main-content  mt-0">
+                    <section>
+                        <div className="page-header min-vh-75">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+                                        <div className="card card-plain mt-8">
+                                            <div className="card-header pb-0 text-left bg-transparent">
+                                                <h3 className="font-weight-bolder text-info text-gradient">Welcome back</h3>
+                                                <p className="mb-0">Enter your email and password to sign in</p>
+                                            </div>
+                                            <div className="card-body">
+                                                <form role="form" onSubmit={submit}>
+                                                    <label>Email</label>
+                                                    <div className="mb-3">
+                                                        <input
+                                                            type="email"
+                                                            className="form-control"
+                                                            placeholder="Email"
+                                                            aria-label="Email"
+                                                            aria-describedby="email-addon"
+                                                            value={data.email}
+                                                            onChange={(e) => setData('email', e.target.value)}
+                                                        />
+                                                    </div>
+                                                    <label>Password</label>
+                                                    <div className="mb-3">
+                                                        <input
+                                                            type="password"
+                                                            className="form-control"
+                                                            placeholder="Password"
+                                                            aria-label="Password"
+                                                            aria-describedby="password-addon"
+                                                            value={data.password}
+                                                            onChange={(e) => setData('password', e.target.value)}
+                                                        />
+                                                    </div>
+                                                    <div className="form-check form-switch">
+                                                        <input
+                                                            className="form-check-input"
+                                                            type="checkbox"
+                                                            id="rememberMe"
+                                                            checked={data.remember}
+                                                            onChange={(e) => setData('remember', e.target.checked)}
+                                                        />
+                                                        <label className="form-check-label" htmlFor="rememberMe">Remember me</label>
+                                                    </div>
+                                                    <div className="text-center">
+                                                        <button type="submit" className="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div className="card-footer text-center pt-0 px-lg-2 px-1">
+                                                <p className="mb-4 text-sm mx-auto">
+                                                    Don't have an account?
+                                                    <a href="javascript:;" className="text-info text-gradient font-weight-bold">Sign up</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+                                            <div className="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style={{backgroundImage:`url(${Login_Image})`}}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
 
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="current-password"
-                        onChange={(e) => setData('password', e.target.value)}
-                    />
 
-                    <InputError message={errors.password} className="mt-2" />
-                </div>
+</>
 
-                <div className="block mt-4">
-                    <label className="flex items-center">
-                        <input
-                            type="checkbox"
-                            name="remember"
-                            checked={data.remember}
-                            onChange={(e) => setData('remember', e.target.checked)}
-                            className="mr-2"
-                        />
-                        <span className="text-sm text-gray-600">Remember me</span>
-                    </label>
-                </div>
 
-                <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )}
-
-                    <PrimaryButton className="ml-4" disabled={processing}>
-                        Log in
-                    </PrimaryButton>
-                </div>
-            </form>
-        </GuestLayout>
     );
 }
