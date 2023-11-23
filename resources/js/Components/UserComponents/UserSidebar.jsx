@@ -3,20 +3,7 @@ import { Link } from "@inertiajs/react";
 import { useLanguage } from '../../../js/Components/UserComponents/LanguageContext';
 
 import Dropdown from "../../Components/AdminComponents/Dropdown";
-const LanguageChanger = () => {
-    const { currentLanguage, changeLanguage } = useLanguage();
-  
-    const handleLanguageChange = (newLanguage) => {
-      changeLanguage(newLanguage);
-    };
-  
-    return (
-      <div>
-      <button onClick={() => handleLanguageChange('en')}>English</button>
-      <button onClick={() => handleLanguageChange('fr')}>French</button>
-      </div>
-    )
-  }
+
 
   export default function UserSidebar({ show, onClose }, user) {
     const { currentLanguage } = useLanguage();
