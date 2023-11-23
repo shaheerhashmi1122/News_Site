@@ -4,123 +4,93 @@ import { useLanguage } from '../../../js/Components/UserComponents/LanguageConte
 
 import Dropdown from "../../Components/AdminComponents/Dropdown";
 
-
-  export default function UserSidebar({ show, onClose }, user) {
-    const { currentLanguage } = useLanguage();
-
-    // Define language-specific content for menu items
-    const content = {
-        en: {
-            Home: "Home",
-            General: "General",
-            Sports: "Sports",
-            Technology: "Technology",
-        },
-        fr: {
-            Home: "Accueil",
-            General: "Général",
-            Sports: "Sports",
-            Technology: "Technologie",
-        },
-    };
-
-    const [activeLink, setActiveLink] = useState("");
-
-    const handleClick = (route) => {
-        console.log("Link clicked:", route);
-        setActiveLink(route);
-    };
-
-    const links = [
-        { name: "Home", route: "/user/dashboard", icon: "bx bx-grid-alt" },
-        { name: "General", route: "/user/general", icon: "bx bx-user" },
-        { name: "Sports", route: "/user/sports", icon: "bx bx-football" },
-        {
-            name: "Techonology",
-            route: "/user/technology",
-            icon: "bx bx-laptop",
-        },
-    ];
-
+export default function UserSidebar() {
     return (
-        <>
-            <div className="User-sidebar desktop shadow-md">
-                <div className="logo-details">
-                    <i className="bx bx-menu"></i>
-                    <div className="head">GlobLink</div>
-                </div>
-                <div className="list-items">
-                    {links.map((link, index) => (
-                        <Link
-                            key={index}
-                            href={link.route}
-                            className={`li-names ${
-                                activeLink === link.route ? "active-link" : ""
-                            }`}
-                            onClick={() => handleClick(link.route)}
-                        >
-                            <i className={link.icon}></i>
-                            <span>{content[currentLanguage].sidebar[link.name]}</span>
-                        </Link>
-                    ))}
-                </div>
+       
+      
+          <div className="User-sidebar ">
+            <div className="logo-details">
+                
+           
+                {/* <i className='bx bx-menu' id="btn" ></i> */}
+                <div className="header"style={{color:"#fff"}}>News Site</div>
             </div>
-
-            <div
-                className={show ? "mob-sidebar " : "mob-sidebar mobile active"}
-            >
-                <button className="close-menu" onClick={onClose}>
-                    <i className="bx bx-x "></i>
-                </button>
-
-                <div className="logo-details">
-                    <i
-                        className="bx bx-menu"
-                        style={{ paddingTop: "20px" }}
-                    ></i>
-                    <div className="head">GlobLink</div>
-                </div>
-                <div className="list-items">
-                    {links.map((link, index) => (
-                        <Link
-                            key={index}
-                            href={link.route}
-                            className={`li-names ${
-                                activeLink === link.route ? "active-link" : ""
-                            }`}
-                            onClick={() => handleClick(link.route)}
-                        >
-                            <i className={link.icon}></i>
-                            <span className="sp-name">
-                                {content[currentLanguage][link.name]}
-                            </span>
-                        </Link>
-                    ))}
-
-                    <Dropdown>
-                        <div className="drop-down2">
-                            <Dropdown.Trigger>
-                                <i className="bx bx-cog"></i>
-                                <span style={{ color: "#fff", fontSize: "14px" }}>
-                                    Setting {user.name}
-                                </span>
-                            </Dropdown.Trigger>
-                        </div>
-
-                        <Dropdown.Content>
-                            <Dropdown.Link href={route("profile.edit")}>
-                                Profile
-                            </Dropdown.Link>
-                            <Dropdown.Link
-                                href={route("logout")}
-                                method="post"
-                                as="button"
-                            >
-                                Log Out
-                            </Dropdown.Link>
-                        </Dropdown.Content>
-                    </Dropdown>
-                </div>
+            <ul className="nav-bar">
+            
+              <li>
+                <Link href="#">
+                  <i className='bx bx-grid-alt'></i>
+                 
+                                                      <div className="li-names">Home</div>
+                  
+                 
+                </Link>
+                 <span className="tooltip">Home</span>
+              </li>
+              <li>
+               <Link href="#">
+                 <i className='bx bx-user' ></i>
+                
+                                                      <div className="li-names">General</div>
+               </Link>
+               <span className="tooltip">General</span>
+             </li>
+             <li>
+               <Link href="#">
+                 <i className='bx bx-chat' ></i>
+                
+                                                      <div className="li-names">Technology
+                                                      </div>
+               </Link>
+               <span className="tooltip">Technologys</span>
+             </li>
+             <li>
+               <Link href="#">
+                 <i className='bx bx-pie-chart-alt-2' ></i>
+                
+                                                      <div className="li-names">Sports</div>
+               </Link>
+               <span className="tooltip">Sports</span>
+             </li>
+             {/* <li>
+               <Link href="#">
+                 <i className='bx bx-folder' ></i>
+                 <span className="links_name">File Manager</span>
+               </Link>
+               <span className="tooltip">Files</span>
+             </li>
+             <li>
+               <Link href="#">
+                 <i className='bx bx-cart-alt' ></i>
+                 <span className="links_name">Order</span>
+               </Link>
+               <span className="tooltip">Order</span>
+             </li>
+             <li>
+               <Link href="#">
+                 <i className='bx bx-heart' ></i>
+                 <span className="links_name">Saved</span>
+               </Link>
+               <span className="tooltip">Saved</span>
+             </li>
+             <li>
+               <Link href="#">
+                 <i className='bx bx-cog' ></i>
+                 <span className="links_name">Setting</span>
+               </Link>
+               <span className="tooltip">Setting</span>
+             </li>
+             <li className="profile">
+                 <div className="profile-details">
+                   <img src="profile.jpg" alt="profileImg"/>
+                   <div className="name_job">
+                     <div className="name">Prem Shahi</div>
+                     <div className="job">Web designer</div>
+                   </div>
+                 </div>
+                 <i className='bx bx-log-out' id="log_out" ></i>
+             </li> */}
+            </ul>
             </div>
         </>
     );
