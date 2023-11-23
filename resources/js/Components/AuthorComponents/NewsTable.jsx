@@ -44,7 +44,7 @@ export default function NewsTable() {
                                             <td>{row.description}</td>
                                             <td><img src={`/news/${row.image}`} alt="No image!!" /></td>
                                             <td>
-                                                <button className='btn '><a href={`http://127.0.0.1:8000/api/editnews/${row.id}`}>Update</a></button>
+                                                <button className='btn '><a href={`/api/editnews/${row.id}`}>Update</a></button>
                                                 <button className='btn '><a href="#">Delete</a></button>
                                             </td>
                                         </tr>

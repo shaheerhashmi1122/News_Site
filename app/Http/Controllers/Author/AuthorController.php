@@ -56,25 +56,26 @@ class AuthorController extends Controller
         return view('Author.update',get_defined_vars());
     }
 
-    public function edit_form(Request $req,$id)
+    public function edit_form(Request $req)
     {
-        $post=NewsData::find($id);
+        $post=NewsData::find($req->id);
         $req->validate([
             'heading' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'text' => 'required',
-            'image' => 'required'
         ]);
 
         $post->heading = $req->heading;
         $post->description = $req->description;
         $post->text = $req->text;
          //upload image:
+         if($req->image){
          $image = $req->image;
          $imagename = time() . '.' . $image->getClientOriginalExtension();
          //store in public folder "product"
          $image->move('news', $imagename);
          $post->image = $imagename;
+         }
         // dd($post);
         $post->save();
         return redirect()->back();
