@@ -39,18 +39,7 @@ export default function Login({ status, canResetPassword }) {
         <>
             <Head title="Log in" />
 
-            {/* <div className="container position-sticky z-index-sticky top-0">
-                <div className="row">
-                    <div className="col-12">
-                        <nav className="navbar navbar-expand-lg blur blur-rounded top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
-                            <div className="container-fluid justify-content-center">
-                                <p className="btn btn-round mb-0 me-1 bg-gradient-dark not-allowed">Globe-Link</p>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div> */}
-
+          
             <main className="main-content  mt-0">
                 <section>
                     <div className="page-header min-vh-75">
@@ -60,7 +49,7 @@ export default function Login({ status, canResetPassword }) {
                                     <div className="card card-plain mt-8">
                                         <div className="card-header pb-0 text-left bg-transparent">
                                             <h3 className="font-weight-bolder text-info text-gradient">Welcome back</h3>
-                                            <p className="mb-0">Enter your email and password to sign in</p>
+                                            <p className="mb-0">To keep connected with us please login with your personal details.</p>
                                         </div>
                                         <div className="card-body">
                                             <form role="form" onSubmit={submit}>

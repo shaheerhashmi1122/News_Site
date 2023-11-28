@@ -1,138 +1,198 @@
-import { useEffect } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/AdminComponents/InputError';
-import InputLabel from '@/Components/AdminComponents/InputLabel';
-import PrimaryButton from '@/Components/AdminComponents/PrimaryButton';
-import TextInput from '@/Components/AdminComponents/TextInput';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { useEffect } from "react";
+import GuestLayout from "@/Layouts/GuestLayout";
+import InputError from "@/Components/AdminComponents/InputError";
+import InputLabel from "@/Components/AdminComponents/InputLabel";
+import PrimaryButton from "@/Components/AdminComponents/PrimaryButton";
+import TextInput from "@/Components/AdminComponents/TextInput";
+
+import { Head, Link, useForm } from "@inertiajs/react";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: '',
-        email: '',
-        password: '',
-        password_confirmation: '',
-        role: '',
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+        role: "",
     });
-
-   
 
     useEffect(() => {
         return () => {
-            reset('password', 'password_confirmation');
+            reset("password", "password_confirmation");
         };
     }, []);
 
     const submit = (e) => {
         e.preventDefault();
-
-        post(route('register'));
+        post(route("register"));
     };
 
     return (
-        <GuestLayout>
+        <>
             <Head title="Register" />
-
-            <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="name" value="Name" />
-
-                    <TextInput
-                        id="name"
-                        name="name"
-                        value={data.name}
-                        className="mt-1 block w-full"
-                        autoComplete="name"
-                        isFocused={true}
-                        onChange={(e) => setData('name', e.target.value)}
-                        required
-                    />
-
-                    <InputError message={errors.name} className="mt-2" />
+            <section className="min-vh-100 mb-8">
+                <div className="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg">
+                    <span className="mask bg-gradient-dark opacity-6"></span>
+                    <div className="container">
+                        <div className="row justify-content-center">
+                            <div className="col-lg-5 text-center mx-auto">
+                                <h1 className="text-white mb-2 mt-5">
+                                    Welcome!
+                                </h1>
+                                <p className="text-lead text-white">
+                                    Enter your personal details and start a
+                                    journey with us.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div>
-                    <InputLabel htmlFor="role" value="Role" />
-
-                    <TextInput
-                        id="role"
-                        name="role"
-                        value={data.role}
-                        className="mt-1 block w-full"
-                        autoComplete="role"
-                        isFocused={true}
-                        onChange={(e) => setData('role', e.target.value)}
-                        required
-                    />
-
-                    <InputError message={errors.name} className="mt-2" />
+                <div className="container">
+                    <div className="row mt-lg-n10 mt-md-n11 mt-n10">
+                        <div className="col-xl-4 col-lg-5 col-md-7 mx-auto">
+                            <div className="card z-index-0">
+                                <div className="card-header text-center pt-4">
+                                    <h5>Register with</h5>
+                                </div>
+                                <div className="card-body">
+                                    <form role="form text-left">
+                                        <div className="mb-3">
+                                            <input
+                                                id="name"
+                                                value={data.name}
+                                                name="name"
+                                                type="text"
+                                                className="form-control"
+                                                placeholder="Name"
+                                                aria-label="Name"
+                                                aria-describedby="email-addon"
+                                                onChange={(e) =>
+                                                    setData("name", e.target.value)
+                                                }
+                                            />
+                                            <InputError
+                                                message={errors.name}
+                                                className="mt-2"
+                                            />
+                                        </div>
+                                        <div className="mb-3">
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                name="email"
+                                                className="form-control"
+                                                placeholder="Email"
+                                                value={data.email}
+                                                onChange={(e) =>
+                                                    setData("email", e.target.value)
+                                                }
+                                                aria-label="Email"
+                                                aria-describedby="email-addon"
+                                            />
+                                            <InputError
+                                                message={errors.email}
+                                                className="mt-2"
+                                            />
+                                        </div>
+                                        <div className="mb-3">
+                                            <input
+                                                name="password"
+                                                id="password"
+                                                type="password"
+                                                className="form-control"
+                                                placeholder="Password"
+                                                aria-label="Password"
+                                                aria-describedby="password-addon"
+                                                value={data.password}
+                                                onChange={(e) =>
+                                                    setData("password", e.target.value)
+                                                }
+                                            />
+                                            <InputError
+                                                message={errors.password}
+                                                className="mt-2"
+                                            />
+                                        </div>
+                                        <div className="mb-3">
+                                            <input
+                                                name="password_confirmation"
+                                                id="password_confirmation"
+                                                type="password"
+                                                className="form-control"
+                                                placeholder="Confirm Password"
+                                                aria-label="password_confirmation"
+                                                aria-describedby="password-addon"
+                                                value={data.password_confirmation}
+                                                onChange={(e) =>
+                                                    setData(
+                                                        "password_confirmation",
+                                                        e.target.value
+                                                    )
+                                                }
+                                            />
+                                            <InputError
+                                                message={errors.password_confirmation}
+                                                className="mt-2"
+                                            />
+                                        </div>
+                                        <div className="form-check form-switch">
+                                                    <input
+                                                        className="form-check-input"
+                                                        type="checkbox"
+                                                        id="rememberMe"
+                                                        checked={data.remember}
+                                                        onChange={(e) => setData('remember', e.target.checked)}
+                                                    />
+                                                    <label className="form-check-label" htmlFor="rememberMe">Author?</label>
+                                                </div>
+                                        <div className="form-check form-check-info text-left">
+                                            <input
+                                                className="form-check-input"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                                checked
+                                            />
+                                            <label
+                                                className="form-check-label"
+                                                htmlFor="flexCheckDefault"
+                                            >
+                                                I agree the{" "}
+                                                <a
+                                                    href="javascript:;"
+                                                    className="text-dark font-weight-bolder"
+                                                >
+                                                    Terms and Conditions
+                                                </a>
+                                            </label>
+                                        </div>
+                                        
+                                        <div className="text-center">
+                                            {/* Use the PrimaryButton component instead of a standard button */}
+                                            <PrimaryButton
+                                                type="button"
+                                                onClick={submit}
+                                                className="btn bg-gradient-dark w-100 my-4 mb-2"
+                                            >
+                                                Sign up
+                                            </PrimaryButton>
+                                        </div>
+                                        <p className="text-sm mt-3 mb-0">
+                                            Already have an account?{" "}
+                                            <Link
+                                                href={route("login")}
+                                                className="text-dark font-weight-bolder"
+                                            >
+                                                Sign in
+                                            </Link>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div className="mt-4">
-                    <InputLabel htmlFor="email" value="Email" />
-
-                    <TextInput
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        onChange={(e) => setData('email', e.target.value)}
-                        required
-                    />
-
-                    <InputError message={errors.email} className="mt-2" />
-                </div>
-
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
-
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="new-password"
-                        onChange={(e) => setData('password', e.target.value)}
-                        required
-                    />
-
-                    <InputError message={errors.password} className="mt-2" />
-                </div>
-
-                <div className="mt-4">
-                    <InputLabel htmlFor="password_confirmation" value="Confirm Password" />
-
-                    <TextInput
-                        id="password_confirmation"
-                        type="password"
-                        name="password_confirmation"
-                        value={data.password_confirmation}
-                        className="mt-1 block w-full"
-                        autoComplete="new-password"
-                        onChange={(e) => setData('password_confirmation', e.target.value)}
-                        required
-                    />
-
-                    <InputError message={errors.password_confirmation} className="mt-2" />
-                </div>
-
-
-                <div className="flex items-center justify-end mt-4">
-                    <Link
-                        href={route('login')}
-                        className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                        Already registered?
-                    </Link>
-
-                    <PrimaryButton className="ml-4" disabled={processing}>
-                        Register
-                    </PrimaryButton>
-                </div>
-            </form>
-        </GuestLayout>
+            </section>
+        </>
     );
 }
