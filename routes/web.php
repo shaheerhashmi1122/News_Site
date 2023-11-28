@@ -24,6 +24,9 @@ use Inertia\Inertia;
 |
 */
 
+
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),

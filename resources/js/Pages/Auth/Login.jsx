@@ -39,7 +39,7 @@ export default function Login({ status, canResetPassword }) {
         <>
             <Head title="Log in" />
 
-            <div className="container position-sticky z-index-sticky top-0">
+            {/* <div className="container position-sticky z-index-sticky top-0">
                 <div className="row">
                     <div className="col-12">
                         <nav className="navbar navbar-expand-lg blur blur-rounded top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
@@ -49,7 +49,7 @@ export default function Login({ status, canResetPassword }) {
                         </nav>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <main className="main-content  mt-0">
                 <section>
