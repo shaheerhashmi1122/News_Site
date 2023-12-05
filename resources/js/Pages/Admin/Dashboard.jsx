@@ -63,12 +63,11 @@ const Dashboard = ({ auth }) => {
     <AuthenticatedLayout auth={auth}>
 
            <Head title='Dashboard'/>
-                    <div className="">
+          
                         <MainPage />
-                    </div>
-                    <div className="">
+        
                         <Revenue />
-                    </div>
+                  
            
             
     </AuthenticatedLayout>

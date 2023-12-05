@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../../css/Admin/admin.css";
+
 // import { Link } from "@inertiajs/react";
 import NavLink from "../../Components/AdminComponents/NavLink";
 
