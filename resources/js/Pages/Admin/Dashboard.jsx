@@ -56,7 +56,6 @@ import AuthenticatedLayout from '../../Layouts/AuthenticatedLayout';
 import MainPage from '../../Components/AdminComponents/MainPage';
 import Revenue from '../../Components/AdminComponents/Revenue';
 // import { Head } from '@inertiajs/react';
-import SideBar from '@/Components/AdminComponents/SideBar';
 import { Head } from '@inertiajs/react';
 const Dashboard = ({ auth }) => {
   return (

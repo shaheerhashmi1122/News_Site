@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Head, Link, useForm } from '@inertiajs/react';
 import InputError from '@/Components/AdminComponents/InputError';
 import Login_Image from "../../Images/login-design.jpg"
-import "../../../css/Auth/login.css"
+
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({

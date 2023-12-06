@@ -12,7 +12,7 @@ import Footer from '@/Components/AdminComponents/Footer';
 import NewsTable from '@/Components/AuthorComponents/NewsTable';
 import axios from 'axios';
 
-export default function AuthorDashboard({auth}) {
+export default function tables({auth}) {
 
 
  
@@ -21,18 +21,9 @@ export default function AuthorDashboard({auth}) {
         <>
         
 
-        <AuthLayout
-         user={auth.user}
-         header={
-             <h2 className="font-semibold text-xl bg-secondary heading h-10 py-2 px-16 text-light leading-tight">
-                 Tables
-             </h2>
-         }>
-            <Head title="Add News" />
-
+   <AuthLayout auth={auth}>
 <NewsTable/>
-
-        </AuthLayout >
+   </AuthLayout>
                         </>
     );
 }

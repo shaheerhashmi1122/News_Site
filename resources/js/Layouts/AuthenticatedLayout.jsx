@@ -4,6 +4,7 @@ import NavBar from "../Components/AdminComponents/NavBar";
 import SideBar from "@/Components/AdminComponents/SideBar";
 import Footer from "@/Components/AdminComponents/Footer";
 
+
 const AuthenticatedLayout = ({ auth, children }) => {
     return (
         <div className={Styles["g-sidenav-show"] + " bg-gray-100"}>
