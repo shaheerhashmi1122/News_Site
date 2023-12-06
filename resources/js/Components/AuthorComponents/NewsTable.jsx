@@ -1,21 +1,9 @@
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import Footer from "../AdminComponents/Footer";
 import React, { useEffect, useState } from "react";
-import axios from "axios"; // Don't forget to import axios
 
 export default function NewsTable() {
-    // const [data, setData] = useState([]);
-
-    // useEffect(() => {
-    // Fetch data when the component mounts
-    //     axios.get('http://127.0.0.1:8000/api/newsdata')
-    //         .then((response) => {
-    //             setData(response.data);
-    //         })
-    //         .catch((error) => {
-    //             console.error(error);
-    //         });
-    // }, []);
+    const { data } = usePage().props;
 
     return (
         // <div>
@@ -64,12 +52,7 @@ export default function NewsTable() {
                             <div className="card-header pb-0">
                                 <div className="d-lg-flex">
                                     <div>
-                                        <h5 className="mb-0">All Products</h5>
-                                        <p className="text-sm mb-0">
-                                            A lightweight, extendable,
-                                            dependency-free javascript HTML
-                                            table plugin.
-                                        </p>
+                                        <h5 className="mb-0">All News</h5>
                                     </div>
                                     <div className="ms-auto my-auto mt-lg-0 mt-4">
                                         <div className="ms-auto my-auto">
@@ -78,99 +61,10 @@ export default function NewsTable() {
                                                 className="btn bg-gradient-primary btn-sm mb-0"
                                                 target="_blank"
                                             >
-                                                +&nbsp; New Product
+                                                +&nbsp; Upload News
                                             </a>
-                                            <button
-                                                type="button"
-                                                className="btn btn-outline-primary mx-1 btn-sm mb-0"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#import"
-                                            >
-                                                Import
-                                            </button>
-                                            <div
-                                                className="modal fade"
-                                                id="import"
-                                                tabindex="-1"
-                                                aria-hidden="true"
-                                            >
-                                                <div className="modal-dialog mt-lg-10">
-                                                    <div className="modal-content">
-                                                        <div className="modal-header">
-                                                            <h5
-                                                                className="modal-title"
-                                                                id="ModalLabel"
-                                                            >
-                                                                Import CSV
-                                                            </h5>
-                                                            <i
-                                                                className="fas fa-upload ms-3"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                            <button
-                                                                type="button"
-                                                                className="btn-close"
-                                                                data-bs-dismiss="modal"
-                                                                aria-label="Close"
-                                                            ></button>
-                                                        </div>
-                                                        <div className="modal-body">
-                                                            <p>
-                                                                You can browse
-                                                                your computer
-                                                                for a file.
-                                                            </p>
-                                                            <input
-                                                                type="text"
-                                                                placeholder="Browse file..."
-                                                                className="form-control mb-3"
-                                                                onfocus="focused(this)"
-                                                                onfocusout="defocused(this)"
-                                                            />
-                                                            <div className="form-check">
-                                                                <input
-                                                                    className="form-check-input"
-                                                                    type="checkbox"
-                                                                    value=""
-                                                                    id="importCheck"
-                                                                    checked=""
-                                                                />
-                                                                <label
-                                                                    className="custom-control-label"
-                                                                    for="importCheck"
-                                                                >
-                                                                    I accept the
-                                                                    terms and
-                                                                    conditions
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div className="modal-footer">
-                                                            <button
-                                                                type="button"
-                                                                className="btn bg-gradient-secondary btn-sm"
-                                                                data-bs-dismiss="modal"
-                                                            >
-                                                                Close
-                                                            </button>
-                                                            <button
-                                                                type="button"
-                                                                className="btn bg-gradient-primary btn-sm"
-                                                            >
-                                                                Upload
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button
-                                                className="btn btn-outline-primary btn-sm export mb-0 mt-sm-0 mt-1"
-                                                data-type="csv"
-                                                type="button"
-                                                name="button"
-                                            >
-                                                Export
-                                            </button>
+
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -185,125 +79,58 @@ export default function NewsTable() {
                                                 id="products-list"
                                             >
                                                 <thead className="thead-light">
-                                                    <tr>
+                                                    <tr key={data.id}>
                                                         <th
                                                             data-sortable=""
+                                                            className="dataTable-sorter"
                                                             style={{width: "61.4655%;"}}
                                                         >
-                                                            <a
-                                                                href="#"
-                                                                className="dataTable-sorter"
-                                                            >
-                                                                Product
-                                                            </a>
+                                                                Heading
                                                         </th>
                                                         <th
                                                             data-sortable=""
                                                             style={{width: "6.56588%;"}}
+                                                            className="dataTable-sorter"
                                                         >
-                                                            <a
-                                                                href="#"
-                                                                className="dataTable-sorter"
-                                                            >
-                                                                Category
-                                                            </a>
+                                                            Description
                                                         </th>
                                                         <th
                                                             data-sortable=""
-                                                            style={{width: "5.07614%;"}}
-                                                        >
-                                                            <a
-                                                                href="#"
-                                                                className="dataTable-sorter"
-                                                            >
-                                                                Price
-                                                            </a>
-                                                        </th>
-                                                        <th
-                                                            data-sortable=""
-                                                            style={{width: "6.62105%;"}}
-                                                        >
-                                                            <a
-                                                                href="#"
-                                                                className="dataTable-sorter"
-                                                            >
-                                                                SKU
-                                                            </a>
-                                                        </th>
-                                                        <th
-                                                            data-sortable=""
+                                                            className="dataTable-sorter"
                                                             style={{width: "5.46237%;"}}
                                                         >
-                                                            <a
-                                                                href="#"
-                                                                className="dataTable-sorter"
-                                                            >
-                                                                Quantity
-                                                            </a>
-                                                        </th>
-                                                        <th
-                                                            data-sortable=""
-                                                            style={{width: "7.66939%;"}}
-                                                        >
-                                                            <a
-                                                                href="#"
-                                                                className="dataTable-sorter"
-                                                            >
-                                                                Status
-                                                            </a>
+                                                             No. of Views
                                                         </th>
                                                         <th
                                                             data-sortable=""
                                                             style={{width: "7.22798%;"}}
+                                                            className="dataTable-sorter"
                                                         >
-                                                            <a
-                                                                href="#"
-                                                                className="dataTable-sorter"
-                                                            >
-                                                                Action
-                                                            </a>
+                                                            Action
                                                         </th>
                                                     </tr>
+                                                    
                                                 </thead>
                                                 <tbody>
+                                                {data.map((data) => (
                                                     <tr>
-                                                        <td>
+                                                        <td className="w-40">
                                                             <div className="d-flex">
-                                                                <div className="form-check my-auto">
-                                                                    <input
-                                                                        className="form-check-input"
-                                                                        type="checkbox"
-                                                                        id="customCheck1"
-                                                                        checked=""
-                                                                    />
-                                                                </div>
                                                                 <img
                                                                     className="w-10 ms-3"
-                                                                    src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/ecommerce/adidas-hoodie.jpg"
+                                                                    src={`/news/${data.image}`}
                                                                     alt="hoodie"
                                                                 />
                                                                 <h6 className="ms-3 my-auto">
-                                                                    BKLGO Full
-                                                                    Zip Hoodie
+                                                                    {data.heading}
                                                                 </h6>
                                                             </div>
                                                         </td>
                                                         <td className="text-sm">
-                                                            Clothing
+                                                            {data.description}
                                                         </td>
-                                                        <td className="text-sm">
-                                                            $1,321
-                                                        </td>
-                                                        <td className="text-sm">
-                                                            243598234
-                                                        </td>
-                                                        <td className="text-sm">
-                                                            0
-                                                        </td>
-                                                        <td>
-                                                            <span className="badge badge-danger badge-sm">
-                                                                Out of Stock
-                                                            </span>
+                                                        <td className="text-sm text-center">
+                                                            {data.total_views}
                                                         </td>
                                                         <td className="text-sm">
                                                             <a
@@ -339,6 +166,7 @@ export default function NewsTable() {
                                                             </a>
                                                         </td>
                                                     </tr>
+                                                    ))}
                                                   
                                                 </tbody>
                                             </table>

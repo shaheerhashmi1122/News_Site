@@ -11,12 +11,17 @@ class TableController extends Controller
 {
     public function show()
     {
-        return Inertia::render('Admin/Tables');
+        $user=User::where('role','user')->get();
+        $author=User::where('role','author')->get();
+        // dd($data);
+        return Inertia::render('Admin/Tables',[
+            'data' => $user,
+            'author' => $author
+          ]);
     }
     public function data()
     {
-        $data=User::where('role','user')->orwhere('role','author')->get();
-        return $data;
+        
     }
 
 }

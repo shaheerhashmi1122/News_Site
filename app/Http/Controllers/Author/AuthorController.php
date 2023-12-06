@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Author;
 use App\Http\Controllers\Controller;
 use App\Models\NewsData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class AuthorController extends Controller
@@ -12,6 +13,11 @@ class AuthorController extends Controller
     public function dashboard()
     {
         return Inertia::render('Author/Authordash');
+    }
+
+    public function upload_news()
+    {
+        return Inertia::render('Author/Editform');
     }
 
     public function add_news(Request $req)
@@ -40,13 +46,11 @@ class AuthorController extends Controller
 
     public function show_data()
     {
-        // return "Tables";
-        return Inertia::render('Author/tables');
-    }
-public function upload_news()
-    {
-        // return "Tables";
-        return Inertia::render('Author/editform');
+        $auth = Auth::user()->id;
+        $data = NewsData::all();
+        return Inertia::render('Author/Tables',[
+            'data'=>$data
+        ]);
     }
 public function update_news()
     {
