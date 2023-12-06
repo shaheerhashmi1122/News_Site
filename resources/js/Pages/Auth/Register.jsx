@@ -135,15 +135,37 @@ export default function Register() {
                                                 className="mt-2"
                                             />
                                         </div>
-                                        <div className="form-check form-switch">
-                                                    <input
-                                                        className="form-check-input"
-                                                        type="checkbox"
-                                                        id="rememberMe"
-                                                        checked={data.remember}
-                                                        onChange={(e) => setData('remember', e.target.checked)}
-                                                    />
-                                                    <label className="form-check-label" htmlFor="rememberMe">Author?</label>
+                                        <div className="mb-3">
+                                                            <label
+                                                                htmlFor="defaultSelect"
+                                                                className="form-label"
+                                                            >
+                                                                Role:
+                                                            </label>
+                                                            <select
+                                                                id="defaultSelect"
+                                                                className="form-select"
+                                                                name="role"
+                                                                value={data.role}
+                                                                onChange={(e) =>
+                                                                    setData(
+                                                                        "role",
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            >
+                                                                <option>
+                                                                    Select
+                                                                </option>
+                                                                <option value={"author"}>
+                                                                    Author
+                                                                </option>
+                                                                <option value={"user"}>
+                                                                    User
+                                                                </option>
+                                                            </select>
+                                                            <InputError message={errors.id} className="mt-2" />
                                                 </div>
                                         <div className="form-check form-check-info text-left">
                                             <input
