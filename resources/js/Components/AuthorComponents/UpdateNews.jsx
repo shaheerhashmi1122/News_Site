@@ -98,11 +98,11 @@ export default function SideBar() {
 <>
 
 
-<div class="row mt-4">
-                <div class="col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="font-weight-bolder">Image</h5>
+<div className="row mt-4">
+                <div className="col-lg-4">
+                    <div className="card h-100">
+                        <div className="card-body">
+                            <h5 className="font-weight-bolder">Image</h5>
                             <div className="form-floating mb-3">
                                 <input
                                     type="file"
@@ -117,25 +117,25 @@ export default function SideBar() {
                                 </label>
                             </div>
 
-                            <div class="row">
-                                <div class="col-12">
+                            <div className="row">
+                                <div className="col-12">
                                 {selectedImage && (
         <div>
           <img src={selectedImage} alt="Selected" style={{ maxWidth: '100%', maxHeight: '200px' }} />
         </div>
       )}                                 
                                 </div>
-                                <div class="col-12 mt-4">
-                                    <div class="d-flex">
+                                <div className="col-12 mt-4">
+                                    <div className="d-flex">
                                         <button
-                                            class="btn bg-gradient-primary btn-sm mb-0 me-2"
+                                            className="btn bg-gradient-primary btn-sm mb-0 me-2"
                                             type="button"
                                             name="button"
                                         >
                                             Upload
                                         </button>
                                         <button
-                                            class="btn btn-outline-dark btn-sm mb-0"
+                                            className="btn btn-outline-dark btn-sm mb-0"
                                             type="button"
                                             name="button"
                                         >
@@ -147,25 +147,25 @@ export default function SideBar() {
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 mt-lg-0 mt-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="font-weight-bolder">News</h5>
-                            <div class="row">
-                                <div class="col-12 col-sm-6">
+                <div className="col-lg-8 mt-lg-0 mt-4">
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="font-weight-bolder">News</h5>
+                            <div className="row">
+                                <div className="col-12 col-sm-6">
                                     <label>Heading</label>
                                     <input
-                                        class="form-control"
+                                        className="form-control"
                                         type="text"
                                        placeholder="Heading"
                                         onfocus="focused(this)"
                                         onfocusout="defocused(this)"
                                     />
                                 </div>
-                                <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                                <div className="col-12 col-sm-6 mt-3 mt-sm-0">
                                     <label>Description</label>
                                     <input
-                                        class="form-control"
+                                        className="form-control"
                                         type="text"
                                         placeholder="Description"
                                         onfocus="focused(this)"
@@ -174,11 +174,11 @@ export default function SideBar() {
                                 </div>
                             </div>
                         
-                            <div class="form-group mt-4">
-                                <div class="input-group">
-                                    <span class="input-group-text">Detail</span>
+                            <div className="form-group mt-4">
+                                <div className="input-group">
+                                    <span className="input-group-text">Detail</span>
                                     <textarea
-                                        class="form-control"
+                                        className="form-control"
                                         aria-label="With textarea"
                                     ></textarea>
                                 </div>
