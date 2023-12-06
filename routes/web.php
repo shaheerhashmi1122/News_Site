@@ -58,6 +58,8 @@ Route::middleware('admin')->group(function () {
 Route::middleware('author')->group(function () {
     Route::get('author/dashboard', [AuthorController::class, 'dashboard'])->name('author.dashboard');
     Route::post('author/addnews', [AuthorController::class, 'add_news'])->name('author.add_news');
+    Route::get('author/uploadnews', [AuthorController::class, 'upload_news'])->name('author.upload_news');
+    Route::get('author/updatenews', [AuthorController::class, 'update_news'])->name('author.update_news');
     Route::get('author/shownews', [AuthorController::class, 'show_data'])->name('author.shownews');
     Route::post('author/editform', [AuthorController::class, 'edit_form'])->name('author.editform');
 });
@@ -68,14 +70,13 @@ Route::middleware('user')->group(function () {
     Route::get('user/sports', [SportController::class, 'dashboard'])->name('user.sports');
     Route::get('user/technology', [TechnologyController::class, 'dashboard'])->name('user.technology');
 });
-Route::get('/message',function(){
-return "Ani deya Mzaak ay";
+
+
+
+
+Route::get('/message', function () {
+    return Inertia::render('PageNotFound'); // Assuming 'NotFound' is your React 404 component
 })->name('message');
-
-
-
-
-
 
 // tables route
 Route::get('/tables', function () {

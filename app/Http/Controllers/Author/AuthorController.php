@@ -11,7 +11,7 @@ class AuthorController extends Controller
 {
     public function dashboard()
     {
-        return Inertia::render('Author/authordash');
+        return Inertia::render('Author/Authordash');
     }
 
     public function add_news(Request $req)
@@ -42,6 +42,16 @@ class AuthorController extends Controller
     {
         // return "Tables";
         return Inertia::render('Author/tables');
+    }
+public function upload_news()
+    {
+        // return "Tables";
+        return Inertia::render('Author/editform');
+    }
+public function update_news()
+    {
+        // return "Tables";
+        return Inertia::render('Author/Update');
     }
 
     public function data()

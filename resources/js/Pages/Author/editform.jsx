@@ -17,7 +17,7 @@ export default function AuthorDashboard({auth}) {
         <>
         
 
-        <AuthLayout
+        {/* <AuthLayout
          user={auth.user}
          header={
              <h2 className="font-semibold text-xl bg-secondary heading h-10 py-2 px-16 text-light leading-tight">
@@ -29,7 +29,11 @@ export default function AuthorDashboard({auth}) {
 <UpdateNews/>
 
 <Footer/>
-        </AuthLayout >
-                        </>
+
+</AuthLayout > */}
+<AuthLayout auth={auth}>
+    
+  <UploadNews/>
+    </AuthLayout>                        </>
     );
 }
