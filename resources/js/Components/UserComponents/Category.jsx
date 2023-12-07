@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../../css/User/Category.css"
+import "../../../css/User/user.css"
 
 export default function Category() {
   return (

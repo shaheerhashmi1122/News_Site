@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import UserNav from "@/Components/UserComponents/UserNav";
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
-import "../../../css/User/Pages.css";
-import "../../../css/User/Udash.css";
+import "../../../css/User/user.css";
+;
 
-import "../../../css/User/UserNav.css";
+;
 import Clgirls from "../../../js/Images/clg-girls.jpg";
 import ReadSection from "../../../js/Images/news-read-sec.jpg";
 import PageHead from "@/Components/UserComponents/PageHead";

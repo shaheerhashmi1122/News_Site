@@ -1,22 +1,21 @@
-/* body{
+body{
     color: #fff;
    background-color: rgb(247, 251, 254);
-   /* background-image: url('../../js/Images/technology.jpg'); */
-   /* /* background-size: cover; */ */
+   background-image: url('../../js/Images/technology.jpg');
+   background-size: cover;
    
-/*  */
-/* } */ 
 
-/* } */ */
+} 
 
-.container {
-    width: 75vw;
-}
 .topbar{
     color: #444;
     font-size:16px;
     margin: 0;
+    background-color: purple;
     
+}
+.container {
+    width: 75vw;
 }
 
 
@@ -55,9 +54,9 @@
     
 }
 
-.topbar .news-line{
+.topbar .newsline{
     font-size: 16px;
-   
+   color: #fff;
     white-space: nowrap;
     margin-left: 110px;
     padding: 10px 10px;

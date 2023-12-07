@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../css/User/Content.css";
+import "../../../css/User/user.css";
 import Tech from "../../Images/tech-2.jpg";
 import Sports from "../../Images/sports.jpg";
 import Travel from "../../Images/Traveling-the-travel.jpg";

@@ -1,6 +1,6 @@
 import React from "react";
 import Techcard from "../../Images/technology.jpg";
-import "../../../css/User/Slider.css";
+import "../../../css/User/user.css";
 
 export default function Slider() {
     return (
