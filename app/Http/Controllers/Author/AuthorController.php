@@ -22,14 +22,16 @@ class AuthorController extends Controller
 
     public function add_news(Request $req)
     {
-        $post = new NewsData();
+        
         $req->validate([
             'heading' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'text' => 'required',
             'image' => 'required'
         ]);
+        $post = new NewsData();
 
+        $post->user_id = Auth::user()->id;
         $post->heading = $req->heading;
         $post->description = $req->description;
         $post->text = $req->text;
@@ -52,10 +54,13 @@ class AuthorController extends Controller
             'data'=>$data
         ]);
     }
-public function update_news()
+
+    public function update_news($id)
     {
-        // return "Tables";
-        return Inertia::render('Author/Update');
+        $data = NewsData::find($id);
+        return Inertia::render('Author/Update',[
+            'NewsData' => $data
+        ]);
     }
 
     public function data()
@@ -63,42 +68,52 @@ public function update_news()
         $Newsdata=NewsData::all();
         return $Newsdata;    
     }
-  
-    public function edit($id)
-    {
-        $data_id=NewsData::find($id);
-        return view('Author.update',get_defined_vars());
-    }
 
     public function edit_form(Request $req)
     {
-        $post=NewsData::find($req->id);
+        
         $req->validate([
             'heading' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'text' => 'required',
         ]);
-
-        $post->heading = $req->heading;
-        $post->description = $req->description;
-        $post->text = $req->text;
-         //upload image:
-         if($req->image){
-         $image = $req->image;
-         $imagename = time() . '.' . $image->getClientOriginalExtension();
-         //store in public folder "product"
-         $image->move('news', $imagename);
-         $post->image = $imagename;
-         }
-        // dd($post);
-        $post->save();
-        return redirect()->back();
+    
+        // Check if the record with the given ID exists
+        $post = NewsData::find($req->id);
+    
+        if (!$post) {
+            // Handle the case where the record doesn't exist 
+            return redirect()->back()->with('error', 'Record not found');
+        }
+    
+        // Update the attributes using the update method
+        $post->update([
+            'heading' => $req->heading,
+            'description' => $req->description,
+            'text' => $req->text,
+        ]);
+        // Upload image if provided and it's not a string (file name)
+        if ($req->hasFile('image') && is_a($req->file('image'), 'Illuminate\Http\UploadedFile')) {
+            $this->uploadImage($req->file('image'), $post);
+        }
+    
+        return redirect()->back()->with('success', 'Record updated successfully');
     }
+    
+    // Separate method for handling image upload
+    private function uploadImage($image, $post)
+    {
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $image->move('news', $imageName);
+        $post->image = $imageName;
+        $post->save(); // Save the record after updating the image
+    }
+    
 
     public function delete($id)
     {
         $data_id=NewsData::find($id);
-        dd($data_id);
+        // dd($data_id);
         $data_id->delete();
         return redirect()->back();
     }

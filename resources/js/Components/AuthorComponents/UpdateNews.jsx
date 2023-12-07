@@ -1,27 +1,25 @@
 import React, { useState } from "react";
-import { Head, Link, useForm } from "@inertiajs/react";
+import { Head, Link, useForm, usePage } from "@inertiajs/react";
 
 // import "../../../css/Admin/app.css";
 // import "../../../css/Admin/Sidebar.css";
 
 export default function SideBar() {
-  // const { data, setData, post, processing, errors, reset } = useForm({
-  //   heading: "",
-  //   description: "",
-  //   text: "",
-  //   image: null, // Use null to store the image file
-  // });
+    const{NewsData} = usePage().props;
+    console.log(NewsData);
+  const { data, setData, post, processing, errors } = useForm({
+    heading: NewsData.heading || "",
+    description: NewsData.description || "",
+    text: NewsData.text || "",
+    image: NewsData.image || null,
+  });
 
-  // const handleImageChange = (e) => {
-  //   const file = e.target.files[0];
-  //   setData("image", file);
-  // };
 
-  // const submit = (e) => {
-  //   e.preventDefault();
+  const submit = (e) => {
+    e.preventDefault();
 
-  //   post(route("author.add_news"));
-  // };
+    post(route("author.editform",NewsData.id), data);
+  };
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (e) => {
@@ -31,73 +29,15 @@ export default function SideBar() {
       // Use createObjectURL to generate a URL for the selected image
       const imageUrl = URL.createObjectURL(file);
       setSelectedImage(imageUrl);
+      setData("image", file);
     }
   };
 
   return (
-//     <form onSubmit={submit} className="mb-4">
-//     <div className="col-sm-12 col-xl-6 ml-4">
-//       <div className="bg-secondary rounded h-100 p-4">
-//         <h6 className="mb-4">Upload News</h6>
-//         <div className="form-floating mb-3">
-//           <input
-//             type="text"
-//             name="heading"
-//             value={data.heading}
-//             className="form-control"
-//             id="floatingInput"
-//             placeholder="Heading"
-//             onChange={(e) => setData('heading', e.target.value)}
-//           />
-//           <label htmlFor="floatingInput">Heading</label>
-//         </div>
-//         <div className="form-floating mb-3">
-//           <input
-//             type="text"
-//             name="description"
-//             value={data.description}
-//             className="form-control"
-//             id="floatingInput"
-//             placeholder="description"
-//             onChange={(e) => setData('description', e.target.value)}
-//           />
-//           <label htmlFor="floatingInput">Description</label>
-//         </div>
-//         <div className="form-floating mb-3">
-//           <textarea
-//             className="form-control"
-//             name="text"
-//             value={data.text}
-//             placeholder="Write A text"
-//             id="floatingTextarea"
-//             style={{ height: "150px" }}
-//             onChange={(e) => setData('text', e.target.value)}
-//           ></textarea>
-//           <label htmlFor="floatingTextarea">Text</label>
-//         </div>
-//         {/* Add an input for file upload */}
-//         <div className="form-floating mb-3">
-//           <input
-//             type="file"
-//             name="image"
-//             className="form-control"
-//             id="fileUpload"
-//             accept="image/*"
-//             onChange={handleImageChange}
-//           />
-//           <label htmlFor="fileUpload">Choose an image</label>
-//         </div>
-//       </div>
-//       <div className="btn btn-danger" style={{marginLeft:"550px"}}>
-//         <button type="submit">Submit</button>
-//       </div>
-//     </div>
-// </form>
-
 
 <>
 
-
+<form onSubmit={submit}>
 <div className="row mt-4">
                 <div className="col-lg-4">
                     <div className="card h-100">
@@ -129,17 +69,10 @@ export default function SideBar() {
                                     <div className="d-flex">
                                         <button
                                             className="btn bg-gradient-primary btn-sm mb-0 me-2"
-                                            type="button"
+                                            type="submit"
                                             name="button"
                                         >
                                             Upload
-                                        </button>
-                                        <button
-                                            className="btn btn-outline-dark btn-sm mb-0"
-                                            type="button"
-                                            name="button"
-                                        >
-                                            Remove
                                         </button>
                                     </div>
                                 </div>
@@ -159,7 +92,10 @@ export default function SideBar() {
                                         type="text"
                                        placeholder="Heading"
                                         onfocus="focused(this)"
+                                        name="heading"
                                         onfocusout="defocused(this)"
+                                        defaultValue={NewsData.heading}
+                                        onChange={(e) => setData('heading', e.target.value)}
                                     />
                                 </div>
                                 <div className="col-12 col-sm-6 mt-3 mt-sm-0">
@@ -169,8 +105,12 @@ export default function SideBar() {
                                         type="text"
                                         placeholder="Description"
                                         onfocus="focused(this)"
+                                        name="description"
                                         onfocusout="defocused(this)"
+                                        defaultValue={NewsData.description}
+                                        onChange={(e) => setData('description', e.target.value)}
                                     />
+
                                 </div>
                             </div>
                         
@@ -179,8 +119,11 @@ export default function SideBar() {
                                     <span className="input-group-text">Detail</span>
                                     <textarea
                                         className="form-control"
+                                        name="text"
                                         aria-label="With textarea"
-                                    ></textarea>
+                                        defaultValue={NewsData.text}
+                                        onChange={(e) => setData('text', e.target.value)}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -188,6 +131,7 @@ export default function SideBar() {
                 </div>
                 {/* </div> */}
             </div>
+            </form>
 
 
 </>

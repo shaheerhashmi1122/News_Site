@@ -42,7 +42,7 @@
         "i18nlib": "^2.0.0",
         "mdb-react-ui-kit": "^6.3.0",
         "react-alice-carousel": "^2.8.0",
-        "react-bootstrap": "^2.8.0",
+        "react-bootstrap": "^2.9.1",
         "react-chartjs-2": "^5.2.0",
         "react-dark-mode-toggle": "^0.2.0",
         "react-i18next": "^13.3.1",
