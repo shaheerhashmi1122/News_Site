@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "@inertiajs/react";
+import NavLink from "../AdminComponents/NavLink";
 import Dropdown from "../../Components/AdminComponents/Dropdown";
+import "../../../css/User/user.css";
 
 export default function UserSidebar({ show, onClose }, user) {
     const [closeMenu, setCloseMenu] = useState(false);
-
     const [activeLink, setActiveLink] = useState("");
+
+    useEffect(() => {
+        // Set initial active link when component mounts
+        setActiveLink(window.location.pathname);
+    }, []);
 
     const handleClick = (route) => {
         console.log("Link clicked:", route);
@@ -14,7 +20,7 @@ export default function UserSidebar({ show, onClose }, user) {
 
     const links = [
         { name: "Home", route: "/user/dashboard", icon: "bx bx-grid-alt" },
-        { name: "General", route: "/user/general", icon: "bx bx-user" },
+        { name: "General", route: "/user/general", icon: "bx bx-globe" },
         { name: "Sports", route: "/user/sports", icon: "bx bx-football" },
         {
             name: "Techonology",
@@ -25,7 +31,45 @@ export default function UserSidebar({ show, onClose }, user) {
 
     return (
         <>
-            
+            {/* <aside
+                className="sidenav navbar navbar-vertical  navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
+                id="sidenav-main"
+            >
+                <div className="sidenav-header">
+                    <div className="navbar-brand m-0">
+                        <span className="ms-1 font-weight-bold">
+                            Globe-Link
+                        </span>
+                    </div>
+                </div>
+                <hr className="horizontal dark mt-0" />
+                <div
+                    className="collapse navbar-collapse  w-auto  max-height-vh-100 h-100"
+                    id="sidenav-collapse-main"
+                >
+                    <ul className="navbar-nav">
+                        {routes.map((link, index) => (
+                            <li className="nav-item" key={index}>
+                                <NavLink
+                                    isActive={link.route === activeLink}
+                                    href={link.route}
+                                    onClick={() => handleClick(link.route)}
+                                >
+                                    <span>
+                                        <i
+                                            className={`icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center fa ${link.icon}`}
+                                          
+                                        ></i>
+                                    </span>
+                                        <span className="nav-link-text ms-1">
+                                            {link.name}
+                                        </span>
+                                </NavLink>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </aside> */}
 
             <div className="User-sidebar desktop shadow-md">
                 <div className="logo-details">
@@ -38,7 +82,7 @@ export default function UserSidebar({ show, onClose }, user) {
                             key={index}
                             href={link.route}
                             className={`li-names ${
-                                activeLink === link.route ? "active-link" : ""
+                                activeLink === link.route ? "active" : ""
                             }`}
                             onClick={() => handleClick(link.route)}
                         >
@@ -47,6 +91,16 @@ export default function UserSidebar({ show, onClose }, user) {
                         </Link>
                     ))}
                 </div>
+                <div className="list-items position-fixed bottom-0 overflow-hidden">
+                    <Link className="li-names  " href={route("profile.edit")}>
+                        <i className="bx bx-user "></i>
+                        <span>Profile</span>
+                    </Link>
+                    <Link className="li-names " href={route("logout")}>
+                        <i className="bx bx-exit "></i>
+                        <span>SignOut</span>
+                    </Link>
+                </div>
             </div>
 
             {/* ================mobile view toogle sidebar======================================= */}
@@ -54,9 +108,9 @@ export default function UserSidebar({ show, onClose }, user) {
             <div
                 className={show ? "mob-sidebar " : "mob-sidebar mobile active"}
             >
-                <button className="close-menu" onClick={onClose}>
+                <div className="close-menu " onClick={onClose}>
                     <i className="bx bx-x "></i>
-                </button>
+                </div>
 
                 <div className="logo-details">
                     <i
@@ -79,50 +133,16 @@ export default function UserSidebar({ show, onClose }, user) {
                             <span className="sp-name">{link.name}</span>
                         </Link>
                     ))}
-
-                    <Dropdown>
-                        <div className="drop-down2">
-                            <Dropdown.Trigger>
-                               <i className="bx bx-cog"></i>
-                                <span style={{color:"#fff", fontSize:"14px"}}>
-                                  Setting {user.name}
-                                    {/* <button
-                                        type="button"
-                                        className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
-                                    >
-                                        User {user.name}
-                                        <svg
-                                            className="ml-2 -mr-0.5 h-4 w-4"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                fillRule="evenodd"
-                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                clipRule="evenodd"
-                                            ></path>
-                                        </svg>
-                                    </button> */}
-                                </span>
-                            </Dropdown.Trigger>
-                        </div>
-                        
-                        {/* <div className="drop-content"> */}
-                            <Dropdown.Content>
-                                <Dropdown.Link href={route("profile.edit")}>
-                                    Profile
-                                </Dropdown.Link>
-                                <Dropdown.Link
-                                    href={route("logout")}
-                                    method="post"
-                                    as="button"
-                                >
-                                    Log Out
-                                </Dropdown.Link>
-                            </Dropdown.Content>
-                        {/* </div> */}
-                    </Dropdown>
+                </div>
+                <div className="list-items position-fixed bottom-0 overflow-hidden">
+                    <Link className="li-names  " href={route("profile.edit")}>
+                        <i className="bx bx-user "></i>
+                        <span>Profile</span>
+                    </Link>
+                    <Link className="li-names " href={route("logout")}>
+                        <i className="bx bx-exit "></i>
+                        <span>SignOut</span>
+                    </Link>
                 </div>
             </div>
         </>

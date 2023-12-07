@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../../css/User/Footer.css";
+import "../../../css/User/user.css";
 import { Link } from "@inertiajs/inertia-react"; // Correct import statement
 // import ContactUs from "./ContactUs";
 import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone"; // Correct import statement

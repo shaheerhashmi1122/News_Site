@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../css/User/Comment.css";
+import "../../../css/User/user.css";
 
 export default function Comment() {
     return (

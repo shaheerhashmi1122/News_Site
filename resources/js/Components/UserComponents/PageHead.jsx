@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../../css/User/PageHead.css";
+import "../../../css/User/user.css";
 import { MDBBreadcrumb, MDBBreadcrumbItem } from 'mdb-react-ui-kit';
 
 export default function PageHead({ breadcrumbs }) {

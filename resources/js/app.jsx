@@ -1,6 +1,6 @@
 import './bootstrap';
 import '../css/Admin/app.css';
-import '../css/User/Udash.css';
+// import '../css/User/Udash.css';
 // import global_en from '../js/Components/UserComponents/en/global.json';
 // import global_en from '../js/Components/UserComponents/es/global.json';
 // import i18next from 'i18next';
