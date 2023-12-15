@@ -11,7 +11,7 @@ export default function UserDash() {
     const styleHead = {
         fontSize: "45px",
         textAlign: "center",
-
+        color: "white",
         margin: "12px",
     };
 
@@ -21,11 +21,10 @@ export default function UserDash() {
     };
 
     return (
-       
-          <>
-           <div className="container">
+        <div className="user-panel text-light">
+            <div className="container">
                 <header>
-                <UserNav />
+                    <UserNav />
                 </header>
 
                 <div className="toggle-btn">
@@ -49,14 +48,9 @@ export default function UserDash() {
                 <h1 style={styleHead}>GlobeLink</h1>
                 <Content />
 
-               <Slider/>
-
-
-
-
+                <Slider />
+            </div>
+            <Footer />
         </div>
-<Footer/>
-          </>
-       
     );
 }
