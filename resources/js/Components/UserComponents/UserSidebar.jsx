@@ -31,46 +31,6 @@ export default function UserSidebar({ show, onClose }, user) {
 
     return (
         <>
-            {/* <aside
-                className="sidenav navbar navbar-vertical  navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
-                id="sidenav-main"
-            >
-                <div className="sidenav-header">
-                    <div className="navbar-brand m-0">
-                        <span className="ms-1 font-weight-bold">
-                            Globe-Link
-                        </span>
-                    </div>
-                </div>
-                <hr className="horizontal dark mt-0" />
-                <div
-                    className="collapse navbar-collapse  w-auto  max-height-vh-100 h-100"
-                    id="sidenav-collapse-main"
-                >
-                    <ul className="navbar-nav">
-                        {routes.map((link, index) => (
-                            <li className="nav-item" key={index}>
-                                <NavLink
-                                    isActive={link.route === activeLink}
-                                    href={link.route}
-                                    onClick={() => handleClick(link.route)}
-                                >
-                                    <span>
-                                        <i
-                                            className={`icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center fa ${link.icon}`}
-                                          
-                                        ></i>
-                                    </span>
-                                        <span className="nav-link-text ms-1">
-                                            {link.name}
-                                        </span>
-                                </NavLink>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </aside> */}
-
             <div className="User-sidebar desktop shadow-md">
                 <div className="logo-details">
                     <i className="bx bx-menu"></i>
@@ -86,7 +46,10 @@ export default function UserSidebar({ show, onClose }, user) {
                             }`}
                             onClick={() => handleClick(link.route)}
                         >
-                            <i className={link.icon}></i>
+                            <i
+                                className={ link.icon 
+                                }
+                            ></i>{" "}
                             <span>{link.name}</span>
                         </Link>
                     ))}
@@ -96,7 +59,11 @@ export default function UserSidebar({ show, onClose }, user) {
                         <i className="bx bx-user "></i>
                         <span>Profile</span>
                     </Link>
-                    <Link className="li-names " href={route("logout")}>
+                    <Link
+                        className="li-names "
+                        href={route("logout")}
+                        method="post"
+                    >
                         <i className="bx bx-exit "></i>
                         <span>SignOut</span>
                     </Link>

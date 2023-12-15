@@ -26,7 +26,7 @@ export default function General() {
 
     
     return (
-        <>
+        <div className="user-panel">
             <div className="page-nav">
                 <UserNav />
             </div>
@@ -189,6 +189,6 @@ export default function General() {
 
             <Footer  />
             </div>
-        </>
+        </div>
     );
 }
