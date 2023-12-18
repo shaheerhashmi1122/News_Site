@@ -19,7 +19,13 @@ class AuthorController extends Controller
     {
         return Inertia::render('Author/Editform');
     }
-
+    public function viewNews($id)
+    {
+        $viewdata = NewsData::find($id);
+        return Inertia::render('Author/ViewNews',[
+            'NewsData' => $viewdata
+        ]);
+    }
     public function add_news(Request $req)
     {
         

@@ -30,9 +30,8 @@ export default function NewsTable() {
                                 <div className="ms-auto my-auto mt-lg-0 mt-4">
                                     <div className="ms-auto my-auto">
                                         <a
-                                            href="./new-product.html"
+                                            href={route("author.upload_news")}
                                             className="btn bg-gradient-primary btn-sm mb-0"
-                                            target="_blank"
                                         >
                                             +&nbsp; Upload News
                                         </a>
@@ -107,7 +106,7 @@ export default function NewsTable() {
                                                         </td>
                                                         <td className="text-sm">
                                                             <a
-                                                                href="javascript:;"
+                                                                href={route("author.viewNews", data.id)}
                                                                 data-bs-toggle="tooltip"
                                                                 data-bs-original-title="Preview product"
                                                             >
