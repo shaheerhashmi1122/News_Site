@@ -17,7 +17,7 @@ class AuthorController extends Controller
 
     public function upload_news()
     {
-        return Inertia::render('Author/Editform');
+        return Inertia::render('Author/UploadNews');
     }
     public function viewNews($id)
     {
@@ -28,19 +28,21 @@ class AuthorController extends Controller
     }
     public function add_news(Request $req)
     {
-        
         $req->validate([
             'heading' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'text' => 'required',
+            'category' => 'required',
             'image' => 'required'
         ]);
+        // dd($req->all());
         $post = new NewsData();
 
         $post->user_id = Auth::user()->id;
         $post->heading = $req->heading;
         $post->description = $req->description;
         $post->text = $req->text;
+        $post->category = $req->category;
          //upload image:
          $image = $req->image;
          $imagename = time() . '.' . $image->getClientOriginalExtension();
@@ -49,7 +51,7 @@ class AuthorController extends Controller
          $post->image = $imagename;
         // dd($post);
         $post->save();
-        return redirect()->back();
+        return Inertia::render('Author/Tables')->with('success', 'Record Uploaded Successfully');
     }
 
     public function show_data()
@@ -102,8 +104,7 @@ class AuthorController extends Controller
         if ($req->hasFile('image') && is_a($req->file('image'), 'Illuminate\Http\UploadedFile')) {
             $this->uploadImage($req->file('image'), $post);
         }
-    
-        return redirect()->back()->with('success', 'Record updated successfully');
+        return Inertia::render('Author/Tables')->with('success', 'Record updated successfully');
     }
     
     // Separate method for handling image upload

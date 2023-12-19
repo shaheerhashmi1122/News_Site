@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('image');
             $table->integer('total_views')->default('0');
             $table->integer('user_id');
+            $table->integer('category');
             $table->timestamps();
         });
     }

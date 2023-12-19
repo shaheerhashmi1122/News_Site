@@ -51,7 +51,7 @@ export default function NewsTable() {
                                             id="products-list"
                                         >
                                             <thead className="thead-light">
-                                                <tr key={data.id}>
+                                                <tr>
                                                     <th
                                                         data-sortable=""
                                                         className="dataTable-sorter"
