@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "@inertiajs/react";
-import NavLink from "../AdminComponents/NavLink";
-import Dropdown from "../../Components/AdminComponents/Dropdown";
+
 import "../../../css/User/user.css";
 
 export default function UserSidebar({ show, onClose }, user) {
@@ -106,7 +105,7 @@ export default function UserSidebar({ show, onClose }, user) {
                         <i className="bx bx-user "></i>
                         <span>Profile</span>
                     </Link>
-                    <Link className="li-names " href={route("logout")}>
+                    <Link className="li-names " href={route("logout")} method="post">
                         <i className="bx bx-exit "></i>
                         <span>SignOut</span>
                     </Link>

@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import "../../../css/User/user.css";
 import { Link } from "@inertiajs/inertia-react"; 
 
-import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone"; 
-import { FaTwitterSquare, FaInstagram } from "react-icons/fa"; 
-import ImportExportIcon from "@mui/icons-material/ImportExport"; 
+ 
 
 
 export default function Footer() {

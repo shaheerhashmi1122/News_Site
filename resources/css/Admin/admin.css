@@ -278,6 +278,7 @@ code {
 
 a > code {
     color: inherit;
+    
 }
 
 kbd {
@@ -286,6 +287,12 @@ kbd {
     color: #fff;
     background-color: #212529;
     border-radius: 0.25rem;
+}
+.mobile-sidebar{
+    display:none;
+}
+.desktop-bar{
+    display: block;
 }
 
 kbd kbd {
@@ -25375,4 +25382,10 @@ pre[class*="language-"] {
     }
 }
 
-/*# sourceMappingURL=dashboard-free.css.map */
+
+
+@media screen and (max-width:1440px){
+    .mobile-sidebar{
+        display:none;
+    }
+}

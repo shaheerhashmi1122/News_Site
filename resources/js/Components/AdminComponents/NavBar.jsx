@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "@inertiajs/react";
+import AuthorSidebar from "../AuthorComponents/AuthorSidebar"
 
 export default function NavBar({user}) {
+
+
+
+    const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+    const toggleMobileSidebar = () => {
+        setShowMobileSidebar(!showMobileSidebar);
+    };
     return (
         <>
             <nav
@@ -50,14 +58,14 @@ export default function NavBar({user}) {
                             </li>
                             <li className="nav-item d-xl-none ps-3 d-flex align-items-center">
                                 <Link
-                                    href="javascript:;"
+                                   onClick={() => setShowMobileSidebar(!showMobileSidebar)}
                                     className="nav-link text-body p-0"
                                     id="iconNavbarSidenav"
                                 >
-                                    <div className="sidenav-toggler-inner">
-                                        <i className="sidenav-toggler-line"></i>
-                                        <i className="sidenav-toggler-line"></i>
-                                        <i className="sidenav-toggler-line"></i>
+                                    <div className="sidenav-toggler-inner"  >
+                                        <i className="sidenav-toggler-line" ></i>
+                                        <i className="sidenav-toggler-line" ></i>
+                                        <i className="sidenav-toggler-line" ></i>
                                     </div>
                                </Link>
                             </li>
@@ -121,6 +129,12 @@ export default function NavBar({user}) {
                     </div>
                 </div>
             </nav>
+            {showMobileSidebar && (
+                <AuthorSidebar
+                    show={showMobileSidebar}
+                    onClose={toggleMobileSidebar}
+                />
+            )}
         </>
     );
 }

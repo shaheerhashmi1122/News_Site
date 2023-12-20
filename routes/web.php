@@ -71,6 +71,9 @@ Route::middleware('user')->group(function () {
     Route::get('user/general', [GeneralController::class, 'dashboard'])->name('user.general');
     Route::get('user/sports', [SportController::class, 'dashboard'])->name('user.sports');
     Route::get('user/technology', [TechnologyController::class, 'dashboard'])->name('user.technology');
+    Route::get('user/travel', [TechnologyController::class, 'dashboard'])->name('user.travel');
+    Route::get('user/business', [TechnologyController::class, 'dashboard'])->name('user.business');
+    Route::get('user/enviornment', [TechnologyController::class, 'dashboard'])->name('user.enviornment');
 });
 
 

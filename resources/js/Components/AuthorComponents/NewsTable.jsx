@@ -99,7 +99,7 @@ export default function NewsTable() {
                                                             </div>
                                                         </td>
                                                         <td className="text-sm">
-                                                            {data.description}
+                                                            {data.description.slice(0,40)}
                                                         </td>
                                                         <td className="text-sm text-center">
                                                             {data.total_views}

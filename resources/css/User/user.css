@@ -1928,6 +1928,12 @@ s
     .news-content .help-section .card {
         width: 19rem;
     }
+
+
+
+    .footer .container{
+        width: 67%;
+    }
 }
 
 
@@ -1938,6 +1944,7 @@ s
         margin-top: 300px;
         /* padding-top: 150px; */
     }
+
 } 
 
 
@@ -1967,6 +1974,10 @@ s
     .news-content .about-section .about-profile {
         width: 19rem;
         font-size: 0.8vw;
+    }
+    
+    .footer .container{
+        width: 100%;
     }
 }
 
