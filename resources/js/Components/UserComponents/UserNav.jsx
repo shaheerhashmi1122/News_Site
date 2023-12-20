@@ -1,8 +1,7 @@
 import React from "react";
 import  "../../../css/User/user.css";
-import Dropdown from "../AdminComponents/Dropdown";
 
-export default function UserNav(user) {
+export default function UserNav() {
     return (
 
 <>
@@ -10,10 +9,11 @@ export default function UserNav(user) {
 
 
 
-<div className="container">
+<div className="nav">
 
 
-<div role="navigation">
+<div className="container" >
+<div role="navigation" className="mt-3">
   
 
     <div className="border-bottom  d-flex ">
@@ -30,6 +30,7 @@ export default function UserNav(user) {
   </div>
 
 
+</div>
 </div>
 
 </>

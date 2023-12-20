@@ -13,12 +13,12 @@ export default function Category() {
 		<ul className="list-unstyled">
 			<li><a href="" title="">Business <span className="pull-right">13</span></a></li>
 			<li><a href="" title="">Technology <span className="pull-right">13</span></a></li>
-			<li><a href="" title="">Web <span className="pull-right">13</span></a></li>
-			<li><a href="" title="">Ecommerce <span className="pull-right">13</span></a></li>
-			<li><a href="" title="">Wordpress <span className="pull-right">13</span></a></li>
-			<li><a href="" title="">Android <span className="pull-right">13</span></a></li>
-			<li><a href="" title="">IOS <span className="pull-right">13</span></a></li>
-			<li><a href="" title="">Windows <span className="pull-right">13</span></a></li>
+			<li><a href="" title="">Travel <span className="pull-right">13</span></a></li>
+			<li><a href="" title="">Enviornment <span className="pull-right">13</span></a></li>
+			<li><a href="" title="">Sports <span className="pull-right">13</span></a></li>
+			<li><a href="" title="">General <span className="pull-right">13</span></a></li>
+			{/* <li><a href="" title="">IOS <span className="pull-right">13</span></a></li> */}
+			{/* <li><a href="" title="">Windows <span className="pull-right">13</span></a></li> */}
 		</ul>
    </div>
 </div> 
