@@ -4,6 +4,7 @@ import UserNav from "@/Components/UserComponents/UserNav";
 import UserSidebar from "@/Components/UserComponents/UserSidebar";
 import Footer from "@/Components/UserComponents/Footer";
 // import MobBar from "@/Components/UserComponents/MobBar";
+import "../../../css/User/user.css";
 import React, { useState } from "react";
 import Slider from "@/Components/UserComponents/Slider";
 

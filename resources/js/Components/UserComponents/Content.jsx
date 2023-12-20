@@ -187,7 +187,7 @@ const { category: businessCategory, title: businessTitle, author: businessAuthor
       
 
 
-      <div className="select" style={languageStyle[".select"]}>
+      <div className="select mb-3 mx-auto" style={languageStyle[".select"]}>
     <select style={languageStyle.select} name="format" id="format" onChange={(e) => handleLanguageChange(e.target.value)}>
         <option selected disabled style={languageStyle.select}>Select Language</option>
         <option style={languageStyle.select} value="en">English</option>
