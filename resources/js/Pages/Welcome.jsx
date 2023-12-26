@@ -27,7 +27,7 @@ export default function Welcome({ auth }) {
                 <div className="d-flex justify-content-end">
                     {auth.user ? (
                         <Link href={route("dashboard")} className="">
-                           <button class="button-62" role="button">
+                           <button className="button-62" role="button">
                                     Dashboard
                                 </button>
                         </Link>
@@ -37,13 +37,13 @@ export default function Welcome({ auth }) {
                                 href={route("login")}
                                 className=" mx-4 mt-3 text-center "
                             >
-                                <button class="button-62" role="button">
+                                <button className="button-62" role="button">
                                     Login
                                 </button>
                             </Link>
 
                             <Link href={route("register")} className=" mt-3">
-                                <button class="button-62" role="button">
+                                <button className="button-62" role="button">
                                     Register
                                 </button>
                             </Link>

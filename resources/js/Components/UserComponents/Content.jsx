@@ -27,7 +27,7 @@ export default function Content() {
             padding: "0 .5em",
             color: "#fff",
             cursor: "pointer",
-            "font-size": "1em",
+            "fontSize": "1em",
             "font-family": "'Open Sans', sans-serif",
         },
         "select::-ms-expand": {
