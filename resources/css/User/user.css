@@ -870,7 +870,7 @@ s
 @media (max-width: 426px) {
     .category {
         margin-left: -19px;
-        width: 38rem;
+        width: 23rem;
     }
 
     .category .unstyled {
@@ -880,7 +880,7 @@ s
 @media (max-width: 375px) {
     .category {
         /* margin-left: -19px; */
-        width: 35rem;
+        width: 20rem;
     }
 
     .category .unstyled {
@@ -890,7 +890,7 @@ s
 @media (max-width: 325px) {
     .category {
         /* margin-left: -19px; */
-        width: 34rem;
+        width: 17rem;
     }
 
    
@@ -2003,7 +2003,11 @@ s
     .news-content .artical-section {
         margin-top: 15px;
     }
-
+    .news-content .about-section .about-profile {
+        width: 12rem;
+        font-size: 0.8vw;
+    }
+    
     .news-content .about-section .about-profile .about-card, .news-content .about-section .help-section .card {
         font-size: large;
         width: 44rem;
@@ -2016,34 +2020,29 @@ s
 
 @media (max-width: 426px) {
     .news-content {
-        width: 158vw;
+        /* width: 158vw; */
     }
 
     .news-content .about-section .about-profile .about-card, .news-content .about-section .help-section .card {
-        width: 38rem;
+        width: 23rem;
     }
     .news-content .about-section .about-profile .about-card img{
         width: 35vw;
       }
 }
 @media (max-width: 375px) {
-    .news-content {
-        width: 170vw;
-    }
+   
 
     .news-content .about-section .about-profile .about-card, .news-content .about-section .help-section .card {
-        width: 35rem;
+        width: 20rem;
     }
 }@media (max-width: 325px) {
     .nav .container{
         width: 300px; ;
     }
-    .news-content {
-        width: 188vw;
-    }
-
+  
     .news-content .about-section .about-profile .about-card, .news-content .about-section .help-section .card {
-        width: 34rem;
+        width: 17rem;
     }
 
     .select{
@@ -2518,20 +2517,7 @@ s
     color: #614ad3;
 }
 
-@media (max-width: 426px) {
-    .page-footer {
-        width: 158vw;
-    }
-}
-@media (max-width: 375px) {
-    .page-footer {
-        width: 170vw;
-    }
-}
-@media (max-width: 325px) {
-    .page-footer {
-        width: 188vw;
-    }
-}
+
+
 
 /* footer end */

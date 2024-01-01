@@ -9,7 +9,7 @@ import PageHead from "@/Components/UserComponents/PageHead";
 import Category from "@/Components/UserComponents/Category";
 import Footer from "@/Components/UserComponents/Footer";
 
-export default function General() {
+export default function Enviornment() {
     const [showMobileSidebar, setShowMobileSidebar] = useState(false);
     // const [closeNav, setCloseNav] = useState(false);
     const toggleMobileSidebar = () => {
@@ -17,11 +17,11 @@ export default function General() {
     };
     const breadcrumbs = [
         { label: "Home", url: route("user.dashboard") },
-        { label: "General" },
+        { label: "Enviornment" },
     ];
 
     return (
-        <>
+        <div className="user-panel text-light">
             <div className="page-nav">
                 <UserNav />
             </div>
@@ -69,7 +69,7 @@ export default function General() {
                                 </p>
                             </div>
 
-                            <div className="artical-section ">
+                            <div className="artical-section">
                                 <h1>Title</h1>
 
                                 <div className="under-line "></div>
@@ -91,19 +91,19 @@ export default function General() {
                         {/* ======================================section 2================================== */}
 
                         <div className="col-md-4 col-sm-10 about-section order-md-2 order-1 ">
-                            <div className="about-profile">
+                            <div className="about-profile ">
                                 <div className=" text-center">
                                     <div className="">
-                                        <div className=" rounded shadow-sm py-5 about-card ">
+                                        <div className=" rounded shadow-sm p-3 about-card mb-4 ">
                                             <img
                                                 src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg"
                                                 alt=""
                                                 className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm  mx-auto"
                                             />
-                                            <h5 className="mb-4">
+                                            <h5 className="mb-4 text-light">
                                                 Manuella Nevoresky
                                             </h5>
-                                            <p className="text-dark">
+                                            <p className=" text-light">
                                                 Lorem ipsum dolor sit amet
                                                 consectetur, adipisicing elit.
                                                 Dolores eligendi eaque neque
@@ -113,7 +113,7 @@ export default function General() {
                                                 distinctio vitae voluptate illo
                                                 at. Exercitationem, rerum!
                                             </p>
-                                            <span className="small text-uppercase text-muted">
+                                            <span className="small text-uppercase text-light">
                                                 CEO - Founder
                                             </span>
                                             <ul className="social mb-0 list-inline mt-3">
@@ -184,6 +184,6 @@ export default function General() {
 
             <Footer  />
             </div>
-        </>
+        </div>
     );
 }

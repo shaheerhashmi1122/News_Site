@@ -25,6 +25,19 @@ export default function UserSidebar({ show, onClose }, user) {
             name: "Techonology",
             route: "/user/technology",
             icon: "bx bx-laptop",
+        }, {
+            name: "Travel",
+            route: "/user/technology",
+            icon: "bx bx-world",
+        }, 
+        {
+            name: "Enviornment",
+            route: "/user/technology",
+            icon: "bx bx-laptop",
+        },  {
+            name: "Business",
+            route: "/user/technology",
+            icon: "bx bx-laptop",
         },
     ];
 
