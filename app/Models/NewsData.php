@@ -13,6 +13,13 @@ class NewsData extends Model
        'heading',
        'description',
        'text',
+       'user_id',
+       'total_views',
        'image',
     ];
+
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

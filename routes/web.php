@@ -6,10 +6,16 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Author\AuthorController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\BusinessController;
+use App\Http\Controllers\User\EnviormentController;
 use App\Http\Controllers\User\GeneralController;
+use App\Http\Controllers\User\ReadMoreController;
 use App\Http\Controllers\User\SportController;
 use App\Http\Controllers\User\TechnologyController;
+use App\Http\Controllers\User\TravelController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\User\UserProfile;
+use App\Models\NewsData;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -28,11 +34,13 @@ use Inertia\Inertia;
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/', function () {
+    $latest_news = NewsData::orderBy('id', 'DESC')->get();
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
+        'latest'=>$latest_news
     ]);
 });
 
@@ -42,11 +50,11 @@ Route::get('/dashboard', function () {
 
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 Route::middleware('admin')->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
@@ -71,9 +79,12 @@ Route::middleware('user')->group(function () {
     Route::get('user/general', [GeneralController::class, 'dashboard'])->name('user.general');
     Route::get('user/sports', [SportController::class, 'dashboard'])->name('user.sports');
     Route::get('user/technology', [TechnologyController::class, 'dashboard'])->name('user.technology');
-    Route::get('user/travel', [TechnologyController::class, 'dashboard'])->name('user.travel');
-    Route::get('user/business', [TechnologyController::class, 'dashboard'])->name('user.business');
-    Route::get('user/enviornment', [TechnologyController::class, 'dashboard'])->name('user.enviornment');
+    Route::get('user/travel', [TravelController::class, 'dashboard'])->name('user.travel');
+    Route::get('user/business', [BusinessController::class, 'dashboard'])->name('user.business');
+    Route::get('user/enviornment', [EnviormentController::class, 'dashboard'])->name('user.enviornment');
+    Route::get('user/edit',[UserProfile::class,'edit'])->name('user.edit');
+    Route::get('user/readmore/{id}',[ReadMoreController::class,'readmore'])->name('user.read');
+    
 });
 
 
@@ -84,9 +95,9 @@ Route::get('/message', function () {
 })->name('message');
 
 // tables route
-Route::get('/tables', function () {
-    return Inertia::render('Tables');
-})->name('tables');
+// Route::get('/tables', function () {
+//     return Inertia::render('Tables');
+// })->name('tables');
 
 
 require __DIR__.'/auth.php';

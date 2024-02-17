@@ -1,9 +1,12 @@
 import React from "react";
 import "chart.js/auto";
+import { usePage } from "@inertiajs/react";
 
 ;
 
 export default function MainPage() {
+    const { data } = usePage().props;
+    // console.log(data)
     
     return (
         <>
@@ -15,10 +18,10 @@ export default function MainPage() {
                                 <div className="col-8">
                                     <div className="numbers">
                                         <p className="text-sm mb-0 text-capitalize font-weight-bold">
-                                            Today's Money
+                                            Today's Views
                                         </p>
                                         <h5 className="font-weight-bolder mb-0">
-                                            $53,000
+                                            23.00       
                                             <span className="text-success text-sm font-weight-bolder">
                                                 +55%
                                             </span>

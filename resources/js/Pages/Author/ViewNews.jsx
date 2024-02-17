@@ -51,28 +51,7 @@ export default function viewNews({ auth, NewsData }) {
                                         <h3 className="mt-lg-0 mt-4">
                                             {NewsData.heading}
                                         </h3>
-                                        <div className="rating">
-                                            <i
-                                                className="fas fa-star"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="fas fa-star"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="fas fa-star"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="fas fa-star"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="fas fa-star-half-alt"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </div>
+                                       
                                         <br />
                                         
                                         <br />

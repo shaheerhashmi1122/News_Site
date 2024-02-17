@@ -5,7 +5,7 @@ import { Modal, Button } from 'react-bootstrap';
 
 export default function NewsTable() {
     const { data } = usePage().props;
-
+    // console.log(data)
     const [showConfirmation, setShowConfirmation] = useState(false);
 
     const handleDelete = () => {

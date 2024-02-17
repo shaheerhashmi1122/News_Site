@@ -12,7 +12,11 @@ class AuthorController extends Controller
 {
     public function dashboard()
     {
-        return Inertia::render('Author/Authordash');
+        $auth = Auth::user()->id;
+        $data = NewsData::where('user_id',$auth)->get();
+        return Inertia::render('Author/Authordash',[
+            'data'=>$data
+        ]);
     }
 
     public function upload_news()
@@ -51,13 +55,14 @@ class AuthorController extends Controller
          $post->image = $imagename;
         // dd($post);
         $post->save();
-        return Inertia::render('Author/Tables')->with('success', 'Record Uploaded Successfully');
+        return redirect()->back();
     }
 
     public function show_data()
     {
         $auth = Auth::user()->id;
-        $data = NewsData::all();
+        $data = NewsData::where('user_id','=',$auth)->get();
+        // dd($data);
         return Inertia::render('Author/Tables',[
             'data'=>$data
         ]);
@@ -104,7 +109,7 @@ class AuthorController extends Controller
         if ($req->hasFile('image') && is_a($req->file('image'), 'Illuminate\Http\UploadedFile')) {
             $this->uploadImage($req->file('image'), $post);
         }
-        return Inertia::render('Author/Tables')->with('success', 'Record updated successfully');
+        return redirect()->back();
     }
     
     // Separate method for handling image upload

@@ -7,6 +7,7 @@ import Footer from "@/Components/UserComponents/Footer";
 import "../../../css/User/user.css";
 import React, { useState } from "react";
 import Slider from "@/Components/UserComponents/Slider";
+import { usePage } from "@inertiajs/react";
 
 export default function UserDash() {
     const styleHead = {

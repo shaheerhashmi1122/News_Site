@@ -87,7 +87,7 @@ export default function NavBar({user}) {
                                     <li className="mb-2">
                                         <Link
                                             className="dropdown-item border-radius-md"
-                                            href={route("profile.edit")}
+                                            href={route("user.edit")}
                                         >
                                             <div className="d-flex py-1">
                                                 <div className="my-auto">

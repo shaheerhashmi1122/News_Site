@@ -10,8 +10,11 @@ import ReadSection from "../../../js/Images/news-read-sec.jpg";
 import PageHead from "@/Components/UserComponents/PageHead";
 import Category from "@/Components/UserComponents/Category";
 import Footer from "@/Components/UserComponents/Footer";
+import { usePage } from "@inertiajs/react";
 
 export default function General() {
+    const{ data }=usePage().props;
+    // console.log(data)
     const [showMobileSidebar, setShowMobileSidebar] = useState(false);
     // const [closeNav, setCloseNav] = useState(false);
     const toggleMobileSidebar = () => {
@@ -21,8 +24,6 @@ export default function General() {
         { label: "Home", url: route("user.dashboard") },
         { label: "General" },
     ];
-
-
 
     
     return (
@@ -53,112 +54,30 @@ export default function General() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 col-sm-10 order-md-1 order-2 read-part ">
+                        
                             <div className="news-image">
                                 <img src={Clgirls} alt="" />
                             </div>
-
+                            {data.map((news) => (
                             <div className="read-section w-100 py-4 px-2">
                                 <img
                                     className="w-50"
-                                    src={ReadSection}
+                                    src={`/news/${news?.image}`}
                                     alt=""
                                 />
 
-                                <h2>News Updates are the Best site</h2>
+                                <h2>{news?.heading}</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Dignissimos mollitia modi
-                                    maxime! Officiis odio pariatur architecto
-                                    dolorum iste vero quo modi illo amet? Quam
-                                    pariatur quo quas eos, modi suscipit.
+                                    {news?.description}
                                 </p>
+                                <a className="btn btn-primary" href={route("user.read", news.id)}>Read More</a>
                             </div>
-
-                            <div className="artical-section">
-                                <h1>Title</h1>
-
-                                <div className="under-line "></div>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Saepe, deserunt nisi
-                                    libero dicta rem, error incidunt eaque
-                                    delectus repellat quasi corrupti pariatur
-                                    cumque facere. Fugiat optio, unde, eius et
-                                    voluptatum doloremque ipsam culpa quae
-                                    repellat ullam quas eum voluptates enim
-                                    molestiae sed numquam ducimus expedita
-                                    dignissimos eveniet exercitationem, dolores
-                                    itaque.
-                                </p>
-                            </div>
+                        ))}
                         </div>
-
                         {/* ======================================section 2================================== */}
 
                         <div className="col-md-4 col-sm-10 about-section order-md-2 order-1 ">
-                            <div className="about-profile ">
-                                <div className=" text-center">
-                                    <div className="">
-                                        <div className=" rounded shadow-sm p-3 about-card mb-4 ">
-                                            <img
-                                                src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg"
-                                                alt=""
-                                                className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm  mx-auto"
-                                            />
-                                            <h5 className="mb-4 text-light">
-                                                Manuella Nevoresky
-                                            </h5>
-                                            <p className=" text-light">
-                                                Lorem ipsum dolor sit amet
-                                                consectetur, adipisicing elit.
-                                                Dolores eligendi eaque neque
-                                                maxime quia corporis aperiam
-                                                quos odio alias voluptas,
-                                                cupiditate commodi, sapiente
-                                                distinctio vitae voluptate illo
-                                                at. Exercitationem, rerum!
-                                            </p>
-                                            <span className="small text-uppercase text-light">
-                                                CEO - Founder
-                                            </span>
-                                            <ul className="social mb-0 list-inline mt-3">
-                                                <li className="list-inline-item">
-                                                    <a
-                                                        href="#"
-                                                        className="social-link"
-                                                    >
-                                                        <i className="fa fa-facebook-f"></i>
-                                                    </a>
-                                                </li>
-                                                <li className="list-inline-item">
-                                                    <a
-                                                        href="#"
-                                                        className="social-link"
-                                                    >
-                                                        <i className="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li className="list-inline-item">
-                                                    <a
-                                                        href="#"
-                                                        className="social-link"
-                                                    >
-                                                        <i className="fa fa-instagram"></i>
-                                                    </a>
-                                                </li>
-                                                <li className="list-inline-item">
-                                                    <a
-                                                        href="#"
-                                                        className="social-link"
-                                                    >
-                                                        <i className="fa fa-linkedin"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          
                             <Category />
                             <div className="help-section py-4">
                                 <div className="card  bg-primary text-light text-center">

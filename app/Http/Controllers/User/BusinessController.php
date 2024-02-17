@@ -7,11 +7,11 @@ use App\Models\NewsData;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class TravelController extends Controller
+class BusinessController extends Controller
 {
     public function dashboard()
     {
-        $news = NewsData::where('category','6')->get();
-        return Inertia::render('User/Travel',['travel'=>$news]);
+        $news = NewsData::where('category','2')->get();
+        return Inertia::render('User/Business',['business'=>$news]);
     }
 }

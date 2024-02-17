@@ -27,17 +27,17 @@ export default function UserSidebar({ show, onClose }, user) {
             icon: "bx bx-laptop",
         }, {
             name: "Travel",
-            route: "/user/technology",
+            route: "/user/travel",
             icon: "bx bx-world",
         }, 
         {
             name: "Enviornment",
-            route: "/user/technology",
-            icon: "bx bx-laptop",
+            route: "/user/enviornment",
+            icon: "bx bx-street-view",
         },  {
             name: "Business",
-            route: "/user/technology",
-            icon: "bx bx-laptop",
+            route: "/user/business",
+            icon: "bx bx-buildings",
         },
     ];
 
@@ -67,7 +67,7 @@ export default function UserSidebar({ show, onClose }, user) {
                     ))}
                 </div>
                 <div className="list-items position-fixed bottom-0 overflow-hidden">
-                    <Link className="li-names  " href={route("profile.edit")}>
+                    <Link className="li-names  " href={route("user.edit")}>
                         <i className="bx bx-user "></i>
                         <span>Profile</span>
                     </Link>
@@ -114,7 +114,7 @@ export default function UserSidebar({ show, onClose }, user) {
                     ))}
                 </div>
                 <div className="list-items position-fixed bottom-0 overflow-hidden">
-                    <Link className="li-names  " href={route("profile.edit")}>
+                    <Link className="li-names  " href={route("user.edit")}>
                         <i className="bx bx-user "></i>
                         <span>Profile</span>
                     </Link>

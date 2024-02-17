@@ -310,7 +310,7 @@ const { category: businessCategory, title: businessTitle, author: businessAuthor
                                                 <h2>
                                                     <a style={{fontSize:"28px"}}
                                                         href={route(
-                                                            "user.general"
+                                                            "user.travel"
                                                         )}
                                                     >
                                                         {travelTitle}
@@ -321,7 +321,7 @@ const { category: businessCategory, title: businessTitle, author: businessAuthor
                                                         By{" "}
                                                         <a
                                                             href={route(
-                                                                "user.general"
+                                                                "user.travel"
                                                             )}
                                                         >
                                                             {travelAuthor}
@@ -349,7 +349,7 @@ const { category: businessCategory, title: businessTitle, author: businessAuthor
                                                 <h2 >
                                                     <a style={{fontSize:"19px", paddingTop:"15px"}}  
                                                         href={route(
-                                                            "user.general"
+                                                            "user.business"
                                                         )}
                                                     >
                                                         {businessTitle}
