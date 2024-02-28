@@ -4,7 +4,7 @@ import AuthLayout from "@/Layouts/AuthLayout";
 import { Head, Link, useForm } from "@inertiajs/react";
 import MainPage from "../../Components/AdminComponents/MainPage";
 import Revenue from "../../Components/AdminComponents/Revenue";
-
+import NewsTable from '@/Components/AuthorComponents/NewsTable';
 
 
 export default function AuthorDashboard({ auth }) {
@@ -14,10 +14,9 @@ export default function AuthorDashboard({ auth }) {
             <AuthLayout auth={auth}>
                 <Head title="Dashboard" />
                 <div className="">
-                    <MainPage />
                 </div>
                 <div className="">
-                    <Revenue />
+                    <NewsTable/>
                 </div>
             </AuthLayout>
         </>

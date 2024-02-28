@@ -31,8 +31,8 @@ export default function UserSidebar({ show, onClose }, user) {
             icon: "bx bx-world",
         }, 
         {
-            name: "Enviornment",
-            route: "/user/enviornment",
+            name: "Entertainment",
+            route: "/user/entertainment",
             icon: "bx bx-street-view",
         },  {
             name: "Business",

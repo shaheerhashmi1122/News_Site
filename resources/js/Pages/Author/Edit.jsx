@@ -12,6 +12,12 @@ export default function Edit() {
         password: profile.password || "",
       });
 
+      const submit = (e) => {
+        e.preventDefault();
+    
+        post(route("author.editprofile",profile.id), data);
+      };
+
     return (
         <>
             <Head title="Profile" />
@@ -37,6 +43,7 @@ export default function Edit() {
                             <div className="d-flex justify-content-between align-items-center mb-3">
                                 <h4 className="text-right">Profile Settings</h4>
                             </div>
+                            <form onSubmit={submit}>
                             <div className="row mt-2">
                                 <div className="col-md-6">
                                     <label className="labels">Name</label>
@@ -44,7 +51,8 @@ export default function Edit() {
                                         type="text"
                                         className="form-control"
                                         placeholder="name"
-                                        value=""
+                                        defaultValue={profile.name}
+                                        onChange={(e) => setData('name', e.target.value)}
                                     />
                                 </div>
                                 <div className="col-md-6">
@@ -52,7 +60,8 @@ export default function Edit() {
                                     <input
                                         type="email"
                                         className="form-control"
-                                        value=""
+                                        defaultValue={profile.email}
+                                        onChange={(e) => setData('email', e.target.value)}
                                         placeholder="email"
                                     />
                                 </div>
@@ -61,7 +70,8 @@ export default function Edit() {
                                     <input
                                         type="password"
                                         className="form-control"
-                                        value=""
+                                        defaultValue={profile.password}
+                                        onChange={(e) => setData('password', e.target.value)}
                                         placeholder="new password"
                                     />
                                 </div>
@@ -70,7 +80,6 @@ export default function Edit() {
                                     <input
                                         type="password"
                                         className="form-control"
-                                        value=""
                                         placeholder="confirm password"
                                     />
                                 </div>
@@ -88,12 +97,13 @@ export default function Edit() {
                                 <div className=" text-center">
                                     <button
                                         className="btn btn-primary profile-button"
-                                        type="button"
+                                        type="submit"
                                     >
                                         Save Profile
                                     </button>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>

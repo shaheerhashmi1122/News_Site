@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Author;
 
 use App\Http\Controllers\Controller;
 use App\Models\NewsData;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -130,13 +131,24 @@ class AuthorController extends Controller
         return redirect()->back();
     }
 
-    public function profile()
+    public function profile($id)
     {
-        $auth = Auth::user();
+        $auth = User::find($id);
         // dd($auth);
         return inertia::render('Author/Edit',[
             'profile'=>$auth
         ]);
+    }
+
+    public function edit_profile(Request $request,$id){
+        $user =User::whereId($id)->firstOrFail();
+        
+        $user->update([
+            "name"=>$request->input("name"),
+            "email"=>$request->input("email"),
+            "password"=>bcrypt($request->input("password")),
+        ]);
+        return inertia::render('Author/AuthorDash');
     }
 
 
