@@ -5,8 +5,10 @@ import { usePage } from "@inertiajs/react";
 ;
 
 export default function MainPage() {
-    const { data } = usePage().props;
-    // console.log(data)
+    const { props } = usePage();
+    const { posts, user, newuser, newpost } = props;
+
+    // console.log(props)
     
     return (
         <>
@@ -18,13 +20,10 @@ export default function MainPage() {
                                 <div className="col-8">
                                     <div className="numbers">
                                         <p className="text-sm mb-0 text-capitalize font-weight-bold">
-                                            Today's Views
+                                            Total Posts
                                         </p>
                                         <h5 className="font-weight-bolder mb-0">
-                                            23.00       
-                                            <span className="text-success text-sm font-weight-bolder">
-                                                +55%
-                                            </span>
+                                            {posts}       
                                         </h5>
                                     </div>
                                 </div>
@@ -47,13 +46,10 @@ export default function MainPage() {
                                 <div className="col-8">
                                     <div className="numbers">
                                         <p className="text-sm mb-0 text-capitalize font-weight-bold">
-                                            Today's Users
+                                            Total Users
                                         </p>
                                         <h5 className="font-weight-bolder mb-0">
-                                            2,300
-                                            <span className="text-success text-sm font-weight-bolder">
-                                                +3%
-                                            </span>
+                                            {user} 
                                         </h5>
                                     </div>
                                 </div>
@@ -80,20 +76,17 @@ export default function MainPage() {
                                 <div className="col-8">
                                     <div className="numbers">
                                         <p className="text-sm mb-0 text-capitalize font-weight-bold">
-                                            New Clients
+                                            New Users this month
                                         </p>
                                         <h5 className="font-weight-bolder mb-0">
-                                            +3,462
-                                            <span className="text-danger text-sm font-weight-bolder">
-                                                -2%
-                                            </span>
+                                            {newuser}
                                         </h5>
                                     </div>
                                 </div>
                                 <div className="col-4 text-end">
                                     <div className="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
                                         <i
-                                            className="fa fa-newspaper text-lg opacity-10"
+                                            className="fa fa-user text-lg opacity-10"
                                             aria-hidden="true"
                                         ></i>
                                     </div>
@@ -109,20 +102,17 @@ export default function MainPage() {
                                 <div className="col-8">
                                     <div className="numbers">
                                         <p className="text-sm mb-0 text-capitalize font-weight-bold">
-                                            Sales
+                                            New posts this Month
                                         </p>
                                         <h5 className="font-weight-bolder mb-0">
-                                            $103,430
-                                            <span className="text-success text-sm font-weight-bolder">
-                                                +5%
-                                            </span>
+                                            {newpost}
                                         </h5>
                                     </div>
                                 </div>
                                 <div className="col-4 text-end">
                                     <div className="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
                                         <i
-                                            className="fa fa-cart-plus text-lg opacity-10"
+                                            className="fa fa-newspaper text-lg opacity-10"
                                             aria-hidden="true"
                                         ></i>
                                     </div>

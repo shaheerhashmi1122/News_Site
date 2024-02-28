@@ -6,7 +6,7 @@ import { Head, Link, useForm, usePage } from "@inertiajs/react";
 
 export default function SideBar() {
     const{NewsData} = usePage().props;
-    console.log(NewsData);
+    // console.log(NewsData);
   const { data, setData, post, processing, errors } = useForm({
     heading: NewsData.heading || "",
     description: NewsData.description || "",

@@ -130,5 +130,14 @@ class AuthorController extends Controller
         return redirect()->back();
     }
 
+    public function profile()
+    {
+        $auth = Auth::user();
+        // dd($auth);
+        return inertia::render('Author/Edit',[
+            'profile'=>$auth
+        ]);
+    }
+
 
 }
