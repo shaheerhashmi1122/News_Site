@@ -11,7 +11,7 @@ export default function Welcome({ auth }) {
     const styleHead = {
         fontSize: "45px",
         textAlign: "center",
-
+color:"#fff",
         margin: "12px",
     };
 

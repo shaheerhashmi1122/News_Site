@@ -25,16 +25,18 @@ export default function UserSidebar({ show, onClose }, user) {
             name: "Techonology",
             route: "/user/technology",
             icon: "bx bx-laptop",
-        }, {
+        },
+        {
             name: "Travel",
             route: "/user/travel",
             icon: "bx bx-world",
-        }, 
+        },
         {
             name: "Enviornment",
             route: "/user/enviornment",
             icon: "bx bx-street-view",
-        },  {
+        },
+        {
             name: "Business",
             route: "/user/business",
             icon: "bx bx-buildings",
@@ -58,10 +60,7 @@ export default function UserSidebar({ show, onClose }, user) {
                             }`}
                             onClick={() => handleClick(link.route)}
                         >
-                            <i
-                                className={ link.icon 
-                                }
-                            ></i>{" "}
+                            <i className={link.icon}></i>{" "}
                             <span>{link.name}</span>
                         </Link>
                     ))}
@@ -118,7 +117,11 @@ export default function UserSidebar({ show, onClose }, user) {
                         <i className="bx bx-user "></i>
                         <span>Profile</span>
                     </Link>
-                    <Link className="li-names " href={route("logout")} method="post">
+                    <Link
+                        className="li-names "
+                        href={route("logout")}
+                        method="post"
+                    >
                         <i className="bx bx-exit "></i>
                         <span>SignOut</span>
                     </Link>
