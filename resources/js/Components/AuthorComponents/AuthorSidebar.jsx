@@ -19,7 +19,6 @@ export default function SideBar({ show }) {
 
     const routes = [
         { route: "/author/dashboard", icon: "fa-home", name: "Home" },
-        { route: "/author/shownews", icon: "fa-laptop", name: "News" },
         { route: "/author/uploadnews", icon: "fa-laptop", name: "UploadNews" },
         // { route: "/admin/charts", icon: "fa-chart-bar", name: "Analytics" },
     ];

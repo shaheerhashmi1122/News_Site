@@ -6,28 +6,34 @@ import "../../../css/Admin/app.css";
 import SideBar from "@/Components/AdminComponents/SideBar";
 import Footer from "@/Components/AdminComponents/Footer";
 import MainPage from "@/Components/AdminComponents/MainPage";
-import { Head } from "@inertiajs/react";
+import { Head, usePage } from "@inertiajs/react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Children } from "react";
 
 export default function Charts({ auth }) {
+    const{ usermonth, postmonth } = usePage().props;
+    
+    const formattedUserMonth = Object.keys(usermonth).map(month => ({
+        month: month,
+        total: usermonth[month]
+    }));
+    const formattedPostMonth = Object.keys(postmonth).map(month => ({
+        month: month,
+        total: postmonth[month]
+    }));
+
     const data1 = {
-        labels: ["January", "February", "March", "April", "May"],
+        labels: ["January", "February", "March", "April", "May","June","July","August","September","Octuber","November","December"],
         datasets: [
             {
-                label: "Total",
-                data: [12, 19, 3, 5, 2],
+                label: "Users",
+                data: formattedUserMonth.map(monthData => monthData.total),
                 backgroundColor: "#3a416f",
             },
             {
-                label: "Monthly",
-                data: [19, 12, 13, 15, 3],
+                label: "News Data",
+                data: formattedPostMonth.map(monthData => monthData.total),
                 backgroundColor: "#0bbee7",
-            },
-            {
-                label: "Daily",
-                data: [10, 22, 10, 35, 21],
-                backgroundColor: "#cb0c9f",
             },
         ],
     };
@@ -48,14 +54,7 @@ export default function Charts({ auth }) {
 <div className="col-6 col-md-10 col-sm-12">
                                  <div className="card z-index-2">
                                      <div className="card-header pb-0">
-                                         <h6>Sales overview</h6>
-                                         <p className="text-sm">
-                                             <i className="fa fa-arrow-up text-success"></i>
-                                             <span className="font-weight-bold">
-                                                 4% more
-                                             </span>{" "}
-                                             in 2021
-                                         </p>
+                                         <h6>Analytics</h6>
                                      </div>
 
                                      <div className="card-body p-3">

@@ -72,6 +72,8 @@ Route::middleware('author')->group(function () {
     Route::get('author/shownews', [AuthorController::class, 'show_data'])->name('author.shownews');
     Route::post('author/editform/{id}', [AuthorController::class, 'edit_form'])->name('author.editform');
     Route::get('author/delete/{id}', [AuthorController::class, 'delete'])->name('author.delete');
+    Route::get('author/profile/{id}',[AuthorController::class,'profile'])->name('author.profile');
+    Route::post('author/editprofile/{id}',[AuthorController::class,'edit_profile'])->name('author.editprofile');
 });
 
 Route::middleware('user')->group(function () {
@@ -81,7 +83,7 @@ Route::middleware('user')->group(function () {
     Route::get('user/technology', [TechnologyController::class, 'dashboard'])->name('user.technology');
     Route::get('user/travel', [TravelController::class, 'dashboard'])->name('user.travel');
     Route::get('user/business', [BusinessController::class, 'dashboard'])->name('user.business');
-    Route::get('user/enviornment', [EnviormentController::class, 'dashboard'])->name('user.enviornment');
+    Route::get('user/entertainment', [EnviormentController::class, 'dashboard'])->name('user.enviornment');
     Route::get('user/edit',[UserProfile::class,'edit'])->name('user.edit');
     Route::get('user/readmore/{id}',[ReadMoreController::class,'readmore'])->name('user.read');
     

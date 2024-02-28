@@ -33,9 +33,6 @@ const Tables = () => {
                                             <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Role
                                             </th>
-                                            <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Action
-                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -59,16 +56,6 @@ const Tables = () => {
                                                     <span className="badge badge-sm bg-gradient-warning">
                                                         {data.role}
                                                     </span>
-                                                </td>
-                                                <td className="align-middle text-center">
-                                                    <a
-                                                        href="javascript:;"
-                                                        className="badge badge-sm text-xxs bg-gradient-success"
-                                                        data-toggle="tooltip"
-                                                        data-original-title="Edit user"
-                                                    >
-                                                        Contact
-                                                    </a>
                                                 </td>
                                             </tr>
                                         ))}
@@ -97,8 +84,6 @@ const Tables = () => {
                                             </th>
                                             <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Role
-                                            </th> <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Action
                                             </th>
                                         </tr>
                                     </thead>
@@ -123,16 +108,6 @@ const Tables = () => {
                                                     <span className="badge badge-sm bg-gradient-warning">
                                                         {author.role}
                                                     </span>
-                                                </td>
-                                                <td className="align-middle text-center">
-                                                    <a
-                                                        href="javascript:;"
-                                                        className="badge badge-sm text-xxs bg-gradient-success"
-                                                        data-toggle="tooltip"
-                                                        data-original-title="Edit user"
-                                                    >
-                                                        Contact
-                                                    </a>
                                                 </td>
                                             </tr>
                                         ))}
