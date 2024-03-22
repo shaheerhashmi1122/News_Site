@@ -163,7 +163,7 @@ export default function UploadNews() {
                                                                     Business
                                                                 </option>
                                                                 <option value={"3"}>
-                                                                    Enviornment
+                                                                    Entertainment
                                                                 </option>
                                                                 <option value={"4"}>
                                                                     Sports

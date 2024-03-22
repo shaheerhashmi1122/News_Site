@@ -8,6 +8,7 @@ import '../css/Admin/app.css';
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+{/* <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> */}
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 

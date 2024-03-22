@@ -59,15 +59,7 @@ class AuthorController extends Controller
         return redirect()->back();
     }
 
-    public function show_data()
-    {
-        $auth = Auth::user()->id;
-        $data = NewsData::where('user_id','=',$auth)->get();
-        // dd($data);
-        return Inertia::render('Author/Tables',[
-            'data'=>$data
-        ]);
-    }
+ 
 
     public function update_news($id)
     {
@@ -142,13 +134,23 @@ class AuthorController extends Controller
 
     public function edit_profile(Request $request,$id){
         $user =User::whereId($id)->firstOrFail();
-        
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
         $user->update([
             "name"=>$request->input("name"),
             "email"=>$request->input("email"),
             "password"=>bcrypt($request->input("password")),
         ]);
-        return inertia::render('Author/AuthorDash');
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 
 

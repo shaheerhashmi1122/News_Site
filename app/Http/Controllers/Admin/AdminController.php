@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\NewsData;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
@@ -35,5 +36,34 @@ class AdminController extends Controller
             'usermonth'=>$user_month,
             'postmonth'=>$post_month
         ]);
+    }
+    public function profile($id)
+    {
+        $auth = User::find($id);
+        // dd($auth);
+        return inertia::render('Admin/Edit',[
+            'profile'=>$auth
+        ]);
+    }
+
+    public function edit_profile(Request $request,$id){
+        $user =User::whereId($id)->firstOrFail();
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        $user->update([
+            "name"=>$request->input("name"),
+            "email"=>$request->input("email"),
+            "password"=>bcrypt($request->input("password")),
+        ]);
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }

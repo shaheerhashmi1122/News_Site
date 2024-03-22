@@ -89,7 +89,7 @@ export default function NavBar({ user }) {
                                         <Link
                                             className="dropdown-item border-radius-md"
                                             href={route(
-                                                "admin.profile",
+                                                "author.profile",
                                                 user.id
                                             )}
                                         >

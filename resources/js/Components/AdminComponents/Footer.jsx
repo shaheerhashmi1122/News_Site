@@ -22,39 +22,7 @@ export default function Footer() {
                   for a better web.
                 </div>
               </div>
-              <div className="col-lg-6">
-                <ul
-                  className="nav nav-footer justify-content-center justify-content-lg-end"
-                >
-                  {/* <li className="nav-item">
-                    <p
-                    
-                      className="nav-link text-muted"
-                      target="_blank"
-                      >
-                        Creative Tim</p>
-                    
-                  </li> */}
-                  <li className="nav-item">
-                    <p
-                      className="nav-link text-muted"
-                      target="_blank"
-                      >About Us</p>
-                  </li>
-                  <li className="nav-item">
-                    <p
-                      className="nav-link text-muted"
-                      target="_blank"
-                      >Contact Us</p>
-                  </li>
-                  <li className="nav-item">
-                    <p
-                      className="nav-link pe-0 text-muted"
-                      target="_blank"
-                      >License</p>
-                  </li>
-                </ul>
-              </div>
+              
             </div>
           </div>
         </footer>

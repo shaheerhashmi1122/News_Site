@@ -15,7 +15,7 @@ export default function Edit() {
       const submit = (e) => {
         e.preventDefault();
     
-        post(route("author.editprofile",profile.id), data);
+        post(route("admin.editprofile",profile.id), data);
       };
 
     return (
@@ -87,7 +87,7 @@ export default function Edit() {
                             <div className=" mt-3 d-flex flex-row justify-content-center">
                                 <div className="text-center me-3">
                                     <Link
-                                        href={route("author.dashboard")}
+                                        href={route("admin.dashboard")}
                                         className="btn btn-primary home-button"
                                         type="button"
                                     >

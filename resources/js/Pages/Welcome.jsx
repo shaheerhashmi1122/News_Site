@@ -1,7 +1,7 @@
 import { Link, Head } from "@inertiajs/react";
 import Content from "@/Components/UserComponents/Content";
 import UserNav from "@/Components/UserComponents/UserNav";
-import UserSidebar from "@/Components/UserComponents/UserSidebar";
+import Sidebar from "@/Components/Sidebar";
 import Footer from "@/Components/UserComponents/Footer";
 import "../../css/User/user.css";
 import React, { useState } from "react";
@@ -66,7 +66,7 @@ color:"#fff",
                         </div>
                     </div>
 
-                    <UserSidebar
+                    <Sidebar
                         show={showMobileSidebar}
                         onClose={toggleMobileSidebar}
                     />

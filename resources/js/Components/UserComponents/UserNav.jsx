@@ -1,7 +1,10 @@
 import React from "react";
 import  "../../../css/User/user.css";
+import { usePage } from "@inertiajs/react";
 
 export default function UserNav() {
+  const{ head }=usePage().props;
+  // console.log(head)
     return (
 
 <>
@@ -22,8 +25,9 @@ export default function UserNav() {
       </div>
       <div className="px-1" style={{overflow:"hidden"}}>
         <div id="scrollContent" className="text-secondary mb-4">
-          <div>Lorem Ipsum is simply dummy text. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages. It is a long
-            established fact that a reader will be distracted by the readable content of a page when looking at its layout</div>
+          {head.map((head, index) => (
+            <div key={index}>{head.heading}</div>
+          ))}
         </div>
       </div>
     </div>

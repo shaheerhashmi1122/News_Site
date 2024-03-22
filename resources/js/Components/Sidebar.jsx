@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, usePage } from "@inertiajs/react";
 
-import "../../../css/User/user.css";
+import "../../css/User/user.css";
 
 export default function UserSidebar({ show, onClose} ) {
     const [closeMenu, setCloseMenu] = useState(false);
@@ -66,20 +66,6 @@ export default function UserSidebar({ show, onClose} ) {
                         </Link>
                     ))}
                 </div>
-                <div className="list-items position-fixed bottom-0 overflow-hidden">
-                    <Link className="li-names  " href={route("user.profile",auth.id)}>
-                        <i className="bx bx-user "></i>
-                        <span>Profile</span>
-                    </Link>
-                    <Link
-                        className="li-names "
-                        href={route("logout")}
-                        method="post"
-                    >
-                        <i className="bx bx-exit "></i>
-                        <span>SignOut</span>
-                    </Link>
-                </div>
             </div>
 
             {/* ================mobile view toogle sidebar======================================= */}
@@ -112,20 +98,6 @@ export default function UserSidebar({ show, onClose} ) {
                             <span className="sp-name">{link.name}</span>
                         </Link>
                     ))}
-                </div>
-                <div className="list-items position-fixed bottom-0 overflow-hidden">
-                    <Link className="li-names  " href={route("user.profile",auth.id)}>
-                        <i className="bx bx-user "></i>
-                        <span>Profile</span>
-                    </Link>
-                    <Link
-                        className="li-names "
-                        href={route("logout")}
-                        method="post"
-                    >
-                        <i className="bx bx-exit "></i>
-                        <span>SignOut</span>
-                    </Link>
                 </div>
             </div>
         </>

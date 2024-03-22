@@ -1,6 +1,7 @@
 import React from 'react';
 import "../../../css/User/user.css";
 import { MDBBreadcrumb, MDBBreadcrumbItem } from 'mdb-react-ui-kit';
+import { Link } from '@inertiajs/react';
 
 export default function PageHead({ breadcrumbs }) {
   return (
@@ -9,7 +10,7 @@ export default function PageHead({ breadcrumbs }) {
         {breadcrumbs.map((breadcrumb, index) => (
           <MDBBreadcrumbItem key={index}>
             {breadcrumb.url ? (
-              <a href={breadcrumb.url}>{breadcrumb.label}</a>
+              <Link href={breadcrumb.url}>{breadcrumb.label}</Link>
             ) : (
               breadcrumb.label
             )}

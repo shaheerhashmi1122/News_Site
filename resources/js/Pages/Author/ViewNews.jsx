@@ -68,21 +68,7 @@ export default function viewNews({ auth, NewsData }) {
                                         <div className="table table-responsive">
                                             <table className="table align-items-center mb-0">
                                                <p> {NewsData.text}</p>
-                                                {/* <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div className="d-flex px-2 py-1">
-                                                                <div></div>
-                                                                <div className="d-flex flex-column justify-content-center">
-                                                                    <h6 className="mb-0 text-sm">
-                                                                    
-                                                                    </h6>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    
-                                                    </tr>
-                                                </tbody> */}
+                                               
                                             </table>
                                         </div>
                                     </div>

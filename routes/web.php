@@ -61,6 +61,8 @@ Route::middleware('admin')->group(function () {
     Route::get('admin/tables', [TableController::class, 'show'])->name('admin.tables');
     Route::get('admin/charts', [ChartController::class, 'show'])->name('admin.charts');
     Route::get('admin/pages', [PageController::class, 'show'])->name('admin.pages');
+    Route::get('admin/profile/{id}',[AdminController::class,'profile'])->name('admin.profile');
+    Route::post('admin/editprofile/{id}',[AdminController::class,'edit_profile'])->name('admin.editprofile');
 });
 
 Route::middleware('author')->group(function () {
@@ -84,9 +86,9 @@ Route::middleware('user')->group(function () {
     Route::get('user/travel', [TravelController::class, 'dashboard'])->name('user.travel');
     Route::get('user/business', [BusinessController::class, 'dashboard'])->name('user.business');
     Route::get('user/entertainment', [EnviormentController::class, 'dashboard'])->name('user.enviornment');
-    Route::get('user/edit',[UserProfile::class,'edit'])->name('user.edit');
     Route::get('user/readmore/{id}',[ReadMoreController::class,'readmore'])->name('user.read');
-    
+    Route::get('user/profile/{id}',[UserController::class,'profile'])->name('user.profile');
+    Route::post('user/editprofile/{id}',[UserController::class,'edit_profile'])->name('user.editprofile');
 });
 
 
